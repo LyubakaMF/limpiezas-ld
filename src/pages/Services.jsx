@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import { Home, Building2, SprayCan, Truck, HardHat, CalendarCheck, Check, ArrowRight } from 'lucide-react';
+import { Home, Building2, SprayCan, Truck, HardHat, CalendarCheck, Umbrella, Check, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/lib/LanguageContext';
 
-const icons = [Home, Building2, SprayCan, Truck, HardHat, CalendarCheck];
+const icons = [Home, Umbrella, Building2, SprayCan, Truck, HardHat, CalendarCheck];
 const images = [
   'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80',
+  'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80',
   'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80',
   'https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?w=600&q=80',
   'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80',
@@ -34,7 +35,7 @@ export default function Services() {
       <section className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-12">
           {sp.items.map((service, i) => {
-            const Icon = icons[i];
+            const Icon = icons[i] || Home;
             return (
               <motion.div
                 key={service.title}
@@ -42,11 +43,11 @@ export default function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className={`grid lg:grid-cols-2 gap-8 items-center`}
+                className="grid lg:grid-cols-2 gap-8 items-center"
               >
                 <div className={`${i % 2 === 1 ? 'lg:order-2' : ''}`}>
                   <div className="rounded-2xl overflow-hidden aspect-[16/10]">
-                    <img src={images[i]} alt={service.title} className="w-full h-full object-cover" />
+                    <img src={images[i] || images[0]} alt={service.title} className="w-full h-full object-cover" />
                   </div>
                 </div>
                 <div className={`${i % 2 === 1 ? 'lg:order-1' : ''}`}>
