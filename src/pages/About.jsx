@@ -89,7 +89,7 @@ export default function About() {
                 Every member of our team goes through rigorous training to meet our high standards. We invest in the best equipment and eco-friendly products because we believe clean shouldn't come at the cost of health or the environment.
               </p>
               <p>
-                Today, we're proud to be the most trusted cleaning service in the area, with a 4.9-star average rating and a 95% customer retention rate.
+                Hoy somos orgullosamente el servicio de limpieza más confiable de la zona, con una valoración media de 4,9 estrellas y un 95% de clientes que repiten.
               </p>
             </div>
           </motion.div>
@@ -155,7 +155,7 @@ export default function About() {
       {/* CTA */}
       <section className="py-16 lg:py-24 bg-accent">
         <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">Ready to experience PureClean?</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4">¿Listo para experimentar Limpiezas LD?</h2>
           <p className="text-muted-foreground text-lg mb-8">
             Join thousands of satisfied customers. Book your first cleaning today.
           </p>

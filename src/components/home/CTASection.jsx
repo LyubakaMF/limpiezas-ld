@@ -18,10 +18,10 @@ export default function CTASection() {
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1527515545081-5db817172677?w=1200&q=60')] opacity-10 bg-cover bg-center" />
           <div className="relative">
             <h2 className="text-3xl lg:text-5xl font-bold text-primary-foreground tracking-tight max-w-2xl mx-auto">
-              Ready for a spotless space?
+              ¿Listo para un espacio impecable?
             </h2>
             <p className="mt-4 text-primary-foreground/80 text-lg max-w-lg mx-auto">
-              Book your first cleaning today and experience the PureClean difference. Free estimates, no obligations.
+              Reserva tu primera limpieza hoy y descubre la diferencia de Limpiezas LD. Presupuestos gratuitos, sin compromiso.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 mt-10">
               <Link to="/Booking">
