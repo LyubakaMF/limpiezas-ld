@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles, Phone, Mail, MapPin } from 'lucide-react';
+import { Sparkles, Phone, Mail, MapPin, QrCode } from 'lucide-react';
 import { useLanguage } from '@/lib/LanguageContext';
+import { QRCodeSVG } from 'qrcode.react';
 
 export default function Footer() {
   const { t } = useLanguage();
