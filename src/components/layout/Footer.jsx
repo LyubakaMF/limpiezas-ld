@@ -43,9 +43,10 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">{f.contact}</h4>
             <ul className="space-y-3 text-sm text-background/60">
-              <li className="flex items-center gap-2"><Phone className="w-4 h-4" /> (555) 123-4567</li>
-              <li className="flex items-center gap-2"><Mail className="w-4 h-4" /> hola@limpiezasld.com</li>
-              <li className="flex items-center gap-2"><MapPin className="w-4 h-4" /> Calle Mayor 10, 28013 Madrid</li>
+              <li className="flex items-center gap-2"><Phone className="w-4 h-4" /> +34 643 53 34 53</li>
+              <li className="flex items-center gap-2"><Phone className="w-4 h-4" /> +34 602 66 55 37</li>
+              <li className="flex items-center gap-2"><Mail className="w-4 h-4" /> limpiezasld@gmail.com</li>
+              <li className="flex items-center gap-2"><MapPin className="w-4 h-4" /> C. Conde de Aranda 6, 30880 Águilas</li>
             </ul>
           </div>
         </div>
