@@ -6,12 +6,6 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '@/lib/LanguageContext';
 
 const valueIcons = [Leaf, Shield, Users, Heart];
-const team = [
-  { name: 'Jessica Park', role: 'Founder & CEO', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80' },
-  { name: 'David Kim', role: 'Operations Director', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80' },
-  { name: 'Maria Santos', role: 'Lead Supervisor', image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80' },
-  { name: 'James Wilson', role: 'Quality Manager', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80' },
-];
 
 export default function About() {
   const { t } = useLanguage();
