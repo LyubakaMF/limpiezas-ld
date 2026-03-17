@@ -44,11 +44,26 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">{f.contact}</h4>
             <ul className="space-y-3 text-sm text-background/60">
-              <li className="flex items-center gap-2"><Phone className="w-4 h-4" /> +34 643 53 34 53</li>
-              <li className="flex items-center gap-2"><Phone className="w-4 h-4" /> +34 602 66 55 37</li>
-              <li className="flex items-center gap-2"><Mail className="w-4 h-4" /> limpiezasld@gmail.com</li>
-              <li className="flex items-center gap-2"><MapPin className="w-4 h-4" /> C. Conde de Aranda 6, 30880 Águilas</li>
+              <li className="flex items-center gap-2"><Phone className="w-4 h-4" /><a href="tel:+34643533453" className="hover:text-background transition-colors">+34 643 53 34 53</a></li>
+              <li className="flex items-center gap-2"><Phone className="w-4 h-4" /><a href="tel:+34602665537" className="hover:text-background transition-colors">+34 602 66 55 37</a></li>
+              <li className="flex items-center gap-2"><Mail className="w-4 h-4" /><a href="mailto:limpiezasld@gmail.com" className="hover:text-background transition-colors">limpiezasld@gmail.com</a></li>
+              <li className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 shrink-0 mt-0.5" />
+                <a href="https://maps.google.com/?q=C.+Conde+de+Aranda+6,+30880+Águilas,+Murcia,+Spain" target="_blank" rel="noopener noreferrer" className="hover:text-background transition-colors">
+                  C. Conde de Aranda 6, 30880 Águilas
+                </a>
+              </li>
+              <li className="flex items-start gap-2 pt-2">
+                <MapPin className="w-4 h-4 shrink-0 mt-0.5 text-primary" />
+                <span className="text-background/50 text-xs leading-relaxed">{f.serviceArea}</span>
+              </li>
             </ul>
+            <div className="mt-5">
+              <p className="text-xs text-background/40 mb-2">{f.scanQR}</p>
+              <div className="bg-white rounded-xl p-2 inline-block">
+                <QRCodeSVG value={typeof window !== 'undefined' ? window.location.origin : 'https://limpiezasld.com'} size={88} />
+              </div>
+            </div>
           </div>
         </div>
 
