@@ -31,7 +31,7 @@ export default function CTASection() {
                   {c.bookNow} <ArrowRight className="w-4 h-4" />
                 </Button>
               </Link>
-              <a href="tel:5551234567">
+              <a href="tel:+34643533453">
                 <Button size="lg" variant="outline" className="rounded-full px-8 h-14 text-base border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10">
                   {c.call}
                 </Button>

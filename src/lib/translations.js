@@ -43,7 +43,7 @@ export const translations = {
       title: 'Ready for a spotless space?',
       subtitle: 'Book your first cleaning today and experience the Limpiezas LD difference. Free estimates, no obligations.',
       bookNow: 'Book Now',
-      call: 'Call (555) 123-4567',
+      call: '+34 643 53 34 53',
     },
     footer: {
       description: 'Professional cleaning services that transform your space. Trusted by thousands of homes and businesses.',
@@ -151,7 +151,7 @@ export const translations = {
       satisfaction: 'Satisfaction Guaranteed',
       satisfactionDesc: '100% satisfaction or we\'ll re-clean for free',
       needHelp: 'Need help?',
-      needHelpDesc: 'Call us at (555) 123-4567',
+      needHelpDesc: '+34 643 53 34 53 / +34 602 66 55 37',
       freeTitle: 'Free estimates',
       freeDesc: 'Not sure which service you need? Submit a request and our team will provide a personalized quote based on your space and requirements.',
       services: [
