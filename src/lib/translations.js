@@ -209,7 +209,7 @@ export const translations = {
       title: '¿Listo para un espacio impecable?',
       subtitle: 'Reserva tu primera limpieza hoy y descubre la diferencia de Limpiezas LD. Presupuestos gratuitos, sin compromiso.',
       bookNow: 'Reservar ahora',
-      call: 'Llamar (555) 123-4567',
+      call: '+34 643 53 34 53',
     },
     footer: {
       description: 'Servicios profesionales de limpieza que transforman tu espacio. La confianza de miles de hogares y empresas.',
@@ -287,7 +287,7 @@ export const translations = {
       satisfaction: 'Satisfacción garantizada',
       satisfactionDesc: '100% de satisfacción o repetimos la limpieza gratis',
       needHelp: '¿Necesitas ayuda?',
-      needHelpDesc: 'Llámanos al (555) 123-4567',
+      needHelpDesc: '+34 643 53 34 53 / +34 602 66 55 37',
       freeTitle: 'Presupuestos gratuitos',
       freeDesc: '¿No sabes qué servicio necesitas? Envía una solicitud y nuestro equipo te dará un presupuesto personalizado según tu espacio.',
       services: [
@@ -345,7 +345,7 @@ export const translations = {
       title: 'Bereit für makellose Räume?',
       subtitle: 'Buchen Sie Ihre erste Reinigung heute und erleben Sie den Limpiezas LD Unterschied. Kostenlose Angebote, keine Verpflichtungen.',
       bookNow: 'Jetzt buchen',
-      call: 'Anrufen (555) 123-4567',
+      call: '+34 643 53 34 53',
     },
     footer: {
       description: 'Professionelle Reinigungsdienstleistungen, die Ihren Raum verwandeln. Das Vertrauen von Tausenden Haushalten und Unternehmen.',
@@ -423,7 +423,7 @@ export const translations = {
       satisfaction: 'Zufriedenheitsgarantie',
       satisfactionDesc: '100 % Zufriedenheit oder wir reinigen erneut kostenlos',
       needHelp: 'Brauchen Sie Hilfe?',
-      needHelpDesc: 'Rufen Sie uns an: (555) 123-4567',
+      needHelpDesc: '+34 643 53 34 53 / +34 602 66 55 37',
       freeTitle: 'Kostenlose Angebote',
       freeDesc: 'Unsicher, welche Leistung Sie benötigen? Senden Sie eine Anfrage und wir erstellen ein individuelles Angebot.',
       services: [
@@ -559,7 +559,7 @@ export const translations = {
       satisfaction: 'Satisfaction garantie',
       satisfactionDesc: '100 % de satisfaction ou nous re-nettoyons gratuitement',
       needHelp: 'Besoin d\'aide ?',
-      needHelpDesc: 'Appelez-nous au (555) 123-4567',
+      needHelpDesc: '+34 643 53 34 53 / +34 602 66 55 37',
       freeTitle: 'Devis gratuits',
       freeDesc: 'Vous ne savez pas quel service choisir ? Soumettez une demande et notre équipe vous fournira un devis personnalisé.',
       services: [
