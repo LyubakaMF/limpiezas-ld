@@ -156,7 +156,13 @@ export default function Booking() {
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-0.5"><Phone className="w-4 h-4 text-primary" /></div>
-                      <div><p className="font-medium text-sm">{bp.needHelp}</p><p className="text-xs text-muted-foreground">{bp.needHelpDesc}</p></div>
+                      <div>
+                        <p className="font-medium text-sm">{bp.needHelp}</p>
+                        <p className="text-xs text-muted-foreground">{bp.needHelpDesc}</p>
+                        <a href="https://wa.me/34643533453" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 mt-1 text-xs font-medium text-green-600 hover:text-green-700">
+                          💬 WhatsApp
+                        </a>
+                      </div>
                     </li>
                   </ul>
                 </CardContent>
