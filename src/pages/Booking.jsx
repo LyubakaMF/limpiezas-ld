@@ -27,6 +27,25 @@ export default function Booking() {
     e.preventDefault();
     setIsSubmitting(true);
     await base44.entities.BookingRequest.create(form);
+
+    // Email notification
+    await base44.integrations.Core.SendEmail({
+      to: 'limpiezasld@gmail.com',
+      subject: `Nueva solicitud de limpieza – ${form.full_name}`,
+      body: `
+        <h2>Nueva solicitud de reserva</h2>
+        <p><strong>Nombre:</strong> ${form.full_name}</p>
+        <p><strong>Email:</strong> ${form.email}</p>
+        <p><strong>Teléfono:</strong> ${form.phone}</p>
+        <p><strong>Servicio:</strong> ${form.service_type}</p>
+        <p><strong>Fecha:</strong> ${form.preferred_date} – ${form.preferred_time}</p>
+        <p><strong>Dirección:</strong> ${form.address}</p>
+        <p><strong>Notas:</strong> ${form.notes || '–'}</p>
+        <hr/>
+        <p>📱 También puedes responder por WhatsApp: <a href="https://wa.me/34643533453">wa.me/34643533453</a></p>
+      `
+    });
+
     setIsSubmitting(false);
     setIsSuccess(true);
   };
