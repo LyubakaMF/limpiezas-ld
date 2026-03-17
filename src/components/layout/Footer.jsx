@@ -12,10 +12,10 @@ export default function Footer() {
               <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center">
                 <Sparkles className="w-5 h-5 text-primary-foreground" />
               </div>
-              <span className="text-xl font-bold">PureClean</span>
+              <span className="text-xl font-bold">Limpiezas LD</span>
             </div>
             <p className="text-background/60 text-sm leading-relaxed">
-              Professional cleaning services that transform your space. Trusted by thousands of homes and businesses.
+              Servicios profesionales de limpieza que transforman tu espacio. La confianza de miles de hogares y empresas.
             </p>
           </div>
 
@@ -56,7 +56,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-background/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-background/40">© 2026 PureClean. All rights reserved.</p>
+          <p className="text-sm text-background/40">© 2026 Limpiezas LD. Todos los derechos reservados.</p>
           <div className="flex gap-6 text-sm text-background/40">
             <span className="hover:text-background/60 transition-colors cursor-pointer">Privacy Policy</span>
             <span className="hover:text-background/60 transition-colors cursor-pointer">Terms of Service</span>
