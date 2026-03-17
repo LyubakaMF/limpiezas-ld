@@ -36,7 +36,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-background/60">
               <li><Link to="/About" className="hover:text-background transition-colors">{f.companyLinks[0]}</Link></li>
               <li><Link to="/Booking" className="hover:text-background transition-colors">{f.companyLinks[1]}</Link></li>
-              <li><span className="cursor-pointer hover:text-background transition-colors">{f.companyLinks[2]}</span></li>
+              <li><Link to="/Empleo" className="hover:text-background transition-colors">{f.companyLinks[2]}</Link></li>
               <li><span className="cursor-pointer hover:text-background transition-colors">{f.companyLinks[3]}</span></li>
             </ul>
           </div>
