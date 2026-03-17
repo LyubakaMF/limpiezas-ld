@@ -30,7 +30,7 @@ export default function HeroSection() {
             </h1>
 
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-lg">
-              Professional cleaning services tailored to your needs. We bring sparkle to every corner of your home or office with eco-friendly products and meticulous attention to detail.
+              Servicios profesionales de limpieza adaptados a tus necesidades. Llevamos brillo a cada rincón de tu hogar u oficina con productos ecológicos y atención al detalle.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mt-10">
