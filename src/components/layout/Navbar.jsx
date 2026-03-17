@@ -1,26 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import { Menu, X, Sparkles } from 'lucide-react';
+import { Menu, X, Sparkles, Globe } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLanguage } from '@/lib/LanguageContext';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
-const navLinks = [
-  { label: 'Home', path: '/Home' },
-  { label: 'Services', path: '/Services' },
-  { label: 'About', path: '/About' },
-  { label: 'Book Now', path: '/Booking', highlight: true },
+const LANGUAGES = [
+  { code: 'en', label: 'English', flag: '🇬🇧' },
+  { code: 'es', label: 'Español', flag: '🇪🇸' },
+  { code: 'de', label: 'Deutsch', flag: '🇩🇪' },
+  { code: 'fr', label: 'Français', flag: '🇫🇷' },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { lang, setLang, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const navLinks = [
+    { label: t.nav.home, path: '/Home' },
+    { label: t.nav.services, path: '/Services' },
+    { label: t.nav.about, path: '/About' },
+    { label: t.nav.bookNow, path: '/Booking', highlight: true },
+  ];
+
+  const currentLang = LANGUAGES.find(l => l.code === lang);
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -39,9 +51,7 @@ export default function Navbar() {
             {navLinks.map((link) => (
               link.highlight ? (
                 <Link key={link.path} to={link.path}>
-                  <Button className="ml-3 rounded-full px-6">
-                    {link.label}
-                  </Button>
+                  <Button className="ml-3 rounded-full px-6">{link.label}</Button>
                 </Link>
               ) : (
                 <Link
@@ -57,6 +67,26 @@ export default function Navbar() {
                 </Link>
               )
             ))}
+
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="sm" className="ml-2 rounded-full gap-1.5 px-3">
+                  <Globe className="w-4 h-4" />
+                  <span className="text-sm">{currentLang?.flag} {currentLang?.code.toUpperCase()}</span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                {LANGUAGES.map(l => (
+                  <DropdownMenuItem
+                    key={l.code}
+                    onClick={() => setLang(l.code)}
+                    className={`gap-2 cursor-pointer ${lang === l.code ? 'text-primary font-semibold' : ''}`}
+                  >
+                    <span>{l.flag}</span> {l.label}
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
 
           <button
@@ -93,6 +123,21 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
+              <div className="pt-2 border-t">
+                <div className="flex gap-2 flex-wrap">
+                  {LANGUAGES.map(l => (
+                    <button
+                      key={l.code}
+                      onClick={() => { setLang(l.code); setIsOpen(false); }}
+                      className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
+                        lang === l.code ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground hover:bg-accent'
+                      }`}
+                    >
+                      {l.flag} {l.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
           </motion.div>
         )}
