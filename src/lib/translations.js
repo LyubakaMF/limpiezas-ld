@@ -55,6 +55,8 @@ export const translations = {
       rights: '© 2026 Limpiezas LD. All rights reserved.',
       privacy: 'Privacy Policy',
       terms: 'Terms of Service',
+      serviceArea: 'Serving: Águilas · San Juan de los Terreros · Pulpí · Lorca',
+      scanQR: 'Scan to visit our website',
     },
     servicesPage: {
       tag: 'Our Services',
@@ -227,6 +229,8 @@ export const translations = {
       rights: '© 2026 Limpiezas LD. Todos los derechos reservados.',
       privacy: 'Política de privacidad',
       terms: 'Términos de servicio',
+      serviceArea: 'Servicio en: Águilas · San Juan de los Terreros · Pulpí · Lorca',
+      scanQR: 'Escanea para visitar nuestra web',
     },
     servicesPage: {
       tag: 'Nuestros servicios',
@@ -365,6 +369,8 @@ export const translations = {
       rights: '© 2026 Limpiezas LD. Alle Rechte vorbehalten.',
       privacy: 'Datenschutz',
       terms: 'Nutzungsbedingungen',
+      serviceArea: 'Einsatzgebiet: Águilas · San Juan de los Terreros · Pulpí · Lorca',
+      scanQR: 'QR scannen für unsere Website',
     },
     servicesPage: {
       tag: 'Unsere Leistungen',
@@ -503,6 +509,8 @@ export const translations = {
       rights: '© 2026 Limpiezas LD. Tous droits réservés.',
       privacy: 'Politique de confidentialité',
       terms: 'Conditions d\'utilisation',
+      serviceArea: 'Zone desservie : Águilas · San Juan de los Terreros · Pulpí · Lorca',
+      scanQR: 'Scannez pour visiter notre site',
     },
     servicesPage: {
       tag: 'Nos services',
