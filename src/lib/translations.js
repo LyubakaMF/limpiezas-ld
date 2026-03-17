@@ -64,9 +64,15 @@ export const translations = {
       items: [
         {
           title: 'Residential Cleaning',
-          description: 'Keep your home spotless with our regular residential cleaning service. We handle dusting, vacuuming, mopping, bathroom and kitchen sanitizing, and more.',
-          features: ['Kitchen & bathroom deep clean', 'Dusting & vacuuming', 'Floor mopping & polishing', 'Trash removal'],
-          price: 'From $120',
+          description: 'Keep your home spotless with our integral cleaning service. We handle dusting, vacuuming, mopping, bathroom and kitchen sanitizing, and more.',
+          features: ['2-bedroom flat from 80 €', '3-bedroom flat from 110 €', 'Kitchen & bathroom deep clean', 'Dusting, vacuuming & mopping'],
+          price: 'From 80 €',
+        },
+        {
+          title: 'Vacation Apartment Cleaning',
+          description: 'Fast, thorough cleaning between guest stays. We leave your vacation rental spotless and guest-ready every time.',
+          features: ['Full property clean', 'Linen change & bed making', 'Kitchen & bathroom refresh', 'Quick turnaround'],
+          price: 'From 30 €',
         },
         {
           title: 'Commercial Cleaning',
