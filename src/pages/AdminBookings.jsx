@@ -171,6 +171,20 @@ export default function AdminBookings() {
               <table className="w-full text-sm">
                 <thead className="bg-muted border-b">
                   <tr>
+                    <th className="px-6 py-3 text-left font-semibold w-12">
+                      <input
+                        type="checkbox"
+                        checked={selectedIds.size > 0 && selectedIds.size === filteredBookings.length}
+                        onChange={(e) => {
+                          if (e.target.checked) {
+                            setSelectedIds(new Set(filteredBookings.map(b => b.id)));
+                          } else {
+                            setSelectedIds(new Set());
+                          }
+                        }}
+                        className="w-4 h-4 cursor-pointer"
+                      />
+                    </th>
                     <th className="px-6 py-3 text-left font-semibold">Name</th>
                     <th className="px-6 py-3 text-left font-semibold">Email</th>
                     <th className="px-6 py-3 text-left font-semibold">Phone</th>
