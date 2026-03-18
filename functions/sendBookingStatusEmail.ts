@@ -27,33 +27,48 @@ Deno.serve(async (req) => {
     const serviceTypeFormatted = service_type ? service_type.replace(/_/g, ' ').charAt(0).toUpperCase() + service_type.replace(/_/g, ' ').slice(1) : 'N/A';
     const timeFormatted = preferred_time ? preferred_time.charAt(0).toUpperCase() + preferred_time.slice(1) : 'N/A';
 
-    const result = await resend.emails.send({
-      from: 'Limpiezas LD <noreply@resend.dev>',
-      to: email,
-      subject: statusInfo.subject,
-      html: `
-        <h2>${statusInfo.message}</h2>
-        <p>Dear ${escapeHtml(full_name)},</p>
-        <h3>Your Booking Details:</h3>
-        <ul>
-          <li><strong>Service Type:</strong> ${serviceTypeFormatted}</li>
-          <li><strong>Scheduled Date:</strong> ${escapeHtml(preferred_date)}</li>
-          <li><strong>Scheduled Time:</strong> ${timeFormatted}</li>
-          <li><strong>Address:</strong> ${escapeHtml(address)}</li>
-          <li><strong>Status:</strong> <strong>${status.charAt(0).toUpperCase() + status.slice(1)}</strong></li>
-          ${notes ? `<li><strong>Special Notes:</strong> ${escapeHtml(notes)}</li>` : ''}
-        </ul>
-        <hr/>
-        <p><strong>Need help?</strong></p>
-        <p>Call us: <a href="tel:+34643533453">+34 643 53 34 53</a></p>
-        <p>or message us on WhatsApp: <a href="https://wa.me/34643533453">wa.me/34643533453</a></p>
-        <p>Limpiezas LD - Professional Cleaning Services</p>
-      `
+    const emailContent = `
+      <h2>${statusInfo.message}</h2>
+      <p>Dear ${escapeHtml(full_name)},</p>
+      <h3>Your Booking Details:</h3>
+      <ul>
+        <li><strong>Service Type:</strong> ${serviceTypeFormatted}</li>
+        <li><strong>Scheduled Date:</strong> ${escapeHtml(preferred_date)}</li>
+        <li><strong>Scheduled Time:</strong> ${timeFormatted}</li>
+        <li><strong>Address:</strong> ${escapeHtml(address)}</li>
+        <li><strong>Status:</strong> <strong>${status.charAt(0).toUpperCase() + status.slice(1)}</strong></li>
+        ${notes ? `<li><strong>Special Notes:</strong> ${escapeHtml(notes)}</li>` : ''}
+      </ul>
+      <hr/>
+      <p><strong>Need help?</strong></p>
+      <p>Call us: <a href="tel:+34643533453">+34 643 53 34 53</a></p>
+      <p>or message us on WhatsApp: <a href="https://wa.me/34643533453">wa.me/34643533453</a></p>
+      <p>Limpiezas LD - Professional Cleaning Services</p>
+    `;
+
+    const message = {
+      raw: Buffer.from(
+        `From: Limpiezas LD <limpiezasdomesticos@gmail.com>\r\n` +
+        `To: ${email}\r\n` +
+        `Subject: ${statusInfo.subject}\r\n` +
+        `Content-Type: text/html; charset=UTF-8\r\n\r\n` +
+        emailContent
+      ).toString('base64')
+    };
+
+    const response = await fetch('https://www.googleapis.com/gmail/v1/users/me/messages/send', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${accessToken}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(message)
     });
 
-    if (result.error) {
-      console.error('Resend API error:', result.error);
-      return Response.json({ success: false, error: result.error.message }, { status: 500 });
+    if (!response.ok) {
+      const error = await response.json();
+      console.error('Gmail API error:', error);
+      return Response.json({ success: false, error: error.error.message }, { status: 500 });
     }
 
     return Response.json({ success: true, message: 'Status notification sent to client.' });
