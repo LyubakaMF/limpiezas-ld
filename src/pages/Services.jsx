@@ -8,8 +8,8 @@ import { useLanguage } from '@/lib/LanguageContext';
 const icons = [Home, Umbrella, Building2, SprayCan, Truck, HardHat, CalendarCheck];
 const images = [
   'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80',
-  'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80',
   'https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=600&q=80',
+  'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=600&q=80',
   'https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?w=600&q=80',
   'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80',
   'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80',
