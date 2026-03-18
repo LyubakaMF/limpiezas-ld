@@ -52,7 +52,23 @@ export default function AdminBookings() {
 
   const handleStatusChange = async (bookingId, newStatus) => {
     try {
+      const booking = bookings.find(b => b.id === bookingId);
       await base44.entities.BookingRequest.update(bookingId, { status: newStatus });
+      
+      // Send status notification email to client
+      if (booking && newStatus !== 'pending') {
+        await base44.functions.invoke('sendBookingStatusEmail', {
+          full_name: booking.full_name,
+          email: booking.email,
+          service_type: booking.service_type,
+          preferred_date: booking.preferred_date,
+          preferred_time: booking.preferred_time,
+          address: booking.address,
+          status: newStatus,
+          notes: booking.notes
+        });
+      }
+      
       setBookings(bookings.map(b => b.id === bookingId ? { ...b, status: newStatus } : b));
     } catch (error) {
       console.error('Error updating status:', error);
