@@ -7,7 +7,7 @@ import { useLanguage } from '@/lib/LanguageContext';
 
 const icons = [Home, Umbrella, Building2, SprayCan, Truck, HardHat, CalendarCheck];
 const images = [
-  'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80',
+  'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80',
   'https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=600&q=80',
   'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=600&q=80',
   'https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?w=600&q=80',
