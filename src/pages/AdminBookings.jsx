@@ -200,6 +200,14 @@ export default function AdminBookings() {
                     const StatusIcon = statusInfo.icon;
                     return (
                       <tr key={booking.id} className="hover:bg-muted/50 transition-colors">
+                        <td className="px-6 py-3 w-12">
+                          <input
+                            type="checkbox"
+                            checked={selectedIds.has(booking.id)}
+                            onChange={() => toggleSelection(booking.id)}
+                            className="w-4 h-4 cursor-pointer"
+                          />
+                        </td>
                         <td className="px-6 py-3 font-medium">{booking.full_name}</td>
                         <td className="px-6 py-3 text-xs">{booking.email}</td>
                         <td className="px-6 py-3 text-xs">{booking.phone}</td>
