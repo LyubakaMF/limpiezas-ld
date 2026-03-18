@@ -41,9 +41,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link to="/Home" className="flex items-center gap-2">
-            <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center">
-              <Sparkles className="w-5 h-5 text-primary-foreground" />
-            </div>
+            <img src="https://media.base44.com/images/public/69b9d864ebb8dd58db0fa41f/cdc45d7c5_generated_image.png" alt="Limpiezas LD" className="h-12 w-auto" />
             <span className="text-xl font-bold tracking-tight">Limpiezas LD</span>
           </Link>
 
