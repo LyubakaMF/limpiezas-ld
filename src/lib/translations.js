@@ -684,6 +684,20 @@ export const translations = {
       successMsg: 'Merci ! Nous avons bien reçu votre candidature et vous contacterons bientôt.',
       sendAnother: 'Envoyer une autre candidature',
     },
+    faqPage: {
+      title: 'Questions Fréquemment Posées',
+      subtitle: 'Trouvez des réponses aux questions courantes sur nos services de nettoyage et nos tarifs.',
+      items: [
+        { question: 'Quelles zones desservez-vous?', answer: 'Nous desservons Águilas, San Juan de los Terreros, Pulpí et Lorca avec des services de nettoyage professionnel.' },
+        { question: 'Combien de temps à l\'avance dois-je réserver?', answer: 'Vous pouvez réserver dès 24 heures à l\'avance, mais nous recommandons de réserver 3-5 jours avant.' },
+        { question: 'Utilisez-vous des produits écologiques?', answer: 'Oui, tous nos produits de nettoyage sont sûrs pour l\'environnement et non toxiques.' },
+        { question: 'Vos équipes sont-elles assurées?', answer: 'Oui, tous nos membres sont vérifiés, complètement assurés et cautionnés.' },
+        { question: 'Que se passe-t-il si je ne suis pas satisfait?', answer: 'Nous offrons une garantie de satisfaction à 100%. Si vous n\'êtes pas satisfait, nous revenons gratuitement.' },
+        { question: 'Proposez-vous un service le jour même?', answer: 'Oui, nous offrons un service le jour même selon la disponibilité. Contactez +34 643 53 34 53.' },
+        { question: 'Puis-je demander des produits spécifiques?', answer: 'Oui, nous pouvons accommoder les demandes spéciales. Mentionnez les allergies lors de la réservation.' },
+        { question: 'Combien de temps prend un nettoyage résidentiel?', answer: '2 chambres prend 2-3h, 3 chambres prend 3-4h. Cela dépend de l\'état du logement.' },
+      ]
+    },
     bookingPage: {
     tag: 'Réserver un nettoyage',
       title: 'Obtenez votre devis gratuit',
