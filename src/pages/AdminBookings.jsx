@@ -59,14 +59,14 @@ export default function AdminBookings() {
       if (booking && newStatus !== 'pending') {
         try {
           await base44.functions.invoke('sendBookingStatusEmail', {
-            full_name: booking.full_name,
-            email: booking.email,
-            service_type: booking.service_type,
-            preferred_date: booking.preferred_date,
-            preferred_time: booking.preferred_time,
-            address: booking.address,
+            full_name: booking.full_name || '',
+            email: booking.email || '',
+            service_type: booking.service_type || '',
+            preferred_date: booking.preferred_date || '',
+            preferred_time: booking.preferred_time || '',
+            address: booking.address || '',
             status: newStatus,
-            notes: booking.notes
+            notes: booking.notes || ''
           });
         } catch (emailError) {
           console.error('Error sending notification email:', emailError);
