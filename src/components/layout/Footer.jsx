@@ -52,7 +52,7 @@ export default function Footer() {
                 <a href="tel:+34602665537" className="hover:text-background transition-colors">+34 602 66 55 37</a>
                 <a href="https://wa.me/34602665537" target="_blank" rel="noopener noreferrer" className="ml-1 text-xs bg-green-500 text-white px-1.5 py-0.5 rounded-full hover:bg-green-400 transition-colors">WhatsApp</a>
               </li>
-              <li className="flex items-center gap-2"><Mail className="w-4 h-4" /><a href="mailto:limpiezasld@gmail.com" className="hover:text-background transition-colors">limpiezasld@gmail.com</a></li>
+              <li className="flex items-center gap-2"><Mail className="w-4 h-4" /><a href="mailto:limpiezasdomesticos@gmail.com" className="hover:text-background transition-colors">limpiezasdomesticos@gmail.com</a></li>
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 shrink-0 mt-0.5" />
                 <a href="https://maps.google.com/?q=C.+Conde+de+Aranda+6,+30880+Águilas,+Murcia,+Spain" target="_blank" rel="noopener noreferrer" className="hover:text-background transition-colors">

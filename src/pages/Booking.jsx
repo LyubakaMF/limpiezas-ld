@@ -30,7 +30,7 @@ export default function Booking() {
 
     // Email notification
     await base44.integrations.Core.SendEmail({
-      to: 'limpiezasld@gmail.com',
+      to: 'limpiezasdomesticos@gmail.com',
       subject: `Nueva solicitud de limpieza – ${form.full_name}`,
       body: `
         <h2>Nueva solicitud de reserva</h2>
