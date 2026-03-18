@@ -15,7 +15,6 @@ export default function ServicesPreview() {
     <section className="py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">{s.tag}</p>
           <h2 className="text-3xl lg:text-5xl font-bold tracking-tight">{s.title}</h2>
           <p className="mt-4 text-muted-foreground text-lg">{s.subtitle}</p>
         </div>
