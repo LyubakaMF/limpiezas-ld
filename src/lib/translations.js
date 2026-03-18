@@ -162,6 +162,20 @@ export const translations = {
       successMsg: 'Thank you! We have received your application and will contact you soon.',
       sendAnother: 'Send Another Application',
     },
+    faqPage: {
+      title: 'Frequently Asked Questions',
+      subtitle: 'Find answers to common questions about our cleaning services and pricing.',
+      items: [
+        { question: 'What areas do you serve?', answer: 'We serve Águilas, San Juan de los Terreros, Pulpí, and Lorca with professional cleaning services.' },
+        { question: 'How far in advance do I need to book?', answer: 'You can book as little as 24 hours in advance, but we recommend booking at least 3-5 days ahead for better availability.' },
+        { question: 'Do you use eco-friendly products?', answer: 'Yes, all our cleaning products are environmentally safe and non-toxic. We prioritize both your health and the planet.' },
+        { question: 'Are your team members insured?', answer: 'Absolutely. All our team members are background-checked, fully insured, and bonded for your complete peace of mind.' },
+        { question: 'What if I\'m not satisfied with the cleaning?', answer: 'We offer a 100% satisfaction guarantee. If you\'re not happy with the results, we\'ll re-clean the area for free.' },
+        { question: 'Do you offer same-day cleaning?', answer: 'Yes, we offer same-day service depending on availability. Contact us directly at +34 643 53 34 53 to check.' },
+        { question: 'Can I request specific cleaning products?', answer: 'Yes, we can accommodate special requests. Please mention any allergies or product preferences when booking.' },
+        { question: 'How long does a typical residential cleaning take?', answer: 'A typical 2-bedroom home takes 2-3 hours, and a 3-bedroom takes 3-4 hours. Exact timing depends on the home\'s condition.' },
+      ]
+    },
     bookingPage: {
     tag: 'Book a Cleaning',
       title: 'Get your free quote',
