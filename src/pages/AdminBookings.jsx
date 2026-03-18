@@ -143,6 +143,17 @@ export default function AdminBookings() {
           </Select>
           <Button variant="outline" onClick={loadBookings}>Refresh</Button>
           <span className="text-sm text-muted-foreground ml-auto">{filteredBookings.length} bookings</span>
+          {selectedIds.size > 0 && (
+            <Button
+              variant="destructive"
+              size="sm"
+              onClick={handleBulkDelete}
+              className="ml-4"
+            >
+              <Trash2 className="w-4 h-4 mr-2" />
+              Delete {selectedIds.size}
+            </Button>
+          )}
         </div>
 
         {/* Bookings Table */}
