@@ -112,7 +112,7 @@ export const translations = {
     aboutPage: {
       tag: 'About Us',
       title: 'We believe everyone deserves a clean space',
-      subtitle: 'Founded in 2018, Limpiezas LD started with a simple mission: to provide honest, reliable, and exceptional cleaning services. Today, we serve thousands of homes and businesses with the same dedication.',
+      subtitle: 'Founded in 2021, Limpiezas LD started with a simple mission: to provide honest, reliable, and exceptional cleaning services. Today, we serve thousands of homes and businesses with the same dedication.',
       storyTitle: 'Our story',
       story: [
         'What started as a one-person operation has grown into a team of 50+ dedicated professionals. Our founder saw a gap in the market for cleaning services that truly care — about the quality, about the environment, and about the people.',
@@ -271,7 +271,7 @@ export const translations = {
     aboutPage: {
       tag: 'Sobre nosotros',
       title: 'Creemos que todos merecen un espacio limpio',
-      subtitle: 'Fundada en 2018, Limpiezas LD nació con una misión sencilla: ofrecer servicios de limpieza honestos, fiables y excepcionales. Hoy servimos a miles de hogares y empresas con la misma dedicación.',
+      subtitle: 'Fundada en 2021, Limpiezas LD nació con una misión sencilla: ofrecer servicios de limpieza honestos, fiables y excepcionales. Hoy servimos a miles de hogares y empresas con la misma dedicación.',
       storyTitle: 'Nuestra historia',
       story: [
         'Lo que empezó como un trabajo individual se ha convertido en un equipo de más de 50 profesionales dedicados. Nuestra fundadora detectó una necesidad en el mercado: servicios de limpieza que realmente se preocupan por la calidad, el medio ambiente y las personas.',
@@ -430,7 +430,7 @@ export const translations = {
     aboutPage: {
       tag: 'Über uns',
       title: 'Jeder verdient saubere Räume',
-      subtitle: 'Gegründet 2018, startete Limpiezas LD mit einer einfachen Mission: ehrliche, zuverlässige und außergewöhnliche Reinigungsdienstleistungen. Heute betreuen wir Tausende Haushalte und Unternehmen mit derselben Hingabe.',
+      subtitle: 'Gegründet 2021, startete Limpiezas LD mit einer einfachen Mission: ehrliche, zuverlässige und außergewöhnliche Reinigungsdienstleistungen. Heute betreuen wir Tausende Haushalte und Unternehmen mit derselben Hingabe.',
       storyTitle: 'Unsere Geschichte',
       story: [
         'Was als Ein-Personen-Betrieb begann, ist zu einem Team von über 50 engagierten Fachleuten gewachsen. Unsere Gründerin erkannte eine Marktlücke für Reinigungsdienste, die wirklich Wert legen – auf Qualität, Umwelt und Menschen.',
@@ -589,7 +589,7 @@ export const translations = {
     aboutPage: {
       tag: 'À propos de nous',
       title: 'Nous croyons que tout le monde mérite un espace propre',
-      subtitle: 'Fondée en 2018, Limpiezas LD a démarré avec une mission simple : fournir des services de nettoyage honnêtes, fiables et exceptionnels. Aujourd\'hui, nous servons des milliers de foyers et d\'entreprises avec la même dévotion.',
+      subtitle: 'Fondée en 2021, Limpiezas LD a démarré avec une mission simple : fournir des services de nettoyage honnêtes, fiables et exceptionnels. Aujourd\'hui, nous servons des milliers de foyers et d\'entreprises avec la même dévotion.',
       storyTitle: 'Notre histoire',
       story: [
         'Ce qui a commencé comme une activité individuelle est devenu une équipe de plus de 50 professionnels dévoués. Notre fondatrice a identifié un manque sur le marché : des services de nettoyage qui se soucient vraiment de la qualité, de l\'environnement et des personnes.',
