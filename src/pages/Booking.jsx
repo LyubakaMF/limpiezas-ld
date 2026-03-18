@@ -159,9 +159,14 @@ export default function Booking() {
                       <div>
                         <p className="font-medium text-sm">{bp.needHelp}</p>
                         <p className="text-xs text-muted-foreground">{bp.needHelpDesc}</p>
-                        <a href="https://wa.me/34643533453" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 mt-1 text-xs font-medium text-green-600 hover:text-green-700">
-                          💬 WhatsApp
-                        </a>
+                        <div className="flex gap-2 mt-1">
+                          <a href="https://wa.me/34643533453" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs font-medium text-green-600 hover:text-green-700">
+                            💬 WhatsApp (+34 643 53 34 53)
+                          </a>
+                          <a href="https://wa.me/34602665537" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs font-medium text-green-600 hover:text-green-700">
+                            💬 WhatsApp (+34 602 66 55 37)
+                          </a>
+                        </div>
                       </div>
                     </li>
                   </ul>
