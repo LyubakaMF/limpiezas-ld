@@ -105,7 +105,7 @@ export const translations = {
           title: 'Recurring Service',
           description: 'Set up weekly, bi-weekly, or monthly cleaning schedules. Enjoy consistent cleanliness with priority booking.',
           features: ['Flexible scheduling', 'Dedicated team', 'Priority booking', 'Discounted rates'],
-          price: 'From $99/visit',
+          price: 'From 29 €/week',
         },
       ],
     },
