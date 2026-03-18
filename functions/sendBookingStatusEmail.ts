@@ -50,14 +50,15 @@ Deno.serve(async (req) => {
       <p>Limpiezas LD - Professional Cleaning Services</p>
     `;
 
+    const rawEmail = 
+      `From: Limpiezas LD <limpiezasdomesticos@gmail.com>\r\n` +
+      `To: ${email}\r\n` +
+      `Subject: ${statusInfo.subject}\r\n` +
+      `Content-Type: text/html; charset=UTF-8\r\n\r\n` +
+      emailContent;
+
     const message = {
-      raw: Buffer.from(
-        `From: Limpiezas LD <limpiezasdomesticos@gmail.com>\r\n` +
-        `To: ${email}\r\n` +
-        `Subject: ${statusInfo.subject}\r\n` +
-        `Content-Type: text/html; charset=UTF-8\r\n\r\n` +
-        emailContent
-      ).toString('base64')
+      raw: encodeBase64(rawEmail)
     };
 
     const response = await fetch('https://www.googleapis.com/gmail/v1/users/me/messages/send', {
