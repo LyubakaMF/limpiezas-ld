@@ -13,7 +13,7 @@ const images = [
   'https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?w=600&q=80',
   'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80',
   'https://media.base44.com/images/public/69b9d864ebb8dd58db0fa41f/a72c2bacb_generated_image.png',
-  'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80',
+  'https://media.base44.com/images/public/69b9d864ebb8dd58db0fa41f/e85b46f0f_generated_image.png',
 ];
 
 export default function Services() {
