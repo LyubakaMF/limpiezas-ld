@@ -27,7 +27,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
           <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <div className="rounded-3xl overflow-hidden aspect-[4/3]">
-              <img src="https://images.unsplash.com/photo-1607748851687-ba9a10438621?w=800&q=80" alt="Our team" className="w-full h-full object-cover" />
+              <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80" alt="Our team" className="w-full h-full object-cover" />
             </div>
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
