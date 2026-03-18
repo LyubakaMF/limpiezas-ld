@@ -265,6 +265,8 @@ export const translations = {
         { title: 'Limpieza por horas', description: 'Limpieza flexible por horas. Ideal para repasos rápidos, espacios pequeños o cuando solo necesitas una mano.', features: ['Sin compromiso mínimo', 'Cualquier habitación o zona', 'Horario flexible', 'Limpiador/a profesional'], price: 'Desde 13 €/hora' },
         { title: 'Post-obra', description: 'Eliminamos polvo, escombros y residuos de construcción. Dejamos tu espacio recién construido o reformado listo para entrar.', features: ['Retirada de polvo y escombros', 'Limpieza de ventanas', 'Pulido de superficies', 'Limpieza final'], price: 'Presupuesto personalizado' },
         { title: 'Servicio periódico', description: 'Configura limpiezas semanales, quincenales o mensuales. Disfruta de una limpieza constante con reserva prioritaria.', features: ['Horario flexible', 'Equipo dedicado', 'Reserva prioritaria', 'Tarifas con descuento'], price: 'Desde 29 €/semanal' },
+        { title: 'Limpieza de cristales', description: 'Limpieza profesional de ventanas, escaparates y fachadas de cristal en locales comerciales y edificios. Resultados impecables y sin manchas.', features: ['Locales y escaparates', 'Fachadas de cristal', 'Sin marcas ni rayas', 'Resultados brillantes'], price: 'Desde 1,50 €/m²' },
+        { title: 'Limpieza de alfombras, moquetas y sofás', description: 'Limpieza en profundidad de alfombras, moquetas y tapicerías. Eliminamos manchas, ácaros y olores para devolver el frescor y la vida a tus textiles.', features: ['Alfombras y moquetas', 'Sofás y tapizados', 'Eliminación de manchas y ácaros', 'Secado rápido'], price: 'Desde 3 €/m²' },
       ],
     },
     aboutPage: {
@@ -423,6 +425,8 @@ export const translations = {
         { title: 'Stundenweise Reinigung', description: 'Flexible Reinigung nach Stunden. Ideal für schnelle Auffrischungen, kleine Räume oder wenn Sie einfach Hilfe brauchen.', features: ['Keine Mindestbuchung', 'Jedes Zimmer oder jede Zone', 'Flexible Planung', 'Professionelle Reinigungskraft'], price: 'Ab 13 €/Stunde' },
         { title: 'Baureinigung', description: 'Baustaub, Schutt und Rückstände entfernen. Wir machen Ihren Neu- oder Umbau einzugsbereit.', features: ['Staub- & Schuttentfernung', 'Fensterreinigung', 'Oberflächenpolitur', 'Endreinigung'], price: 'Individuelles Angebot' },
         { title: 'Regelmäßiger Service', description: 'Richten Sie wöchentliche, zweiwöchentliche oder monatliche Reinigungspläne ein. Genießen Sie konstante Sauberkeit mit Prioritätsbuchung.', features: ['Flexible Planung', 'Festes Team', 'Prioritätsbuchung', 'Rabattierte Preise'], price: 'Ab 29 €/Woche' },
+        { title: 'Glas- & Fensterreinigung', description: 'Professionelle Reinigung von Fenstern, Schaufenstern und Glasfassaden für Gewerbeimmobilien und Gebäude. Streifenfreie, makellose Ergebnisse.', features: ['Schaufenster & Fenster', 'Glasfassaden', 'Streifenfreies Ergebnis', 'Strahlend sauber'], price: 'Ab 1,50 €/m²' },
+        { title: 'Teppich-, Vorleger- & Sofäreinigung', description: 'Tiefenreinigung von Teppichen, Vorlegern und Polstermöbeln. Wir entfernen Flecken, Milben und Gerüche für frische, lebendige Textilien.', features: ['Teppiche & Vorleger', 'Sofas & Polster', 'Flecken- & Milbenentfernung', 'Schnelles Trocknen'], price: 'Ab 3 €/m²' },
       ],
     },
     aboutPage: {
@@ -581,6 +585,8 @@ export const translations = {
         { title: 'Nettoyage à l\'heure', description: 'Nettoyage flexible à l\'heure. Idéal pour des retouches rapides, petits espaces ou quand vous avez besoin d\'un coup de main.', features: ['Sans engagement minimum', 'N\'importe quelle pièce', 'Planification flexible', 'Agent de nettoyage professionnel'], price: 'À partir de 13 €/heure' },
         { title: 'Après travaux', description: 'Élimination de la poussière, des débris et résidus de construction. Nous rendons votre espace rénové prêt à habiter.', features: ['Évacuation poussière & débris', 'Nettoyage des vitres', 'Polissage des surfaces', 'Nettoyage final'], price: 'Devis personnalisé' },
         { title: 'Service récurrent', description: 'Planifiez des nettoyages hebdomadaires, bimensuels ou mensuels. Profitez d\'une propreté constante avec réservation prioritaire.', features: ['Planification flexible', 'Équipe dédiée', 'Réservation prioritaire', 'Tarifs réduits'], price: 'À partir de 29 €/semaine' },
+        { title: 'Nettoyage de vitres & fenêtres', description: 'Nettoyage professionnel de fenêtres, vitrines et façades vitrées pour locaux commerciaux et immeubles. Résultats impeccables, sans traces.', features: ['Vitrines & fenêtres', 'Façades vitrées', 'Sans traces', 'Résultat brillant'], price: 'À partir de 1,50 €/m²' },
+        { title: 'Nettoyage tapis, moquettes & canapés', description: 'Nettoyage en profondeur des tapis, moquettes et tissus d\'ameublement. Nous éliminons taches, acariens et odeurs pour redonner fraîcheur à vos textiles.', features: ['Tapis & moquettes', 'Canapés & tissus', 'Élimination taches & acariens', 'Séchage rapide'], price: 'À partir de 3 €/m²' },
       ],
     },
     aboutPage: {
