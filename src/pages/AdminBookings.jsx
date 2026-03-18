@@ -103,16 +103,21 @@ export default function AdminBookings() {
   };
 
   const handleBulkDelete = async () => {
-    if (selectedIds.size === 0) return;
+    if (selectedIds.size === 0) {
+      alert('Please select at least one booking to delete');
+      return;
+    }
     if (window.confirm(`Are you sure you want to delete ${selectedIds.size} booking(s)?`)) {
       try {
-        for (const id of selectedIds) {
+        const idsArray = Array.from(selectedIds);
+        for (const id of idsArray) {
           await base44.entities.BookingRequest.delete(id);
         }
         setBookings(bookings.filter(b => !selectedIds.has(b.id)));
         setSelectedIds(new Set());
       } catch (error) {
         console.error('Error deleting bookings:', error);
+        alert('Error deleting bookings: ' + error.message);
       }
     }
   };
