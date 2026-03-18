@@ -172,6 +172,90 @@ export default function AdminBookings() {
             </div>
           </motion.div>
         )}
+
+        {/* Details Modal */}
+        {selectedBooking && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              className="bg-card rounded-lg shadow-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+            >
+              <div className="sticky top-0 bg-card border-b p-6 flex justify-between items-center">
+                <h2 className="text-xl font-bold">Booking Details</h2>
+                <button
+                  onClick={() => setSelectedBooking(null)}
+                  className="text-muted-foreground hover:text-foreground"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              <div className="p-6 space-y-4">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <p className="text-sm text-muted-foreground">Name</p>
+                    <p className="font-semibold">{selectedBooking.full_name}</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">Email</p>
+                    <p className="font-semibold">{selectedBooking.email}</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">Phone</p>
+                    <p className="font-semibold">{selectedBooking.phone}</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">Service Type</p>
+                    <p className="font-semibold capitalize">{selectedBooking.service_type.replace('_', ' ')}</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">Preferred Date</p>
+                    <p className="font-semibold">{selectedBooking.preferred_date}</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">Preferred Time</p>
+                    <p className="font-semibold capitalize">{selectedBooking.preferred_time}</p>
+                  </div>
+                </div>
+
+                <div>
+                  <p className="text-sm text-muted-foreground">Address</p>
+                  <p className="font-semibold">{selectedBooking.address}</p>
+                </div>
+
+                {selectedBooking.notes && (
+                  <div>
+                    <p className="text-sm text-muted-foreground">Notes</p>
+                    <p className="bg-muted p-3 rounded-lg">{selectedBooking.notes}</p>
+                  </div>
+                )}
+
+                <div className="pt-4 border-t">
+                  <p className="text-sm text-muted-foreground mb-2">Status</p>
+                  <Select
+                    value={selectedBooking.status}
+                    onValueChange={(val) => {
+                      handleStatusChange(selectedBooking.id, val);
+                      setSelectedBooking({ ...selectedBooking, status: val });
+                    }}
+                  >
+                    <SelectTrigger className="w-48">
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="pending">Pending</SelectItem>
+                      <SelectItem value="confirmed">Confirmed</SelectItem>
+                      <SelectItem value="completed">Completed</SelectItem>
+                      <SelectItem value="cancelled">Cancelled</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
       </div>
     </div>
   );
