@@ -89,15 +89,15 @@ export const translations = {
           title: 'Deep Cleaning',
           description: 'An intensive, thorough cleaning that covers every surface, corner, and hidden spot. Perfect for seasonal refreshes.',
           features: ['Inside cabinets & drawers', 'Behind appliances', 'Baseboard cleaning', 'Light fixture cleaning'],
-          price: 'From $250',
-        },
-        {
+          price: 'From 180 €',
+          },
+          {
           title: 'Move In/Out Cleaning',
           description: 'Leave your old home perfect or prepare your new one. Comprehensive cleaning for smooth transitions.',
           features: ['Full property cleaning', 'Appliance interior cleaning', 'Closet & shelf cleaning', 'Garage sweeping'],
-          price: 'From $200',
-        },
-        {
+          price: 'From 150 €',
+          },
+          {
           title: 'Post-Construction',
           description: 'Remove construction dust, debris, and residue. We make your newly built or renovated space move-in ready.',
           features: ['Dust & debris removal', 'Window cleaning', 'Surface polishing', 'Final touch-up clean'],
