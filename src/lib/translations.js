@@ -100,7 +100,7 @@ export const translations = {
         {
           title: 'Hourly Cleaning',
           description: 'Flexible hourly cleaning. Ideal for quick touch-ups, small spaces or when you just need a hand.',
-          features: ['No minimum commitment', 'Any room or zone', 'Flexible scheduling', 'Professional cleaner'],
+          features: ['Minimum 2 hours', 'Any room or zone', 'Flexible scheduling', 'Professional cleaner'],
           price: 'From 13 €/hour',
         },
         {
