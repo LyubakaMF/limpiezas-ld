@@ -56,16 +56,23 @@ Deno.serve(async (req) => {
       <p>Limpiezas LD - Professional Cleaning Services</p>
     `;
 
-    const result = await base44.asServiceRole.integrations.Core.SendEmail({
-      to: email,
-      subject: statusInfo.subject,
-      body: emailBody,
-      from_name: 'Limpiezas LD'
+    const rawMessage = `From: Limpiezas LD <limpiezasdomesticos@gmail.com>\r\nTo: ${email}\r\nSubject: ${statusInfo.subject}\r\nMIME-Version: 1.0\r\nContent-Type: text/html; charset=UTF-8\r\n\r\n${emailBody}`;
+
+    const response = await fetch('https://www.googleapis.com/gmail/v1/users/me/messages/send', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${accessToken}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        raw: encodeBase64(rawMessage)
+      })
     });
 
-    if (!result || result.error) {
-      console.error('SendEmail error:', result?.error || 'Unknown error');
-      return Response.json({ success: false, error: 'Failed to send email' }, { status: 500 });
+    if (!response.ok) {
+      const error = await response.json();
+      console.error('Gmail API error:', error);
+      return Response.json({ success: false, error: error.error?.message || 'Failed to send email' }, { status: 500 });
     }
 
     return Response.json({ success: true, message: 'Status notification sent to client.' });
