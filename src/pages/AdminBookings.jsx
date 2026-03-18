@@ -146,7 +146,15 @@ export default function AdminBookings() {
                             </SelectContent>
                           </Select>
                         </td>
-                        <td className="px-6 py-3">
+                        <td className="px-6 py-3 flex gap-2">
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            onClick={() => setSelectedBooking(booking)}
+                            className="text-primary hover:text-primary hover:bg-primary/10"
+                          >
+                            <Eye className="w-4 h-4" />
+                          </Button>
                           <Button
                             variant="ghost"
                             size="sm"
