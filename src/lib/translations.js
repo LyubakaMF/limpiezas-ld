@@ -80,8 +80,8 @@ export const translations = {
         {
           title: 'Commercial Cleaning',
           description: 'Professional cleaning for offices, retail spaces, and commercial buildings. We work around your schedule for zero disruption.',
-          features: ['Office sanitization', 'Restroom maintenance', 'Window cleaning', 'Floor care & waxing'],
-          price: 'Custom quote',
+          features: ['Offices & retail: €15/hour', '€3.50/m² (large areas)', 'Small shops from €180/month', 'Restroom & common area maintenance'],
+          price: '€15/hour',
         },
         {
           title: 'Deep Cleaning',
