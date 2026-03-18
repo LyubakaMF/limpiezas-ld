@@ -30,7 +30,7 @@ Deno.serve(async (req) => {
     const serviceTypeFormatted = service_type ? service_type.replace(/_/g, ' ').charAt(0).toUpperCase() + service_type.replace(/_/g, ' ').slice(1) : 'N/A';
     const timeFormatted = preferred_time ? preferred_time.charAt(0).toUpperCase() + preferred_time.slice(1) : 'N/A';
 
-    await resend.emails.send({
+    const result = await resend.emails.send({
       from: 'Limpiezas LD <noreply@resend.dev>',
       to: email,
       subject: statusInfo.subject,
@@ -53,6 +53,11 @@ Deno.serve(async (req) => {
         <p>Limpiezas LD - Professional Cleaning Services</p>
       `
     });
+
+    if (result.error) {
+      console.error('Resend API error:', result.error);
+      return Response.json({ success: false, error: result.error.message }, { status: 500 });
+    }
 
     return Response.json({ success: true, message: 'Status notification sent to client.' });
   } catch (error) {
