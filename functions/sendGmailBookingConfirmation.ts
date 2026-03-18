@@ -2,14 +2,19 @@ import { Resend } from 'npm:resend@2.1.0';
 
 Deno.serve(async (req) => {
   try {
+    const apiKey = Deno.env.get('RESEND_API_KEY');
+    if (!apiKey) {
+      return Response.json({ success: false, error: 'RESEND_API_KEY is not configured' }, { status: 500 });
+    }
+
     const { full_name, email, phone, service_type, preferred_date, preferred_time, address, notes } = await req.json();
-    const resend = new Resend(Deno.env.get('RESEND_API_KEY'));
+    const resend = new Resend(apiKey);
 
     // Send to admin
     await resend.emails.send({
       from: 'Limpiezas LD <noreply@resend.dev>',
       to: 'limpiezasdomesticos@gmail.com',
-      subject: `New Booking Request - ${full_name}`,
+      subject: `New Booking Request - ${escapeHtml(full_name)}`,
       html: `
         <h2>New Booking Request</h2>
         <p><strong>Name:</strong> ${escapeHtml(full_name)}</p>
