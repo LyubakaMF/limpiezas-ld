@@ -1,21 +1,9 @@
 import { createClientFromRequest } from 'npm:@base44/sdk@0.8.21';
 
-function encodeBase64(str) {
-  return btoa(unescape(encodeURIComponent(str))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
-}
-
 Deno.serve(async (req) => {
   try {
     const base44 = createClientFromRequest(req);
-    const user = await base44.auth.me();
-    
-    if (!user) {
-      return Response.json({ success: false, error: 'Unauthorized' }, { status: 401 });
-    }
-    
     const { full_name, email, service_type, preferred_date, preferred_time, address, status, notes } = await req.json();
-    
-    const { accessToken } = await base44.asServiceRole.connectors.getConnection('gmail');
 
     const statusMessages = {
       confirmed: {
