@@ -336,6 +336,20 @@ export const translations = {
       successMsg: '¡Gracias! Hemos recibido tu solicitud y nos pondremos en contacto contigo pronto.',
       sendAnother: 'Enviar otra solicitud',
     },
+    faqPage: {
+      title: 'Preguntas Frecuentes',
+      subtitle: 'Encuentra respuestas a las preguntas más comunes sobre nuestros servicios de limpieza y precios.',
+      items: [
+        { question: '¿Qué zonas cubren?', answer: 'Servimos en Águilas, San Juan de los Terreros, Pulpí y Lorca con servicios de limpieza profesional.' },
+        { question: '¿Con cuánta anticipación debo reservar?', answer: 'Puedes reservar con tan solo 24 horas de anticipación, pero recomendamos hacerlo 3-5 días antes para mejor disponibilidad.' },
+        { question: '¿Utilizan productos ecológicos?', answer: 'Sí, todos nuestros productos de limpieza son seguros para el medio ambiente y no tóxicos.' },
+        { question: '¿Están asegurados los miembros del equipo?', answer: 'Sí, todos nuestros empleados tienen antecedentes verificados, están completamente asegurados y avalados.' },
+        { question: '¿Qué pasa si no quedo satisfecho?', answer: 'Ofrecemos garantía del 100% de satisfacción. Si no estás satisfecho, reharemos la limpieza gratis.' },
+        { question: '¿Ofrecen servicio el mismo día?', answer: 'Sí, ofrecemos servicio el mismo día según disponibilidad. Contacta al +34 643 53 34 53 para verificar.' },
+        { question: '¿Puedo solicitar productos específicos?', answer: 'Sí, podemos acomodar solicitudes especiales. Menciona alergias o preferencias al reservar.' },
+        { question: '¿Cuánto tiempo toma una limpieza residencial?', answer: 'Una casa de 2 habitaciones toma 2-3 horas, y de 3 habitaciones toma 3-4 horas. El tiempo exacto depende del estado de la casa.' },
+      ]
+    },
     bookingPage: {
     tag: 'Reservar limpieza',
       title: 'Solicita tu presupuesto gratis',
