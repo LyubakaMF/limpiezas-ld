@@ -13,6 +13,7 @@ import Services from './pages/Services';
 import About from './pages/About';
 import Booking from './pages/Booking';
 import Empleo from './pages/Empleo';
+import AdminBookings from './pages/AdminBookings';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
