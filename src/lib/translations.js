@@ -417,7 +417,7 @@ export const translations = {
       items: [
         { title: 'Haushaltsreinigung', description: 'Regelmäßige Hausreinigung, die Ihren Wohnraum täglich frisch, ordentlich und einladend hält.', price: 'Ab 80 €' },
         { title: 'Gewerbliche Reinigung', description: 'Professionelle Büro- und Arbeitsplatzsäuberung für ein produktives und gesundes Umfeld.', price: '15 €/Stunde' },
-        { title: 'Tiefenreinigung', description: 'Gründliche Reinigung von oben bis unten, die jeden versteckten Winkel und hartnäckigen Fleck erreicht.', price: 'Ab 250 €' },
+        { title: 'Tiefenreinigung', description: 'Gründliche Reinigung von oben bis unten, die jeden versteckten Winkel und hartnäckigen Fleck erreicht.', price: 'Ab 130 €' },
         { title: 'Ein-/Auszug', description: 'Vollständige Reinigung für Neuanfänge. Hinterlassen Sie Ihr altes Zuhause makellos oder bereiten Sie das neue vor.', price: 'Ab 150 €' },
       ],
     },
