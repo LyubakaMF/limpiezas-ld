@@ -243,7 +243,7 @@ export const translations = {
       items: [
         { title: 'Limpieza residencial', description: 'Limpieza regular del hogar que mantiene tu espacio fresco, organizado y acogedor cada día.', price: 'Desde 80 €' },
         { title: 'Limpieza comercial', description: 'Limpieza profesional de oficinas y espacios de trabajo para un entorno productivo y saludable.', price: '15 €/hora' },
-        { title: 'Limpieza profunda', description: 'Limpieza exhaustiva de arriba abajo que llega a cada rincón oculto y mancha persistente.', price: 'Desde 250 €' },
+        { title: 'Limpieza profunda', description: 'Limpieza exhaustiva de arriba abajo que llega a cada rincón oculto y mancha persistente.', price: 'Desde 130 €' },
         { title: 'Mudanzas', description: 'Limpieza completa para nuevos comienzos. Deja tu antiguo lugar impecable o prepara tu nuevo hogar.', price: 'Desde 150 €' },
       ],
     },
