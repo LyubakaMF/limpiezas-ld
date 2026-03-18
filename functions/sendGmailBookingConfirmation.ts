@@ -1,52 +1,61 @@
-import { createClientFromRequest } from 'npm:@base44/sdk@0.8.21';
+import { Resend } from 'npm:resend@3.0.0';
 
 Deno.serve(async (req) => {
   try {
-    const base44 = createClientFromRequest(req);
     const { full_name, email, phone, service_type, preferred_date, preferred_time, address, notes } = await req.json();
+    const resend = new Resend(Deno.env.get('RESEND_API_KEY'));
 
-    // Get Gmail access token via connector
-    const { accessToken } = await base44.asServiceRole.connectors.getConnection('gmail');
-
-    // Encode email content as base64 (RFC 2822 format required by Gmail API)
-    const emailContent = `From: limpiezasdomesticos@gmail.com\r\nTo: limpiezasdomesticos@gmail.com\r\nSubject: =?UTF-8?B?${btoa('New Booking Request - ' + full_name)}?=\r\nContent-Type: text/html; charset="UTF-8"\r\nContent-Transfer-Encoding: base64\r\n\r\n${btoa(getEmailBody(full_name, email, phone, service_type, preferred_date, preferred_time, address, notes))}`;
-
-    const encodedMessage = btoa(emailContent).replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
-
-    // Send via Gmail API
-    const response = await fetch('https://www.googleapis.com/gmail/v1/users/me/messages/send', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${accessToken}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ raw: encodedMessage }),
+    // Send to admin
+    await resend.emails.send({
+      from: 'Limpiezas LD <noreply@resend.dev>',
+      to: 'limpiezasdomesticos@gmail.com',
+      subject: `New Booking Request - ${full_name}`,
+      html: `
+        <h2>New Booking Request</h2>
+        <p><strong>Name:</strong> ${escapeHtml(full_name)}</p>
+        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+        <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
+        <p><strong>Service Type:</strong> ${escapeHtml(service_type)}</p>
+        <p><strong>Preferred Date:</strong> ${escapeHtml(preferred_date)}</p>
+        <p><strong>Preferred Time:</strong> ${escapeHtml(preferred_time)}</p>
+        <p><strong>Address:</strong> ${escapeHtml(address)}</p>
+        ${notes ? `<p><strong>Notes:</strong> ${escapeHtml(notes)}</p>` : ''}
+        <hr/>
+        <p>Please contact the client within 2 hours to confirm their reservation.</p>
+      `
     });
 
-    if (!response.ok) {
-      throw new Error(`Gmail API error: ${response.statusText}`);
-    }
+    // Send confirmation to client
+    await resend.emails.send({
+      from: 'Limpiezas LD <noreply@resend.dev>',
+      to: email,
+      subject: 'Booking Confirmation - Limpiezas LD',
+      html: `
+        <h2>Thank you for your reservation!</h2>
+        <p>Dear ${escapeHtml(full_name)},</p>
+        <p>We received your cleaning service request. Our team will contact you within 2 hours to confirm your reservation.</p>
+        <h3>Reservation Details:</h3>
+        <ul>
+          <li><strong>Service Type:</strong> ${escapeHtml(service_type)}</li>
+          <li><strong>Preferred Date:</strong> ${escapeHtml(preferred_date)}</li>
+          <li><strong>Preferred Time:</strong> ${escapeHtml(preferred_time)}</li>
+          <li><strong>Address:</strong> ${escapeHtml(address)}</li>
+          ${notes ? `<li><strong>Notes:</strong> ${escapeHtml(notes)}</li>` : ''}
+        </ul>
+        <hr/>
+        <p><strong>Need help?</strong></p>
+        <p>Call us: <a href="tel:+34643533453">+34 643 53 34 53</a></p>
+        <p>or message us on WhatsApp: <a href="https://wa.me/34643533453">wa.me/34643533453</a></p>
+        <p>Limpiezas LD - Professional Cleaning Services</p>
+      `
+    });
 
     return Response.json({ success: true, message: 'Booking received. We will contact you soon.' });
   } catch (error) {
-    console.error('Error sending booking notification:', error);
+    console.error('Error sending emails:', error);
     return Response.json({ success: false, error: error.message }, { status: 500 });
   }
 });
-
-function getEmailBody(full_name, email, phone, service_type, preferred_date, preferred_time, address, notes) {
-  return `<h2>New Booking Request</h2>
-    <p><strong>Name:</strong> ${escapeHtml(full_name)}</p>
-    <p><strong>Email:</strong> ${escapeHtml(email)}</p>
-    <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
-    <p><strong>Service Type:</strong> ${escapeHtml(service_type)}</p>
-    <p><strong>Preferred Date:</strong> ${escapeHtml(preferred_date)}</p>
-    <p><strong>Preferred Time:</strong> ${escapeHtml(preferred_time)}</p>
-    <p><strong>Address:</strong> ${escapeHtml(address)}</p>
-    ${notes ? `<p><strong>Notes:</strong> ${escapeHtml(notes)}</p>` : ''}
-    <hr/>
-    <p>Please contact the client within 2 hours to confirm their reservation.</p>`;
-}
 
 function escapeHtml(text) {
   const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
