@@ -22,6 +22,9 @@ Deno.serve(async (req) => {
 
     const statusInfo = statusMessages[status] || statusMessages.confirmed;
 
+    const serviceTypeFormatted = service_type ? service_type.replace(/_/g, ' ').charAt(0).toUpperCase() + service_type.replace(/_/g, ' ').slice(1) : 'N/A';
+    const timeFormatted = preferred_time ? preferred_time.charAt(0).toUpperCase() + preferred_time.slice(1) : 'N/A';
+
     await resend.emails.send({
       from: 'Limpiezas LD <noreply@resend.dev>',
       to: email,
@@ -31,11 +34,11 @@ Deno.serve(async (req) => {
         <p>Dear ${escapeHtml(full_name)},</p>
         <h3>Your Booking Details:</h3>
         <ul>
-          <li><strong>Service Type:</strong> ${escapeHtml(service_type.replace('_', ' '))}</li>
+          <li><strong>Service Type:</strong> ${serviceTypeFormatted}</li>
           <li><strong>Scheduled Date:</strong> ${escapeHtml(preferred_date)}</li>
-          <li><strong>Scheduled Time:</strong> ${escapeHtml(preferred_time)}</li>
+          <li><strong>Scheduled Time:</strong> ${timeFormatted}</li>
           <li><strong>Address:</strong> ${escapeHtml(address)}</li>
-          <li><strong>Status:</strong> <strong>${escapeHtml(status)}</strong></li>
+          <li><strong>Status:</strong> <strong>${status.charAt(0).toUpperCase() + status.slice(1)}</strong></li>
           ${notes ? `<li><strong>Special Notes:</strong> ${escapeHtml(notes)}</li>` : ''}
         </ul>
         <hr/>
