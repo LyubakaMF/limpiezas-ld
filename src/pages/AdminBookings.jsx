@@ -12,6 +12,7 @@ export default function AdminBookings() {
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState('all');
+  const [selectedBooking, setSelectedBooking] = useState(null);
 
   const statusConfig = {
     pending: { label: 'Pending', color: 'bg-yellow-100 text-yellow-800', icon: Clock },
