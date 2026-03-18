@@ -115,7 +115,7 @@ export const translations = {
       subtitle: 'Founded in 2021, Limpiezas LD started with a simple mission: to provide honest, reliable, and exceptional cleaning services. Today, we serve thousands of homes and businesses with the same dedication.',
       storyTitle: 'Our story',
       story: [
-        'What started as a one-person operation has grown into a team of 50+ dedicated professionals. Our founder saw a gap in the market for cleaning services that truly care — about the quality, about the environment, and about the people.',
+        'What started as a one-person operation has grown into a team of 20+ dedicated professionals. Our founder saw a gap in the market for cleaning services that truly care — about the quality, about the environment, and about the people.',
         'Every member of our team goes through rigorous training to meet our high standards. We invest in the best equipment and eco-friendly products because we believe clean shouldn\'t come at the cost of health or the environment.',
         'Today, we\'re proud to be the most trusted cleaning service in the area, with a 4.9-star average rating and a 95% customer retention rate.',
       ],
@@ -273,7 +273,7 @@ export const translations = {
       subtitle: 'Fundada en 2021, Limpiezas LD nació con una misión sencilla: ofrecer servicios de limpieza honestos, fiables y excepcionales. Hoy servimos a miles de hogares y empresas con la misma dedicación.',
       storyTitle: 'Nuestra historia',
       story: [
-        'Lo que empezó como un trabajo individual se ha convertido en un equipo de más de 50 profesionales dedicados. Nuestra fundadora detectó una necesidad en el mercado: servicios de limpieza que realmente se preocupan por la calidad, el medio ambiente y las personas.',
+        'Lo que empezó como un trabajo individual se ha convertido en un equipo de más de 20 profesionales dedicados. Nuestra fundadora detectó una necesidad en el mercado: servicios de limpieza que realmente se preocupan por la calidad, el medio ambiente y las personas.',
         'Cada miembro de nuestro equipo pasa por una formación rigurosa para cumplir nuestros altos estándares. Invertimos en los mejores equipos y productos ecológicos porque creemos que la limpieza no debe tener un coste para la salud ni para el medio ambiente.',
         'Hoy somos orgullosamente el servicio de limpieza más confiable de la zona, con una valoración media de 4,9 estrellas y un 95% de clientes que repiten.',
       ],
@@ -431,7 +431,7 @@ export const translations = {
       subtitle: 'Gegründet 2021, startete Limpiezas LD mit einer einfachen Mission: ehrliche, zuverlässige und außergewöhnliche Reinigungsdienstleistungen. Heute betreuen wir Tausende Haushalte und Unternehmen mit derselben Hingabe.',
       storyTitle: 'Unsere Geschichte',
       story: [
-        'Was als Ein-Personen-Betrieb begann, ist zu einem Team von über 50 engagierten Fachleuten gewachsen. Unsere Gründerin erkannte eine Marktlücke für Reinigungsdienste, die wirklich Wert legen – auf Qualität, Umwelt und Menschen.',
+        'Was als Ein-Personen-Betrieb begann, ist zu einem Team von über 20 engagierten Fachleuten gewachsen. Unsere Gründerin erkannte eine Marktlücke für Reinigungsdienste, die wirklich Wert legen – auf Qualität, Umwelt und Menschen.',
         'Jedes Teammitglied durchläuft eine strenge Ausbildung, um unseren hohen Standards gerecht zu werden. Wir investieren in die besten Geräte und umweltfreundliche Produkte, weil wir glauben, dass Sauberkeit nicht auf Kosten von Gesundheit oder Umwelt gehen darf.',
         'Heute sind wir stolz darauf, der vertrauenswürdigste Reinigungsservice der Region zu sein, mit einer durchschnittlichen Bewertung von 4,9 Sternen und einer Kundenbindungsrate von 95 %.',
       ],
@@ -589,7 +589,7 @@ export const translations = {
       subtitle: 'Fondée en 2021, Limpiezas LD a démarré avec une mission simple : fournir des services de nettoyage honnêtes, fiables et exceptionnels. Aujourd\'hui, nous servons des milliers de foyers et d\'entreprises avec la même dévotion.',
       storyTitle: 'Notre histoire',
       story: [
-        'Ce qui a commencé comme une activité individuelle est devenu une équipe de plus de 50 professionnels dévoués. Notre fondatrice a identifié un manque sur le marché : des services de nettoyage qui se soucient vraiment de la qualité, de l\'environnement et des personnes.',
+        'Ce qui a commencé comme une activité individuelle est devenu une équipe de plus de 20 professionnels dévoués. Notre fondatrice a identifié un manque sur le marché : des services de nettoyage qui se soucient vraiment de la qualité, de l\'environnement et des personnes.',
         'Chaque membre de notre équipe suit une formation rigoureuse pour répondre à nos exigences élevées. Nous investissons dans le meilleur équipement et des produits écologiques car nous pensons que la propreté ne doit pas coûter la santé ni l\'environnement.',
         'Aujourd\'hui, nous sommes fiers d\'être le service de nettoyage le plus fiable de la région, avec une note moyenne de 4,9 étoiles et un taux de fidélisation de 95 %.',
       ],
