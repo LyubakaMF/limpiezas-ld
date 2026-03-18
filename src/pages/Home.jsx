@@ -13,6 +13,7 @@ export default function Home() {
       <ServicesPreview />
       <StatsSection />
       <TestimonialsSection />
+      <FaqSection />
       <CTASection />
     </div>
   );
