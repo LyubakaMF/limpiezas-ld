@@ -26,28 +26,16 @@ export default function Booking() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    await base44.entities.BookingRequest.create(form);
-
-    // Email notification
-    await base44.integrations.Core.SendEmail({
-      to: 'limpiezasdomesticos@gmail.com',
-      subject: `Nueva solicitud de limpieza – ${form.full_name}`,
-      body: `
-        <h2>Nueva solicitud de reserva</h2>
-        <p><strong>Nombre:</strong> ${form.full_name}</p>
-        <p><strong>Email:</strong> ${form.email}</p>
-        <p><strong>Teléfono:</strong> ${form.phone}</p>
-        <p><strong>Servicio:</strong> ${form.service_type}</p>
-        <p><strong>Fecha:</strong> ${form.preferred_date} – ${form.preferred_time}</p>
-        <p><strong>Dirección:</strong> ${form.address}</p>
-        <p><strong>Notas:</strong> ${form.notes || '–'}</p>
-        <hr/>
-        <p>📱 También puedes responder por WhatsApp: <a href="https://wa.me/34643533453">wa.me/34643533453</a></p>
-      `
-    });
-
-    setIsSubmitting(false);
-    setIsSuccess(true);
+    try {
+      await base44.entities.BookingRequest.create(form);
+      await base44.functions.invoke('sendBookingEmail', form);
+      setIsSubmitting(false);
+      setIsSuccess(true);
+    } catch (error) {
+      console.error('Submission error:', error);
+      setIsSubmitting(false);
+      alert('Error: ' + (error.response?.data?.error || error.message || 'Please try again'));
+    }
   };
 
   return (
