@@ -246,7 +246,7 @@ export const translations = {
       items: [
         { title: 'Limpieza residencial', description: 'Limpieza regular del hogar que mantiene tu espacio fresco, organizado y acogedor cada día.', price: 'Desde 80 €' },
         { title: 'Limpieza comercial', description: 'Limpieza profesional de oficinas y espacios de trabajo para un entorno productivo y saludable.', price: '15 €/hora' },
-        { title: 'Limpieza profunda', description: 'Limpieza exhaustiva de arriba abajo que llega a cada rincón oculto y mancha persistente.', price: 'Desde 130 €' },
+        { title: 'Limpieza profunda', description: 'Limpieza exhaustiva de arriba abajo que llega a cada rincón oculto y mancha persistente.', price: 'Desde 180 €' },
         { title: 'Mudanzas', description: 'Limpieza completa para nuevos comienzos. Deja tu antiguo lugar impecable o prepara tu nuevo hogar.', price: 'Desde 150 €' },
       ],
     },
@@ -422,7 +422,7 @@ export const translations = {
       items: [
         { title: 'Haushaltsreinigung', description: 'Regelmäßige Hausreinigung, die Ihren Wohnraum täglich frisch, ordentlich und einladend hält.', price: 'Ab 80 €' },
         { title: 'Gewerbliche Reinigung', description: 'Professionelle Büro- und Arbeitsplatzsäuberung für ein produktives und gesundes Umfeld.', price: '15 €/Stunde' },
-        { title: 'Tiefenreinigung', description: 'Gründliche Reinigung von oben bis unten, die jeden versteckten Winkel und hartnäckigen Fleck erreicht.', price: 'Ab 130 €' },
+        { title: 'Tiefenreinigung', description: 'Gründliche Reinigung von oben bis unten, die jeden versteckten Winkel und hartnäckigen Fleck erreicht.', price: 'Ab 180 €' },
         { title: 'Ein-/Auszug', description: 'Vollständige Reinigung für Neuanfänge. Hinterlassen Sie Ihr altes Zuhause makellos oder bereiten Sie das neue vor.', price: 'Ab 150 €' },
       ],
     },
@@ -598,7 +598,7 @@ export const translations = {
       items: [
         { title: 'Nettoyage résidentiel', description: 'Nettoyage régulier qui garde votre espace frais, organisé et accueillant chaque jour.', price: 'À partir de 80 €' },
         { title: 'Nettoyage commercial', description: 'Nettoyage professionnel de bureaux et d\'espaces de travail pour un environnement productif et sain.', price: '15 €/heure' },
-        { title: 'Nettoyage en profondeur', description: 'Nettoyage complet de fond en comble atteignant chaque recoin caché et tache tenace.', price: 'À partir de 130 €' },
+        { title: 'Nettoyage en profondeur', description: 'Nettoyage complet de fond en comble atteignant chaque recoin caché et tache tenace.', price: 'À partir de 180 €' },
         { title: 'Emménagement/Déménagement', description: 'Nettoyage complet pour de nouveaux départs. Laissez votre ancien logement impeccable ou préparez le nouveau.', price: 'À partir de 150 €' },
       ],
     },
@@ -774,7 +774,7 @@ export const translations = {
       items: [
         { title: 'Pulizia Residenziale', description: 'Pulizia regolare della casa che mantiene il tuo spazio fresco, ordinato e accogliente ogni giorno.', price: 'Da 80 €' },
         { title: 'Pulizia Commerciale', description: 'Pulizia professionale di uffici e spazi di lavoro per un ambiente produttivo e salubre.', price: '€15/ora' },
-        { title: 'Pulizia Profonda', description: 'Pulizia completa da cima a fondo che raggiunge ogni angolo nascosto e macchia ostinata.', price: 'Da 130 €' },
+        { title: 'Pulizia Profonda', description: 'Pulizia completa da cima a fondo che raggiunge ogni angolo nascosto e macchia ostinata.', price: 'Da 180 €' },
         { title: 'Traslochi', description: 'Pulizia completa per nuovi inizi. Lascia il tuo vecchio posto impeccabile o prepara il nuovo.', price: 'Da 150 €' },
       ],
     },
@@ -950,7 +950,7 @@ export const translations = {
       items: [
         { title: 'Huishoudens Schoonmaak', description: 'Regelmatige huisschoonmaak die uw ruimte dagelijks fris, georganiseerd en gastvrij houdt.', price: 'Vanaf € 80' },
         { title: 'Commerciële Schoonmaak', description: 'Professionele kanoor- en werkruimteschoonmaak voor een productieve en gezonde omgeving.', price: '€15/uur' },
-        { title: 'Diepschoonmaak', description: 'Grondige schoonmaak van boven naar beneden die elk verborgen hoekje en hardnekkige vlek bereikt.', price: 'Vanaf € 130' },
+        { title: 'Diepschoonmaak', description: 'Grondige schoonmaak van boven naar beneden die elk verborgen hoekje en hardnekkige vlek bereikt.', price: 'Vanaf € 180' },
         { title: 'In/Uitschoonmaak', description: 'Volledige schoonmaak voor nieuwe beginnen. Laat je oude plaats vlekkeloos achter of bereid het nieuwe voor.', price: 'Vanaf € 150' },
       ],
     },
