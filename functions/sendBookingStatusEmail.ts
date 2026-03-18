@@ -25,7 +25,7 @@ Deno.serve(async (req) => {
     const serviceTypeFormatted = service_type ? service_type.replace(/_/g, ' ').charAt(0).toUpperCase() + service_type.replace(/_/g, ' ').slice(1) : 'N/A';
     const timeFormatted = preferred_time ? preferred_time.charAt(0).toUpperCase() + preferred_time.slice(1) : 'N/A';
 
-    const emailContent = `
+    const emailBody = `
       <h2>${statusInfo.message}</h2>
       <p>Dear ${escapeHtml(full_name)},</p>
       <h3>Your Booking Details:</h3>
@@ -44,31 +44,12 @@ Deno.serve(async (req) => {
       <p>Limpiezas LD - Professional Cleaning Services</p>
     `;
 
-    const rawEmail = 
-      `From: Limpiezas LD <limpiezasdomesticos@gmail.com>\r\n` +
-      `To: ${email}\r\n` +
-      `Subject: ${statusInfo.subject}\r\n` +
-      `Content-Type: text/html; charset=UTF-8\r\n\r\n` +
-      emailContent;
-
-    const message = {
-      raw: encodeBase64(rawEmail)
-    };
-
-    const response = await fetch('https://www.googleapis.com/gmail/v1/users/me/messages/send', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${accessToken}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(message)
+    await base44.asServiceRole.integrations.Core.SendEmail({
+      to: email,
+      subject: statusInfo.subject,
+      body: emailBody,
+      from_name: 'Limpiezas LD'
     });
-
-    if (!response.ok) {
-      const error = await response.json();
-      console.error('Gmail API error:', error);
-      return Response.json({ success: false, error: error.error.message }, { status: 500 });
-    }
 
     return Response.json({ success: true, message: 'Status notification sent to client.' });
   } catch (error) {
