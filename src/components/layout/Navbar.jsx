@@ -42,7 +42,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link to="/Home" className="flex items-center gap-2">
             <img src="https://media.base44.com/images/public/69b9d864ebb8dd58db0fa41f/5d146a4f5_generated_image.png" alt="Limpiezas LD" className="h-12 w-auto" />
-            <span className="text-xl font-bold tracking-tight">Limpiezas LD</span>
+            <span className="text-2xl font-bold tracking-tight">Limpiezas LD</span>
           </Link>
 
           <div className="hidden md:flex items-center gap-1">
