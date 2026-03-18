@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/lib/LanguageContext';
 
-const values = ['100+', '3K+', '4.9', '20+'];
+const values = ['300+', '3K+', '4.9', '20+'];
 
 export default function StatsSection() {
   const { t } = useLanguage();
