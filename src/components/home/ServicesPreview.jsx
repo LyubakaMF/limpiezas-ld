@@ -36,7 +36,8 @@ export default function ServicesPreview() {
                   <Icon className="w-6 h-6" />
                 </div>
                 <h3 className="font-semibold text-lg mb-2">{service.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{service.description}</p>
+                <p className="text-sm font-semibold text-primary">{service.price}</p>
               </motion.div>
             );
           })}
