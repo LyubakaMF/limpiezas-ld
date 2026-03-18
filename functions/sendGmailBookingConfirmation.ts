@@ -9,32 +9,32 @@ Deno.serve(async (req) => {
     const { accessToken } = await base44.asServiceRole.connectors.getConnection('gmail');
     
     // Create email content
-    const subject = `Потврда резервације – ${full_name}`;
+    const subject = `Потвърждение на резервация – ${full_name}`;
     const body = `
-      <h2>Хвала на вашој резервацији!</h2>
-      <p>Драги ${full_name},</p>
-      <p>Примили смо вашу заявку за услугу чишћења. Ево детаља ваше резервације:</p>
+      <h2>Благодарим за вашата резервация!</h2>
+      <p>Уважаеми ${full_name},</p>
+      <p>Получихме вашата заявка за услугата по почистване. Ето детайлите на вашата резервация:</p>
       
-      <h3>Детаљи резервације:</h3>
+      <h3>Детайли на резервацията:</h3>
       <ul>
         <li><strong>Име:</strong> ${full_name}</li>
-        <li><strong>Имејл:</strong> ${email}</li>
+        <li><strong>Имейл:</strong> ${email}</li>
         <li><strong>Телефон:</strong> ${phone}</li>
-        <li><strong>Врста услуге:</strong> ${service_type}</li>
-        <li><strong>Преферирани датум:</strong> ${preferred_date}</li>
-        <li><strong>Преферирано време:</strong> ${preferred_time}</li>
-        <li><strong>Адреса:</strong> ${address}</li>
-        ${notes ? `<li><strong>Напомене:</strong> ${notes}</li>` : ''}
+        <li><strong>Вид услуга:</strong> ${service_type}</li>
+        <li><strong>Предпочитана дата:</strong> ${preferred_date}</li>
+        <li><strong>Предпочитано време:</strong> ${preferred_time}</li>
+        <li><strong>Адрес:</strong> ${address}</li>
+        ${notes ? `<li><strong>Забележки:</strong> ${notes}</li>` : ''}
       </ul>
       
-      <p>Наш тим ће вас контактирати у року од 2 часа да потврди вашу резервацију.</p>
+      <p>Нашият екип ще се свърже с вас в рамките на 2 часа, за да потвърди вашата резервация.</p>
       
       <hr/>
-      <p><strong>Потребна вам помоћ?</strong></p>
-      <p>Позовите нас: <a href="tel:+34643533453">+34 643 53 34 53</a></p>
-      <p>или се јавите преко WhatsApp: <a href="https://wa.me/34643533453">wa.me/34643533453</a></p>
+      <p><strong>Нужна ви помощ?</strong></p>
+      <p>Позвънете ни: <a href="tel:+34643533453">+34 643 53 34 53</a></p>
+      <p>или отправете съобщение чрез WhatsApp: <a href="https://wa.me/34643533453">wa.me/34643533453</a></p>
       
-      <p>Лимпиезас ЛД<br/>Професионални сервиси чишћења</p>
+      <p>Limpiezas LD<br/>Професионални услуги по почистване</p>
     `;
 
     // Encode email for Gmail API
