@@ -333,7 +333,7 @@ export const translations = {
       fastResponse: 'Respuesta rápida',
       fastResponseDesc: 'Confirmaremos tu reserva en menos de 2 horas',
       satisfaction: 'Satisfacción garantizada',
-      satisfactionDesc: '100% de satisfacción o repetimos la limpieza gratis',
+      satisfactionDesc: '100% de satisfacción garantizada',
       needHelp: '¿Necesitas ayuda?',
       needHelpDesc: '+34 643 53 34 53 / +34 602 66 55 37',
       freeTitle: 'Presupuestos gratuitos',
