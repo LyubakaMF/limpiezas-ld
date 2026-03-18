@@ -14,9 +14,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center">
-                <Sparkles className="w-5 h-5 text-primary-foreground" />
-              </div>
+              <img src="https://media.base44.com/images/public/69b9d864ebb8dd58db0fa41f/cdc45d7c5_generated_image.png" alt="Limpiezas LD" className="h-10 w-auto" />
               <span className="text-xl font-bold">Limpiezas LD</span>
             </div>
             <p className="text-background/60 text-sm leading-relaxed">{f.description}</p>
