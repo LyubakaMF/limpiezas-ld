@@ -1,17 +1,15 @@
-import { Resend } from 'npm:resend@2.1.0';
 import { createClientFromRequest } from 'npm:@base44/sdk@0.8.21';
+
+function encodeBase64(str) {
+  return btoa(unescape(encodeURIComponent(str))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
+}
 
 Deno.serve(async (req) => {
   try {
     const base44 = createClientFromRequest(req);
     const { full_name, email, service_type, preferred_date, preferred_time, address, status, notes } = await req.json();
     
-    const apiKey = Deno.env.get('RESEND_API_KEY');
-    if (!apiKey) {
-      return Response.json({ success: false, error: 'RESEND_API_KEY is not configured' }, { status: 500 });
-    }
-    
-    const resend = new Resend(apiKey);
+    const { accessToken } = await base44.asServiceRole.connectors.getConnection('gmail');
 
     const statusMessages = {
       confirmed: {
