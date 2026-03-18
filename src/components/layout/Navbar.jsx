@@ -70,6 +70,15 @@ export default function Navbar() {
 
             )}
 
+            {user && user.role === 'admin' && (
+              <Link to="/AdminBookings">
+                <Button variant="ghost" size="sm" className="ml-2 rounded-full gap-1.5 px-3">
+                  <Settings className="w-4 h-4" />
+                  <span className="text-sm">Admin</span>
+                </Button>
+              </Link>
+            )}
+
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="sm" className="ml-2 rounded-full gap-1.5 px-3">
