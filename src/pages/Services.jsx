@@ -12,7 +12,7 @@ const images = [
   'https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=600&q=80',
   'https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?w=600&q=80',
   'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80',
-  'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80',
+  'https://images.unsplash.com/photo-1563453392212-326f5e854473?w=600&q=80',
   'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80',
 ];
 
