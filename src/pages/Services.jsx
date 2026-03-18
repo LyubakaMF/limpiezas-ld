@@ -9,7 +9,7 @@ const icons = [Home, Umbrella, Building2, SprayCan, Truck, HardHat, CalendarChec
 const images = [
   'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80',
   'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=600&q=80',
-  'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=600&q=80',
+  'https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=600&q=80',
   'https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?w=600&q=80',
   'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80',
   'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80',
