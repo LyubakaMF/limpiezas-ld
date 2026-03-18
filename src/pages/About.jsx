@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Leaf, Shield, Users, Heart, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/lib/LanguageContext';
+import ServiceAreaMap from '@/components/ServiceAreaMap';
 
 const valueIcons = [Leaf, Shield, Users, Heart];
 
@@ -61,6 +62,8 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      <ServiceAreaMap title="Our Service Areas" subtitle="We proudly serve multiple locations in the region. Check the map to see if your area is covered." />
 
       <section className="py-16 lg:py-24 bg-accent">
         <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
