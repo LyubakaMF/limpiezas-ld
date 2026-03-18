@@ -1,13 +1,14 @@
-const Resend = (await import('npm:resend@2.1.0')).default;
+import { Resend } from 'npm:resend@2.1.0';
 
 Deno.serve(async (req) => {
   try {
     const { full_name, email, service_type, preferred_date, preferred_time, address, status, notes } = await req.json();
-    const resend = new Resend(Deno.env.get('RESEND_API_KEY'));
     
     if (!Deno.env.get('RESEND_API_KEY')) {
-      throw new Error('RESEND_API_KEY is not configured');
+      return Response.json({ success: false, error: 'RESEND_API_KEY is not configured' }, { status: 500 });
     }
+    
+    const resend = new Resend(Deno.env.get('RESEND_API_KEY'));
 
     const statusMessages = {
       confirmed: {
