@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Trash2, AlertCircle, CheckCircle2, Clock, Eye, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useAuth } from '@/lib/AuthContext';
+import { Checkbox } from "@/components/ui/checkbox";
 
 export default function AdminBookings() {
   const { user } = useAuth();
@@ -13,6 +14,7 @@ export default function AdminBookings() {
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState('all');
   const [selectedBooking, setSelectedBooking] = useState(null);
+  const [selectedIds, setSelectedIds] = useState(new Set());
 
   const statusConfig = {
     pending: { label: 'Pending', color: 'bg-yellow-100 text-yellow-800', icon: Clock },
