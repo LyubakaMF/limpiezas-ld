@@ -22,7 +22,7 @@ export default function Services() {
 
   return (
     <div className="pt-20">
-      <section className="py-20 lg:py-28 bg-gradient-to-b from-accent to-background">
+      <section className="py-10 lg:py-14 bg-gradient-to-b from-accent to-background">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <h1 className="text-4xl lg:text-6xl font-bold tracking-tight">{sp.title}</h1>
