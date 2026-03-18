@@ -510,6 +510,20 @@ export const translations = {
       successMsg: 'Vielen Dank! Wir haben Ihre Bewerbung erhalten und werden uns bald bei Ihnen melden.',
       sendAnother: 'Weitere Bewerbung senden',
     },
+    faqPage: {
+      title: 'Häufig Gestellte Fragen',
+      subtitle: 'Antworten auf häufig gestellte Fragen zu unseren Reinigungsservices und Preisen.',
+      items: [
+        { question: 'Welche Gebiete bedienen Sie?', answer: 'Wir bedienen Águilas, San Juan de los Terreros, Pulpí und Lorca mit professionellen Reinigungsdiensten.' },
+        { question: 'Wie lange im Voraus muss ich buchen?', answer: 'Sie können bereits 24 Stunden im Voraus buchen, wir empfehlen aber, 3-5 Tage im Voraus zu buchen.' },
+        { question: 'Verwenden Sie umweltfreundliche Produkte?', answer: 'Ja, alle unsere Reinigungsprodukte sind umweltverträglich und nicht giftig.' },
+        { question: 'Sind Ihre Mitarbeiter versichert?', answer: 'Ja, alle Mitarbeiter sind überprüft, vollständig versichert und gebunden.' },
+        { question: 'Was wenn ich nicht zufrieden bin?', answer: 'Wir bieten 100% Zufriedenheitsgarantie. Wenn Sie nicht zufrieden sind, reinigen wir kostenlos erneut.' },
+        { question: 'Bieten Sie Same-Day-Service an?', answer: 'Ja, wir bieten Same-Day-Service je nach Verfügbarkeit an. Kontaktieren Sie +34 643 53 34 53.' },
+        { question: 'Kann ich spezifische Produkte anfordern?', answer: 'Ja, wir können spezielle Anfragen berücksichtigen. Erwähnen Sie Allergien bei der Buchung.' },
+        { question: 'Wie lange dauert eine Haushaltsreinigung?', answer: '2-Zimmer dauert 2-3 Std., 3-Zimmer dauert 3-4 Std. Abhängig vom Zustand des Hauses.' },
+      ]
+    },
     bookingPage: {
     tag: 'Reinigung buchen',
       title: 'Kostenloses Angebot anfordern',
