@@ -9,35 +9,35 @@ Deno.serve(async (req) => {
     const { accessToken } = await base44.asServiceRole.connectors.getConnection('gmail');
     
     // Create email content
-    const subject = `Потвърждение на резервация – ${full_name}`;
+    const subject = `Reservation Confirmation - ${full_name}`;
     const body = `
-      <h2>Благодарим за вашата резервация!</h2>
-      <p>Уважаеми ${full_name},</p>
-      <p>Получихме вашата заявка за услугата по почистване. Ето детайлите на вашата резервация:</p>
+      <h2>Thank you for your reservation!</h2>
+      <p>Dear ${full_name},</p>
+      <p>We received your cleaning service request. Here are the details of your reservation:</p>
       
-      <h3>Детайли на резервацията:</h3>
+      <h3>Reservation Details:</h3>
       <ul>
-        <li><strong>Име:</strong> ${full_name}</li>
-        <li><strong>Имейл:</strong> ${email}</li>
-        <li><strong>Телефон:</strong> ${phone}</li>
-        <li><strong>Вид услуга:</strong> ${service_type}</li>
-        <li><strong>Предпочитана дата:</strong> ${preferred_date}</li>
-        <li><strong>Предпочитано време:</strong> ${preferred_time}</li>
-        <li><strong>Адрес:</strong> ${address}</li>
-        ${notes ? `<li><strong>Забележки:</strong> ${notes}</li>` : ''}
+        <li><strong>Name:</strong> ${full_name}</li>
+        <li><strong>Email:</strong> ${email}</li>
+        <li><strong>Phone:</strong> ${phone}</li>
+        <li><strong>Service Type:</strong> ${service_type}</li>
+        <li><strong>Preferred Date:</strong> ${preferred_date}</li>
+        <li><strong>Preferred Time:</strong> ${preferred_time}</li>
+        <li><strong>Address:</strong> ${address}</li>
+        ${notes ? `<li><strong>Notes:</strong> ${notes}</li>` : ''}
       </ul>
       
-      <p>Нашият екип ще се свърже с вас в рамките на 2 часа, за да потвърди вашата резервация.</p>
+      <p>Our team will contact you within 2 hours to confirm your reservation.</p>
       
       <hr/>
-      <p><strong>Нужна ви помощ?</strong></p>
-      <p>Позвънете ни: <a href="tel:+34643533453">+34 643 53 34 53</a></p>
-      <p>или отправете съобщение чрез WhatsApp: <a href="https://wa.me/34643533453">wa.me/34643533453</a></p>
+      <p><strong>Need help?</strong></p>
+      <p>Call us: <a href="tel:+34643533453">+34 643 53 34 53</a></p>
+      <p>or message us on WhatsApp: <a href="https://wa.me/34643533453">wa.me/34643533453</a></p>
       
-      <p>Limpiezas LD<br/>Професионални услуги по почистване</p>
+      <p>Limpiezas LD<br/>Professional Cleaning Services</p>
     `;
 
-    // Encode email for Gmail API
+    // Encode email for Gmail API with UTF-8 support
     const message = [
       `To: ${email}`,
       'Subject: ' + subject,
@@ -47,7 +47,8 @@ Deno.serve(async (req) => {
       body
     ].join('\r\n');
 
-    const encodedMessage = btoa(message).replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
+    const encoder = new TextEncoder();
+    const encodedMessage = btoa(String.fromCharCode.apply(null, encoder.encode(message))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
 
     // Send via Gmail API
     const response = await fetch('https://gmail.googleapis.com/gmail/v1/users/me/messages/send', {
