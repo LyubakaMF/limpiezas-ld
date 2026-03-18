@@ -25,7 +25,7 @@ export const translations = {
       items: [
         { title: 'Residential Cleaning', description: 'Regular home cleaning that keeps your space fresh, organized, and inviting every single day.', price: 'From 80 €' },
         { title: 'Commercial Cleaning', description: 'Professional office and workspace cleaning to maintain a productive and healthy environment.', price: '€15/hour' },
-        { title: 'Deep Cleaning', description: 'Thorough top-to-bottom cleaning that reaches every hidden corner and stubborn stain.', price: 'From 250 €' },
+        { title: 'Deep Cleaning', description: 'Thorough top-to-bottom cleaning that reaches every hidden corner and stubborn stain.', price: 'From 130 €' },
         { title: 'Move In/Out', description: 'Complete cleaning for new beginnings. Leave your old place spotless or prep your new home.', price: 'From 150 €' },
       ],
     },
