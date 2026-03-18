@@ -47,8 +47,10 @@ Deno.serve(async (req) => {
       body
     ].join('\r\n');
 
-    const encoder = new TextEncoder();
-    const encodedMessage = btoa(String.fromCharCode.apply(null, encoder.encode(message))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
+    // Properly encode UTF-8 for Gmail API
+    const uint8Array = new TextEncoder().encode(message);
+    const binaryString = Array.from(uint8Array).map(byte => String.fromCharCode(byte)).join('');
+    const encodedMessage = btoa(binaryString).replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
 
     // Send via Gmail API
     const response = await fetch('https://gmail.googleapis.com/gmail/v1/users/me/messages/send', {
