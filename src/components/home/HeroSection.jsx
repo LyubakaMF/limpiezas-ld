@@ -13,7 +13,7 @@ export default function HeroSection() {
     <section className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1527515545081-5db817172677?w=1600&q=80"
+          src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1600&q=80"
           alt="Clean home"
           className="w-full h-full object-cover"
         />
