@@ -7,6 +7,12 @@ function encodeBase64(str) {
 Deno.serve(async (req) => {
   try {
     const base44 = createClientFromRequest(req);
+    const user = await base44.auth.me();
+    
+    if (!user) {
+      return Response.json({ success: false, error: 'Unauthorized' }, { status: 401 });
+    }
+    
     const { full_name, email, service_type, preferred_date, preferred_time, address, status, notes } = await req.json();
     
     const { accessToken } = await base44.asServiceRole.connectors.getConnection('gmail');
