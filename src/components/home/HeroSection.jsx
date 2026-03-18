@@ -70,7 +70,7 @@ export default function HeroSection() {
           >
             <div className="relative">
               <div className="rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 aspect-[4/5]">
-                <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80" alt="Professional cleaning" className="w-full h-full object-cover" />
+                <img src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=800&q=80" alt="Professional cleaning team" className="w-full h-full object-cover" />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-card rounded-2xl shadow-xl p-5 border">
                 <div className="flex items-center gap-3">
