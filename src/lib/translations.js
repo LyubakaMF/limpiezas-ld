@@ -264,7 +264,7 @@ export const translations = {
         { title: 'Limpieza de mudanzas', description: 'Deja tu antiguo hogar perfecto o prepara el nuevo. Limpieza completa para transiciones sin estrés.', features: ['Limpieza total de la propiedad', 'Interior de electrodomésticos', 'Armarios y estantes', 'Barrido del garaje'], price: 'Desde 150 €' },
         { title: 'Limpieza por horas', description: 'Limpieza flexible por horas. Ideal para repasos rápidos, espacios pequeños o cuando solo necesitas una mano.', features: ['Sin compromiso mínimo', 'Cualquier habitación o zona', 'Horario flexible', 'Limpiador/a profesional'], price: 'Desde 13 €/hora' },
         { title: 'Post-obra', description: 'Eliminamos polvo, escombros y residuos de construcción. Dejamos tu espacio recién construido o reformado listo para entrar.', features: ['Retirada de polvo y escombros', 'Limpieza de ventanas', 'Pulido de superficies', 'Limpieza final'], price: 'Presupuesto personalizado' },
-        { title: 'Servicio periódico', description: 'Configura limpiezas semanales, quincenales o mensuales. Disfruta de una limpieza constante con reserva prioritaria.', features: ['Horario flexible', 'Equipo dedicado', 'Reserva prioritaria', 'Tarifas con descuento'], price: 'Desde 99 €/visita' },
+        { title: 'Servicio periódico', description: 'Configura limpiezas semanales, quincenales o mensuales. Disfruta de una limpieza constante con reserva prioritaria.', features: ['Horario flexible', 'Equipo dedicado', 'Reserva prioritaria', 'Tarifas con descuento'], price: 'Desde 29 €/semanal' },
       ],
     },
     aboutPage: {
@@ -422,7 +422,7 @@ export const translations = {
         { title: 'Ein-/Auszugsreinigung', description: 'Hinterlassen Sie Ihre alte Wohnung makellos oder bereiten Sie die neue vor. Umfassende Reinigung für reibungslose Umzüge.', features: ['Vollständige Immobilienreinigung', 'Geräteinnenseiten', 'Schränke & Regale', 'Garagenfegen'], price: 'Ab 150 €' },
         { title: 'Stundenweise Reinigung', description: 'Flexible Reinigung nach Stunden. Ideal für schnelle Auffrischungen, kleine Räume oder wenn Sie einfach Hilfe brauchen.', features: ['Keine Mindestbuchung', 'Jedes Zimmer oder jede Zone', 'Flexible Planung', 'Professionelle Reinigungskraft'], price: 'Ab 13 €/Stunde' },
         { title: 'Baureinigung', description: 'Baustaub, Schutt und Rückstände entfernen. Wir machen Ihren Neu- oder Umbau einzugsbereit.', features: ['Staub- & Schuttentfernung', 'Fensterreinigung', 'Oberflächenpolitur', 'Endreinigung'], price: 'Individuelles Angebot' },
-        { title: 'Regelmäßiger Service', description: 'Richten Sie wöchentliche, zweiwöchentliche oder monatliche Reinigungspläne ein. Genießen Sie konstante Sauberkeit mit Prioritätsbuchung.', features: ['Flexible Planung', 'Festes Team', 'Prioritätsbuchung', 'Rabattierte Preise'], price: 'Ab 99 €/Besuch' },
+        { title: 'Regelmäßiger Service', description: 'Richten Sie wöchentliche, zweiwöchentliche oder monatliche Reinigungspläne ein. Genießen Sie konstante Sauberkeit mit Prioritätsbuchung.', features: ['Flexible Planung', 'Festes Team', 'Prioritätsbuchung', 'Rabattierte Preise'], price: 'Ab 29 €/Woche' },
       ],
     },
     aboutPage: {
@@ -580,7 +580,7 @@ export const translations = {
         { title: 'Nettoyage emménagement/déménagement', description: 'Laissez votre ancien logement parfait ou préparez le nouveau. Nettoyage complet pour des transitions sans stress.', features: ['Nettoyage complet de la propriété', 'Intérieur des appareils', 'Placards & étagères', 'Balayage du garage'], price: 'À partir de 150 €' },
         { title: 'Nettoyage à l\'heure', description: 'Nettoyage flexible à l\'heure. Idéal pour des retouches rapides, petits espaces ou quand vous avez besoin d\'un coup de main.', features: ['Sans engagement minimum', 'N\'importe quelle pièce', 'Planification flexible', 'Agent de nettoyage professionnel'], price: 'À partir de 13 €/heure' },
         { title: 'Après travaux', description: 'Élimination de la poussière, des débris et résidus de construction. Nous rendons votre espace rénové prêt à habiter.', features: ['Évacuation poussière & débris', 'Nettoyage des vitres', 'Polissage des surfaces', 'Nettoyage final'], price: 'Devis personnalisé' },
-        { title: 'Service récurrent', description: 'Planifiez des nettoyages hebdomadaires, bimensuels ou mensuels. Profitez d\'une propreté constante avec réservation prioritaire.', features: ['Planification flexible', 'Équipe dédiée', 'Réservation prioritaire', 'Tarifs réduits'], price: 'À partir de 99 €/visite' },
+        { title: 'Service récurrent', description: 'Planifiez des nettoyages hebdomadaires, bimensuels ou mensuels. Profitez d\'une propreté constante avec réservation prioritaire.', features: ['Planification flexible', 'Équipe dédiée', 'Réservation prioritaire', 'Tarifs réduits'], price: 'À partir de 29 €/semaine' },
       ],
     },
     aboutPage: {
