@@ -92,6 +92,31 @@ export default function AdminBookings() {
     }
   };
 
+  const toggleSelection = (bookingId) => {
+    const newSelected = new Set(selectedIds);
+    if (newSelected.has(bookingId)) {
+      newSelected.delete(bookingId);
+    } else {
+      newSelected.add(bookingId);
+    }
+    setSelectedIds(newSelected);
+  };
+
+  const handleBulkDelete = async () => {
+    if (selectedIds.size === 0) return;
+    if (window.confirm(`Are you sure you want to delete ${selectedIds.size} booking(s)?`)) {
+      try {
+        for (const id of selectedIds) {
+          await base44.entities.BookingRequest.delete(id);
+        }
+        setBookings(bookings.filter(b => !selectedIds.has(b.id)));
+        setSelectedIds(new Set());
+      } catch (error) {
+        console.error('Error deleting bookings:', error);
+      }
+    }
+  };
+
   const filteredBookings = filter === 'all' ? bookings : bookings.filter(b => b.status === filter);
 
   return (
