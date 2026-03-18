@@ -1,4 +1,4 @@
-import { Resend } from 'npm:resend@3.0.0';
+import { Resend } from 'npm:resend@2.1.0';
 
 Deno.serve(async (req) => {
   try {
