@@ -134,6 +134,11 @@ export default function Navbar() {
                   {link.label}
                 </Link>
             )}
+              {user && user.role === 'admin' && (
+                <Link to="/AdminBookings" onClick={() => setIsOpen(false)} className="block px-4 py-3 rounded-xl text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted">
+                  ⚙️ Admin Panel
+                </Link>
+              )}
               <div className="pt-2 border-t">
                 <div className="flex gap-2 flex-wrap">
                   {LANGUAGES.map((l) =>
@@ -143,7 +148,7 @@ export default function Navbar() {
                   className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
                   lang === l.code ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground hover:bg-accent'}`
                   }>
-                  
+
                       {l.flag} {l.label}
                     </button>
                 )}
