@@ -464,9 +464,9 @@ export const translations = {
       scanQR: 'QR scannen für unsere Website',
     },
     servicesPage: {
-      tag: 'Unsere Leistungen',
-      title: 'Reinigungslösungen für jeden Raum',
-      subtitle: 'Von der Routinepflege bis zur spezialisierten Tiefenreinigung – unser Team liefert außergewöhnliche Ergebnisse.',
+      tag: 'Professionelle Reinigungsdienste',
+      title: 'Professionelle Reinigungslösungen für jeden Raum – Experten-Reinigungsdienste',
+      subtitle: 'Von der Routinepflege bis zur spezialisierten Tiefenreinigung in Águilas, San Juan de los Terreros, Pulpí und Lorca.',
       bookNow: 'Buchen',
       items: [
         { title: 'Haushaltsreinigung in Águilas', description: 'Professionelle Reinigungsdienste für Ihr Zuhause. Halten Sie Ihre Wohnung mit unserer Kompletteinigung makellos. Wir übernehmen Abstauben und Staubsaugen.', features: ['2-Zimmer-Wohnung ab 80 €', '3-Zimmer-Wohnung ab 110 €', 'Tiefenreinigung Küche & Bad', 'Abstauben, Saugen & Wischen'], price: 'Ab 80 €' },
