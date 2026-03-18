@@ -1,5 +1,9 @@
 import { createClientFromRequest } from 'npm:@base44/sdk@0.8.21';
 
+function encodeBase64(str) {
+  return btoa(unescape(encodeURIComponent(str)));
+}
+
 Deno.serve(async (req) => {
   try {
     const base44 = createClientFromRequest(req);
