@@ -591,7 +591,7 @@ export const translations = {
       items: [
         { title: 'Nettoyage résidentiel', description: 'Nettoyage régulier qui garde votre espace frais, organisé et accueillant chaque jour.', price: 'À partir de 80 €' },
         { title: 'Nettoyage commercial', description: 'Nettoyage professionnel de bureaux et d\'espaces de travail pour un environnement productif et sain.', price: '15 €/heure' },
-        { title: 'Nettoyage en profondeur', description: 'Nettoyage complet de fond en comble atteignant chaque recoin caché et tache tenace.', price: 'À partir de 250 €' },
+        { title: 'Nettoyage en profondeur', description: 'Nettoyage complet de fond en comble atteignant chaque recoin caché et tache tenace.', price: 'À partir de 130 €' },
         { title: 'Emménagement/Déménagement', description: 'Nettoyage complet pour de nouveaux départs. Laissez votre ancien logement impeccable ou préparez le nouveau.', price: 'À partir de 150 €' },
       ],
     },
