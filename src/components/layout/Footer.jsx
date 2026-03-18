@@ -63,6 +63,9 @@ export default function Footer() {
                 <MapPin className="w-4 h-4 shrink-0 mt-0.5 text-primary" />
                 <span className="text-background/50 text-xs leading-relaxed">{f.serviceArea}</span>
               </li>
+              <li className="flex items-start gap-2 pt-2">
+                <span className="text-background/50 text-xs leading-relaxed font-medium">{f.languages}</span>
+              </li>
             </ul>
             <div className="mt-5">
               <p className="text-xs text-background/40 mb-2">{f.scanQR}</p>

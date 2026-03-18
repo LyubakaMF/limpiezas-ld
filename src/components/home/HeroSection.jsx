@@ -36,6 +36,8 @@ export default function HeroSection() {
             </h1>
 
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-lg">{h.description}</p>
+            
+            <p className="mt-4 text-sm font-medium text-primary">{h.languages}</p>
 
             <div className="flex flex-col sm:flex-row gap-4 mt-10">
               <Link to="/Booking">
