@@ -17,7 +17,7 @@ export default function HeroSection() {
           alt="Professional cleaning team"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/80 to-background/60" />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/50 to-background/20" />
       </div>
       <div className="absolute top-20 right-0 w-[600px] h-[600px] rounded-full bg-primary/5 blur-3xl" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-primary/3 blur-3xl" />
