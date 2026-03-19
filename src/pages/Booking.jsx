@@ -12,7 +12,7 @@ import { useLanguage } from '@/lib/LanguageContext';
 import { useSEO } from '@/lib/useSEO';
 
 export default function Booking() {
-  const { t, language } = useLanguage();
+  const { t, lang: language } = useLanguage();
   const bp = t.bookingPage;
 
   useSEO({
