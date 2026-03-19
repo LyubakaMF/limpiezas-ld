@@ -24,6 +24,13 @@ export default function Services() {
   const { t } = useLanguage();
   const sp = t.servicesPage;
 
+  useSEO({
+    title: 'Servicios de Limpieza en Águilas - Residencial, Comercial, Profunda | Limpiezas LD',
+    description: 'Todos nuestros servicios de limpieza en Águilas, San Juan de los Terreros, Pulpí y Lorca. Limpieza residencial desde 80€, apartamentos vacacionales desde 30€, limpieza profunda, mudanzas, post-obra y más.',
+    canonical: 'https://limpiezasld.com/Services',
+    ogImage: 'https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?w=1200&q=80',
+  });
+
   return (
     <div className="pt-20">
       <section className="py-10 lg:py-14 bg-gradient-to-b from-accent to-background">

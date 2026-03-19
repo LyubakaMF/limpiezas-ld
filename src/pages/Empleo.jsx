@@ -16,6 +16,13 @@ export default function Empleo() {
   const { t } = useLanguage();
   const ep = t.empleoPage;
 
+  useSEO({
+    title: 'Trabaja con Nosotros - Empleo en Limpiezas LD | Águilas, Murcia',
+    description: 'Únete al equipo de Limpiezas LD. Buscamos personal de limpieza en Águilas, San Juan de los Terreros, Pulpí y Lorca. Envíanos tu CV y te contactamos pronto.',
+    canonical: 'https://limpiezasld.com/Empleo',
+    ogImage: 'https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=1200&q=80',
+  });
+
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
   const [files, setFiles] = useState([]);
   const [isSubmitting, setIsSubmitting] = useState(false);

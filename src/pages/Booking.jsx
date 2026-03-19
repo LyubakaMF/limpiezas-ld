@@ -15,6 +15,13 @@ export default function Booking() {
   const { t } = useLanguage();
   const bp = t.bookingPage;
 
+  useSEO({
+    title: 'Reservar Limpieza en Águilas - Presupuesto Gratis | Limpiezas LD',
+    description: 'Reserva tu servicio de limpieza en Águilas, San Juan de los Terreros, Pulpí o Lorca. Respuesta en menos de 2 horas. Presupuesto gratuito y sin compromiso. ☎ +34 643 53 34 53',
+    canonical: 'https://limpiezasld.com/Booking',
+    ogImage: 'https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=1200&q=80',
+  });
+
   const [form, setForm] = useState({
     full_name: '', email: '', phone: '', service_type: '',
     preferred_date: '', preferred_time: '', address: '', notes: ''
