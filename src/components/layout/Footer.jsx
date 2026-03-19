@@ -70,7 +70,7 @@ export default function Footer() {
             <div className="mt-5">
               <p className="text-xs text-background/40 mb-2">{f.scanQR}</p>
               <div className="bg-white rounded-xl p-2 inline-block">
-                <QRCodeSVG value={typeof window !== 'undefined' ? window.location.origin : 'https://limpiezasld.com'} size={88} />
+                <QRCodeSVG value="https://www.limpiezasld.com" size={88} />
               </div>
             </div>
           </div>
