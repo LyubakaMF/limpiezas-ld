@@ -241,6 +241,21 @@ export default function AdminBookings() {
                           >
                             <Eye className="w-4 h-4" />
                           </Button>
+                          {booking.status === 'completed' && (
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              title="Copy review link"
+                              onClick={() => {
+                                const url = `${window.location.origin}/LeaveReview?name=${encodeURIComponent(booking.full_name)}&service=${encodeURIComponent(booking.service_type)}`;
+                                navigator.clipboard.writeText(url);
+                                alert('Review link copied to clipboard!');
+                              }}
+                              className="text-yellow-600 hover:text-yellow-700 hover:bg-yellow-50"
+                            >
+                              <Star className="w-4 h-4" />
+                            </Button>
+                          )}
                           <Button
                             variant="ghost"
                             size="sm"
