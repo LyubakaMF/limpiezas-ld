@@ -14,6 +14,7 @@ import About from './pages/About';
 import Booking from './pages/Booking';
 import Empleo from './pages/Empleo';
 import AdminBookings from './pages/AdminBookings';
+import LeaveReview from './pages/LeaveReview';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
