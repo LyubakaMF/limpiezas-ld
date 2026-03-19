@@ -51,7 +51,7 @@ export default function Empleo() {
     // Send email notification
     const attachmentLinks = uploadedUrls.map((u, i) => `<a href="${u}">Adjunto ${i + 1}</a>`).join('<br/>');
     await base44.integrations.Core.SendEmail({
-      to: 'limpiezasld@gmail.com',
+      to: 'limpiezasdomesticos@gmail.com',
       subject: `Nueva solicitud de empleo – ${form.name}`,
       body: `
         <h2>Nueva solicitud de empleo</h2>

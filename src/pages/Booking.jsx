@@ -36,7 +36,7 @@ export default function Booking() {
     setIsSubmitting(true);
     try {
       await base44.entities.BookingRequest.create(form);
-      await base44.functions.invoke('sendBookingEmail', form);
+      await base44.functions.invoke('sendGmailBookingConfirmation', form);
       setIsSubmitting(false);
       setIsSuccess(true);
     } catch (error) {
