@@ -14,7 +14,7 @@ Deno.serve(async (req) => {
 
     // Send to admin
     await resend.emails.send({
-      from: 'Limpiezas LD <noreply@resend.dev>',
+      from: 'Limpiezas LD <noreply@limpiezasld.com>',
       to: 'limpiezasdomesticos@gmail.com',
       subject: `Nueva solicitud de reserva - ${escapeHtml(data.full_name)}`,
       html: `
@@ -34,7 +34,7 @@ Deno.serve(async (req) => {
 
     // Send confirmation to client
     await resend.emails.send({
-      from: 'Limpiezas LD <noreply@resend.dev>',
+      from: 'Limpiezas LD <noreply@limpiezasld.com>',
       to: data.email,
       subject: 'Reserva confirmada - Limpiezas LD',
       html: `
