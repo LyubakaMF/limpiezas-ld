@@ -58,7 +58,7 @@ export default function AdminBookings() {
       await base44.entities.BookingRequest.update(bookingId, { status: newStatus });
       
       // Send status notification email to client
-      if (booking && newStatus !== 'pending') {
+      if (booking && (newStatus === 'confirmed' || newStatus === 'cancelled')) {
         try {
           await base44.functions.invoke('sendBookingStatusEmail', {
             full_name: booking.full_name || '',
