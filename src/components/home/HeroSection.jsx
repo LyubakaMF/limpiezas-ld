@@ -14,7 +14,7 @@ export default function HeroSection() {
       <div className="absolute inset-0">
         <img
           src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=1600&q=80"
-          alt="Professional cleaning team"
+          alt="Empresa de limpieza profesional Limpiezas LD en Águilas, Murcia"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/50 to-background/20" />
@@ -72,7 +72,7 @@ export default function HeroSection() {
           >
             <div className="relative">
               <div className="rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 aspect-[4/5]">
-                <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=800&q=80" alt="Professional cleaning team" className="w-full h-full object-cover" />
+                <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=800&q=80" alt="Equipo profesional de limpieza Limpiezas LD - Águilas, San Juan de los Terreros, Pulpí, Lorca" className="w-full h-full object-cover" loading="lazy" />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-card rounded-2xl shadow-xl p-5 border">
                 <div className="flex items-center gap-3">
