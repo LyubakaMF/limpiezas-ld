@@ -42,15 +42,19 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">{f.contact}</h4>
             <ul className="space-y-3 text-sm text-background/60">
-              <li className="flex items-center gap-2">
-                <Phone className="w-4 h-4" />
-                <a href="tel:+34643533453" className="hover:text-background transition-colors">+34 643 53 34 53</a>
-                <a href="https://wa.me/34643533453" target="_blank" rel="noopener noreferrer" className="ml-1 text-xs bg-green-500 text-white px-1.5 py-0.5 rounded-full hover:bg-green-400 transition-colors">WhatsApp</a>
+              <li className="flex flex-wrap items-center gap-2">
+                <a href="tel:+34643533453" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors">
+                  <Phone className="w-4 h-4" />
+                  +34 643 53 34 53
+                </a>
+                <a href="https://wa.me/34643533453" target="_blank" rel="noopener noreferrer" className="text-xs bg-green-500 text-white px-2 py-1.5 rounded-lg font-medium hover:bg-green-400 transition-colors">WhatsApp</a>
               </li>
-              <li className="flex items-center gap-2">
-                <Phone className="w-4 h-4" />
-                <a href="tel:+34602665537" className="hover:text-background transition-colors">+34 602 66 55 37</a>
-                <a href="https://wa.me/34602665537" target="_blank" rel="noopener noreferrer" className="ml-1 text-xs bg-green-500 text-white px-1.5 py-0.5 rounded-full hover:bg-green-400 transition-colors">WhatsApp</a>
+              <li className="flex flex-wrap items-center gap-2">
+                <a href="tel:+34602665537" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors">
+                  <Phone className="w-4 h-4" />
+                  +34 602 66 55 37
+                </a>
+                <a href="https://wa.me/34602665537" target="_blank" rel="noopener noreferrer" className="text-xs bg-green-500 text-white px-2 py-1.5 rounded-lg font-medium hover:bg-green-400 transition-colors">WhatsApp</a>
               </li>
               <li className="flex items-center gap-2"><Mail className="w-4 h-4" /><a href="mailto:limpiezasdomesticos@gmail.com" className="hover:text-background transition-colors">limpiezasdomesticos@gmail.com</a></li>
               <li className="flex items-start gap-2">
