@@ -57,7 +57,7 @@ export default function Services() {
               >
                 <div className={`${i % 2 === 1 ? 'lg:order-2' : ''}`}>
                   <div className="rounded-2xl overflow-hidden aspect-[16/10]">
-                    <img src={images[i] || images[0]} alt={service.title} className="w-full h-full object-cover" />
+                    <img src={images[i] || images[0]} alt={`${service.title} - Limpiezas LD Águilas`} className="w-full h-full object-cover" loading="lazy" />
                   </div>
                 </div>
                 <div className={`${i % 2 === 1 ? 'lg:order-1' : ''}`}>
