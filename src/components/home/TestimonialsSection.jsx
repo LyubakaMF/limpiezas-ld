@@ -1,17 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Star } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/lib/LanguageContext';
+import { base44 } from '@/api/base44Client';
 
-const authors = [
-  { name: 'Sarah Johnson', role: 'Homeowner', avatar: 'SJ' },
-  { name: 'Michael Chen', role: 'Office Manager', avatar: 'MC' },
-  { name: 'Emily Rodriguez', role: 'Real Estate Agent', avatar: 'ER' },
+const staticAuthors = [
+  { name: 'Sarah Johnson', avatar: 'SJ', content: 'Limpiezas LD transformed my home! The attention to detail is incredible. I\'ve never seen my kitchen sparkle like this. Highly recommend their deep cleaning service.' },
+  { name: 'Michael Chen', avatar: 'MC', content: 'We switched to Limpiezas LD for our office cleaning and the difference is night and day. Professional, reliable, and thorough every single time.' },
+  { name: 'Emily Rodriguez', avatar: 'ER', content: 'I use Limpiezas LD for all my move-in/move-out cleanings. They make properties look brand new. My clients are always impressed.' },
 ];
+
+function getInitials(name) {
+  return name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase();
+}
 
 export default function TestimonialsSection() {
   const { t } = useLanguage();
   const tm = t.testimonials;
+  const [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    base44.entities.Review.filter({ approved: true }, '-created_date', 6)
+      .then(setReviews)
+      .catch(() => {});
+  }, []);
+
+  const items = reviews.length > 0
+    ? reviews.map(r => ({ name: r.full_name, avatar: getInitials(r.full_name), content: r.comment, rating: r.rating }))
+    : staticAuthors.map(a => ({ ...a, rating: 5 }));
 
   return (
     <section className="py-24 lg:py-32 bg-muted/50">
@@ -22,7 +38,7 @@ export default function TestimonialsSection() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
-          {tm.items.map((item, i) => (
+          {items.map((item, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
@@ -33,18 +49,15 @@ export default function TestimonialsSection() {
             >
               <div className="flex gap-1 mb-4">
                 {Array.from({ length: 5 }).map((_, j) => (
-                  <Star key={j} className="w-4 h-4 fill-primary text-primary" />
+                  <Star key={j} className={`w-4 h-4 ${j < item.rating ? 'fill-primary text-primary' : 'text-muted-foreground'}`} />
                 ))}
               </div>
               <p className="text-foreground/80 leading-relaxed mb-6">"{item.content}"</p>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-sm font-semibold text-primary">
-                  {authors[i].avatar}
+                  {item.avatar}
                 </div>
-                <div>
-                  <p className="font-semibold text-sm">{authors[i].name}</p>
-                  <p className="text-xs text-muted-foreground">{authors[i].role}</p>
-                </div>
+                <p className="font-semibold text-sm">{item.name}</p>
               </div>
             </motion.div>
           ))}
