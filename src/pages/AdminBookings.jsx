@@ -68,7 +68,8 @@ export default function AdminBookings() {
             preferred_time: booking.preferred_time || '',
             address: booking.address || '',
             status: newStatus,
-            notes: booking.notes || ''
+            notes: booking.notes || '',
+            lang: booking.lang || 'es'
           });
         } catch (emailError) {
           console.error('Error sending notification email:', emailError);

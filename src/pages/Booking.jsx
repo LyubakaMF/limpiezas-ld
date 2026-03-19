@@ -12,7 +12,7 @@ import { useLanguage } from '@/lib/LanguageContext';
 import { useSEO } from '@/lib/useSEO';
 
 export default function Booking() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const bp = t.bookingPage;
 
   useSEO({
@@ -35,8 +35,8 @@ export default function Booking() {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      await base44.entities.BookingRequest.create(form);
-      await base44.functions.invoke('sendGmailBookingConfirmation', form);
+      await base44.entities.BookingRequest.create({ ...form, lang: language });
+      await base44.functions.invoke('sendGmailBookingConfirmation', { ...form, lang: language });
       setIsSubmitting(false);
       setIsSuccess(true);
     } catch (error) {
