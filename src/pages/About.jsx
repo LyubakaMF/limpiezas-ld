@@ -5,6 +5,7 @@ import { Leaf, Shield, Users, Heart, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/lib/LanguageContext';
 import ServiceAreaMap from '@/components/ServiceAreaMap';
+import { useSEO } from '@/lib/useSEO';
 
 const valueIcons = [Leaf, Shield, Users, Heart];
 

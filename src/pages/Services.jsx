@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Home, Building2, SprayCan, Truck, HardHat, CalendarCheck, Umbrella, Check, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/lib/LanguageContext';
+import { useSEO } from '@/lib/useSEO';
 
 const icons = [Home, Umbrella, Building2, SprayCan, Truck, HardHat, CalendarCheck];
 const images = [
