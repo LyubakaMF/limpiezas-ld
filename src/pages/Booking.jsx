@@ -137,7 +137,17 @@ export default function Booking() {
                       <Textarea id="notes" placeholder={bp.notesPlaceholder} value={form.notes} onChange={(e) => handleChange('notes', e.target.value)} className="min-h-[120px] rounded-xl" />
                     </div>
 
-                    <div ref={recaptchaRef}></div>
+                    {/* Honeypot - скрито от потребителите, ботовете го попълват */}
+                    <div style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, overflow: 'hidden' }} aria-hidden="true">
+                      <input
+                        type="text"
+                        name="website"
+                        value={honeypot}
+                        onChange={(e) => setHoneypot(e.target.value)}
+                        tabIndex={-1}
+                        autoComplete="off"
+                      />
+                    </div>
 
                     <Button type="submit" size="lg" disabled={isSubmitting} className="w-full rounded-xl h-14 text-base">
                       {isSubmitting ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> {bp.submitting}</> : bp.submit}
