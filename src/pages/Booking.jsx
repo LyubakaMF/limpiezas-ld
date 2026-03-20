@@ -28,9 +28,21 @@ export default function Booking() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [recaptchaToken, setRecaptchaToken] = useState('');
   // Honeypot field - ботовете го попълват, хората не го виждат
   const [honeypot, setHoneypot] = useState('');
   const formLoadTime = useRef(Date.now());
+  const recaptchaRef = useRef(null);
+
+  // Expose callback for reCAPTCHA
+  useEffect(() => {
+    window.onRecaptchaSuccess = (token) => setRecaptchaToken(token);
+    window.onRecaptchaExpired = () => setRecaptchaToken('');
+    return () => {
+      delete window.onRecaptchaSuccess;
+      delete window.onRecaptchaExpired;
+    };
+  }, []);
 
   const handleChange = (field, value) => setForm(prev => ({ ...prev, [field]: value }));
 
