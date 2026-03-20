@@ -69,9 +69,13 @@ export default function Booking() {
       await base44.functions.invoke('sendGmailBookingConfirmation', { ...form, lang: language });
       setIsSubmitting(false);
       setIsSuccess(true);
+      setRecaptchaToken('');
+      if (window.grecaptcha) window.grecaptcha.reset();
     } catch (error) {
       console.error('Submission error:', error);
       setIsSubmitting(false);
+      if (window.grecaptcha) window.grecaptcha.reset();
+      setRecaptchaToken('');
       alert('Error: ' + (error.response?.data?.error || error.message || 'Please try again'));
     }
   };
