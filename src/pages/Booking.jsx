@@ -144,6 +144,13 @@ export default function Booking() {
                       <Textarea id="notes" placeholder={bp.notesPlaceholder} value={form.notes} onChange={(e) => handleChange('notes', e.target.value)} className="min-h-[120px] rounded-xl" />
                     </div>
 
+                    <div
+                      className="g-recaptcha"
+                      data-sitekey="6LeGy5AsAAAAABajiihuLczes2LLY2dHLJ583icZ"
+                      data-callback="onRecaptchaSuccess"
+                      data-expired-callback="onRecaptchaExpired"
+                    ></div>
+
                     <Button type="submit" size="lg" disabled={isSubmitting} className="w-full rounded-xl h-14 text-base">
                       {isSubmitting ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> {bp.submitting}</> : bp.submit}
                     </Button>
