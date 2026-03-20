@@ -52,9 +52,27 @@ export default function Booking() {
     if (honeypot) return;
     // Time check: ако формата е подадена под 3 секунди — бот
     if (Date.now() - formLoadTime.current < 3000) return;
+    // reCAPTCHA check
+    if (!recaptchaToken) {
+      alert(language === 'es' ? 'Por favor confirma que no eres un robot.' :
+            language === 'de' ? 'Bitte bestätige, dass du kein Roboter bist.' :
+            language === 'fr' ? 'Veuillez confirmer que vous n\'êtes pas un robot.' :
+            language === 'it' ? 'Conferma di non essere un robot.' :
+            language === 'nl' ? 'Bevestig dat je geen robot bent.' :
+            'Please confirm you are not a robot.');
+      return;
+    }
 
     setIsSubmitting(true);
     try {
+      const verifyRes = await base44.functions.invoke('verifyRecaptcha', { token: recaptchaToken });
+      if (!verifyRes.data?.success) {
+        alert('reCAPTCHA verification failed. Please try again.');
+        setIsSubmitting(false);
+        if (window.grecaptcha) window.grecaptcha.reset();
+        setRecaptchaToken('');
+        return;
+      }
       await base44.entities.BookingRequest.create({ ...form, lang: language });
       await base44.functions.invoke('sendGmailBookingConfirmation', { ...form, lang: language });
       setIsSubmitting(false);
