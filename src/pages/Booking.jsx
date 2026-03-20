@@ -33,13 +33,38 @@ export default function Booking() {
   const formLoadTime = useRef(Date.now());
   const recaptchaRef = useRef(null);
 
+  const widgetIdRef = useRef(null);
+
   useEffect(() => {
-    window.onRecaptchaSuccess = (token) => setRecaptchaToken(token);
-    window.onRecaptchaExpired = () => setRecaptchaToken('');
-    return () => {
-      delete window.onRecaptchaSuccess;
-      delete window.onRecaptchaExpired;
+    const renderWidget = () => {
+      if (!recaptchaRef.current) return;
+      // Ако вече е рендиран — не правим нищо
+      if (widgetIdRef.current !== null) return;
+      // Изчистваме съдържанието ако има нещо
+      if (recaptchaRef.current.innerHTML) recaptchaRef.current.innerHTML = '';
+      try {
+        widgetIdRef.current = window.grecaptcha.render(recaptchaRef.current, {
+          sitekey: '6Ldw2ZAsAAAAAHvkBpnEWxCDWIQUFUWAHd6d4YWR',
+          callback: (token) => setRecaptchaToken(token),
+          'expired-callback': () => setRecaptchaToken(''),
+        });
+      } catch (e) {
+        // widget вероятно вече е рендиран
+      }
     };
+
+    if (window.grecaptcha && window.grecaptcha.render) {
+      renderWidget();
+    } else {
+      // Изчакваме да се зареди скрипта
+      const interval = setInterval(() => {
+        if (window.grecaptcha && window.grecaptcha.render) {
+          clearInterval(interval);
+          renderWidget();
+        }
+      }, 200);
+      return () => clearInterval(interval);
+    }
   }, []);
 
   const handleChange = (field, value) => setForm(prev => ({ ...prev, [field]: value }));
