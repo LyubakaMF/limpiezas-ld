@@ -30,6 +30,17 @@ export default function Booking() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [recaptchaToken, setRecaptchaToken] = useState('');
 
+  useEffect(() => {
+    const onSuccess = (e) => setRecaptchaToken(e.detail);
+    const onExpired = () => setRecaptchaToken('');
+    document.addEventListener('recaptcha-success', onSuccess);
+    document.addEventListener('recaptcha-expired', onExpired);
+    return () => {
+      document.removeEventListener('recaptcha-success', onSuccess);
+      document.removeEventListener('recaptcha-expired', onExpired);
+    };
+  }, []);
+
   const handleChange = (field, value) => setForm(prev => ({ ...prev, [field]: value }));
 
   const handleSubmit = async (e) => {
