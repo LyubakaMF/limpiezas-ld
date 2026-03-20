@@ -29,7 +29,6 @@ export default function Booking() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [honeypot, setHoneypot] = useState('');
-  const formLoadTime = useRef(Date.now());
 
   const handleChange = (field, value) => setForm(prev => ({ ...prev, [field]: value }));
 
@@ -37,8 +36,6 @@ export default function Booking() {
     e.preventDefault();
     // Honeypot: ако е попълнено — бот
     if (honeypot) return;
-    // Time check: ако формата е подадена под 3 секунди — бот
-    if (Date.now() - formLoadTime.current < 3000) return;
     setIsSubmitting(true);
     try {
       await base44.entities.BookingRequest.create({ ...form, lang: language });
