@@ -190,13 +190,7 @@ export default function Booking() {
 
                     {/* reCAPTCHA v2 widget */}
                     <div className="flex justify-center">
-                      <div
-                        ref={recaptchaRef}
-                        className="g-recaptcha"
-                        data-sitekey="6Ldw2ZAsAAAAAHvkBpnEWxCDWIQUFUWAHd6d4YWR"
-                        data-callback="onRecaptchaSuccess"
-                        data-expired-callback="onRecaptchaExpired"
-                      ></div>
+                      <div ref={recaptchaRef}></div>
                     </div>
 
                     {/* Honeypot - скрито от потребителите, ботовете го попълват */}
