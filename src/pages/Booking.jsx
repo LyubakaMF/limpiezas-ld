@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { base44 } from '@/api/base44Client';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -28,34 +28,9 @@ export default function Booking() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [recaptchaToken, setRecaptchaToken] = useState('');
-  const recaptchaRef = useRef(null);
-  const widgetIdRef = useRef(null);
-
-  useEffect(() => {
-    const renderWidget = () => {
-      if (recaptchaRef.current && window.grecaptcha && window.grecaptcha.render && widgetIdRef.current === null) {
-        widgetIdRef.current = window.grecaptcha.render(recaptchaRef.current, {
-          sitekey: '6LeGy5AsAAAAABajiihuLczes2LLY2dHLJ583icZ',
-          callback: (token) => setRecaptchaToken(token),
-          'expired-callback': () => setRecaptchaToken(''),
-        });
-      }
-    };
-
-    if (window.grecaptcha && window.grecaptcha.render) {
-      renderWidget();
-    } else {
-      // Wait for the script to load
-      const interval = setInterval(() => {
-        if (window.grecaptcha && window.grecaptcha.render) {
-          clearInterval(interval);
-          renderWidget();
-        }
-      }, 100);
-      return () => clearInterval(interval);
-    }
-  }, []);
+  // Honeypot field - ботовете го попълват, хората не го виждат
+  const [honeypot, setHoneypot] = useState('');
+  const formLoadTime = useRef(Date.now());
 
   const handleChange = (field, value) => setForm(prev => ({ ...prev, [field]: value }));
 
