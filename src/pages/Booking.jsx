@@ -86,7 +86,7 @@ export default function Booking() {
       if (!verifyRes.data?.success) {
         alert('reCAPTCHA verification failed. Please try again.');
         setIsSubmitting(false);
-        if (window.grecaptcha) window.grecaptcha.reset();
+        if (window.grecaptcha && widgetIdRef.current !== null) window.grecaptcha.reset(widgetIdRef.current);
         setRecaptchaToken('');
         return;
       }
@@ -95,11 +95,11 @@ export default function Booking() {
       setIsSubmitting(false);
       setIsSuccess(true);
       setRecaptchaToken('');
-      if (window.grecaptcha) window.grecaptcha.reset();
+      if (window.grecaptcha && widgetIdRef.current !== null) window.grecaptcha.reset(widgetIdRef.current);
     } catch (error) {
       console.error('Submission error:', error);
       setIsSubmitting(false);
-      if (window.grecaptcha) window.grecaptcha.reset();
+      if (window.grecaptcha && widgetIdRef.current !== null) window.grecaptcha.reset(widgetIdRef.current);
       setRecaptchaToken('');
       alert('Error: ' + (error.response?.data?.error || error.message || 'Please try again'));
     }
