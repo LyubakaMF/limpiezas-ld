@@ -19,8 +19,10 @@ Deno.serve(async (req) => {
 
     const data = await response.json();
 
-    if (data.success) {
-      return Response.json({ success: true });
+    if (data.success && data.score >= 0.5) {
+      return Response.json({ success: true, score: data.score });
+    } else if (data.success && data.score < 0.5) {
+      return Response.json({ success: false, error: 'Bot detected', score: data.score }, { status: 400 });
     } else {
       return Response.json({ success: false, error: 'reCAPTCHA verification failed', codes: data['error-codes'] }, { status: 400 });
     }
