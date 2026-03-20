@@ -80,6 +80,8 @@ export default function Booking() {
     } catch (error) {
       console.error('Submission error:', error);
       setIsSubmitting(false);
+      if (window.grecaptcha) window.grecaptcha.reset();
+      setRecaptchaToken('');
       alert('Error: ' + (error.response?.data?.error || error.message || 'Please try again'));
     }
   };
