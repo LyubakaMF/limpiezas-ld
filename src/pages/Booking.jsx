@@ -39,32 +39,15 @@ export default function Booking() {
     if (honeypot) return;
     // Time check: ако формата е подадена под 3 секунди — бот
     if (Date.now() - formLoadTime.current < 3000) return;
-    if (!recaptchaToken) {
-      alert('Por favor confirma que no eres un robot.');
-      return;
-    }
-
     setIsSubmitting(true);
     try {
-      const verifyRes = await base44.functions.invoke('verifyRecaptcha', { token: recaptchaToken });
-      if (!verifyRes.data?.success) {
-        alert('reCAPTCHA verification failed. Please try again.');
-        setIsSubmitting(false);
-        if (window.grecaptcha && widgetIdRef.current !== null) window.grecaptcha.reset(widgetIdRef.current);
-        setRecaptchaToken('');
-        return;
-      }
       await base44.entities.BookingRequest.create({ ...form, lang: language });
       await base44.functions.invoke('sendGmailBookingConfirmation', { ...form, lang: language });
       setIsSubmitting(false);
       setIsSuccess(true);
-      setRecaptchaToken('');
-      if (window.grecaptcha && widgetIdRef.current !== null) window.grecaptcha.reset(widgetIdRef.current);
     } catch (error) {
       console.error('Submission error:', error);
       setIsSubmitting(false);
-      if (window.grecaptcha && widgetIdRef.current !== null) window.grecaptcha.reset(widgetIdRef.current);
-      setRecaptchaToken('');
       alert('Error: ' + (error.response?.data?.error || error.message || 'Please try again'));
     }
   };
