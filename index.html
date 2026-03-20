@@ -116,6 +116,16 @@
   <body>
     <div id="root"></div>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+      function onRecaptchaSuccess(token) {
+        window.__recaptchaToken = token;
+        document.dispatchEvent(new CustomEvent('recaptcha-success', { detail: token }));
+      }
+      function onRecaptchaExpired() {
+        window.__recaptchaToken = '';
+        document.dispatchEvent(new CustomEvent('recaptcha-expired'));
+      }
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
