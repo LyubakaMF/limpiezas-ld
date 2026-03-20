@@ -71,7 +71,7 @@ export default function Booking() {
       if (!captchaResult.data?.success) {
         alert('Verificación reCAPTCHA fallida. Por favor, inténtalo de nuevo.');
         setIsSubmitting(false);
-        window.grecaptcha?.reset();
+        if (widgetIdRef.current !== null) window.grecaptcha?.reset(widgetIdRef.current);
         setRecaptchaToken('');
         return;
       }
@@ -82,7 +82,7 @@ export default function Booking() {
     } catch (error) {
       console.error('Submission error:', error);
       setIsSubmitting(false);
-      window.grecaptcha?.reset();
+      if (widgetIdRef.current !== null) window.grecaptcha?.reset(widgetIdRef.current);
       setRecaptchaToken('');
       alert('Error: ' + (error.response?.data?.error || error.message || 'Please try again'));
     }
