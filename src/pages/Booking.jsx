@@ -29,16 +29,32 @@ export default function Booking() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [recaptchaToken, setRecaptchaToken] = useState('');
+  const recaptchaRef = React.useRef(null);
+  const widgetIdRef = React.useRef(null);
 
   useEffect(() => {
-    const onSuccess = (e) => setRecaptchaToken(e.detail);
-    const onExpired = () => setRecaptchaToken('');
-    document.addEventListener('recaptcha-success', onSuccess);
-    document.addEventListener('recaptcha-expired', onExpired);
-    return () => {
-      document.removeEventListener('recaptcha-success', onSuccess);
-      document.removeEventListener('recaptcha-expired', onExpired);
+    const renderWidget = () => {
+      if (recaptchaRef.current && window.grecaptcha && window.grecaptcha.render && widgetIdRef.current === null) {
+        widgetIdRef.current = window.grecaptcha.render(recaptchaRef.current, {
+          sitekey: '6LeGy5AsAAAAABajiihuLczes2LLY2dHLJ583icZ',
+          callback: (token) => setRecaptchaToken(token),
+          'expired-callback': () => setRecaptchaToken(''),
+        });
+      }
     };
+
+    if (window.grecaptcha && window.grecaptcha.render) {
+      renderWidget();
+    } else {
+      // Wait for the script to load
+      const interval = setInterval(() => {
+        if (window.grecaptcha && window.grecaptcha.render) {
+          clearInterval(interval);
+          renderWidget();
+        }
+      }, 100);
+      return () => clearInterval(interval);
+    }
   }, []);
 
   const handleChange = (field, value) => setForm(prev => ({ ...prev, [field]: value }));
