@@ -150,17 +150,6 @@ export default function Booking() {
                       <Textarea id="notes" placeholder={bp.notesPlaceholder} value={form.notes} onChange={(e) => handleChange('notes', e.target.value)} className="min-h-[120px] rounded-xl" />
                     </div>
 
-                    {/* reCAPTCHA widget */}
-                    <div className="flex justify-center">
-                      <div
-                        ref={recaptchaRef}
-                        className="g-recaptcha"
-                        data-sitekey="6LeGy5AsAAAAABajiihuLczes2LLY2dHLJ583icZ"
-                        data-callback="onRecaptchaSuccess"
-                        data-expired-callback="onRecaptchaExpired"
-                      ></div>
-                    </div>
-
                     {/* Honeypot - скрито от потребителите, ботовете го попълват */}
                     <div style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, overflow: 'hidden' }} aria-hidden="true">
                       <input
