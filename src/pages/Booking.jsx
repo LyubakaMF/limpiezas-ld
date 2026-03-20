@@ -28,13 +28,26 @@ export default function Booking() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [recaptchaToken, setRecaptchaToken] = useState('');
 
   const handleChange = (field, value) => setForm(prev => ({ ...prev, [field]: value }));
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!recaptchaToken) {
+      alert('Por favor, confirma que no eres un robot.');
+      return;
+    }
     setIsSubmitting(true);
     try {
+      const captchaResult = await base44.functions.invoke('verifyRecaptcha', { token: recaptchaToken });
+      if (!captchaResult.data?.success) {
+        alert('Verificación reCAPTCHA fallida. Por favor, inténtalo de nuevo.');
+        setIsSubmitting(false);
+        window.grecaptcha?.reset();
+        setRecaptchaToken('');
+        return;
+      }
       await base44.entities.BookingRequest.create({ ...form, lang: language });
       await base44.functions.invoke('sendGmailBookingConfirmation', { ...form, lang: language });
       setIsSubmitting(false);
@@ -42,6 +55,8 @@ export default function Booking() {
     } catch (error) {
       console.error('Submission error:', error);
       setIsSubmitting(false);
+      window.grecaptcha?.reset();
+      setRecaptchaToken('');
       alert('Error: ' + (error.response?.data?.error || error.message || 'Please try again'));
     }
   };
