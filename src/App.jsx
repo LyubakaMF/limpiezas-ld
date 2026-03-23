@@ -8,6 +8,7 @@ import { LanguageProvider } from '@/lib/LanguageContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import { Navigate } from 'react-router-dom';
 import SiteLayout from './components/layout/SiteLayout';
+import CookieBanner from './components/CookieBanner';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import About from './pages/About';
