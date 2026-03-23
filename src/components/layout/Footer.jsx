@@ -83,9 +83,10 @@ export default function Footer() {
 
         <div className="border-t border-background/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-background/40">{f.rights}</p>
-          <div className="flex gap-6 text-sm text-background/40">
+          <div className="flex gap-6 text-sm text-background/40 items-center">
             <span className="hover:text-background/60 transition-colors cursor-pointer">{f.privacy}</span>
             <span className="hover:text-background/60 transition-colors cursor-pointer">{f.terms}</span>
+            <CookieSettingsButton />
           </div>
         </div>
       </div>
