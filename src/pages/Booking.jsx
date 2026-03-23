@@ -41,6 +41,7 @@ export default function Booking() {
     try {
       await base44.entities.BookingRequest.create({ ...form, lang: language });
       await base44.functions.invoke('sendGmailBookingConfirmation', { ...form, lang: language });
+      trackBookingConversion();
       setIsSubmitting(false);
       setIsSuccess(true);
     } catch (error) {
