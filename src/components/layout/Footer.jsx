@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Sparkles, Phone, Mail, MapPin, QrCode } from 'lucide-react';
 import { useLanguage } from '@/lib/LanguageContext';
 import { QRCodeSVG } from 'qrcode.react';
+import CookieSettingsButton from '@/components/CookieSettingsButton';
 
 export default function Footer() {
   const { t } = useLanguage();
