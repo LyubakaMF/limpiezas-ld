@@ -47,7 +47,7 @@ Deno.serve(async (req) => {
       },
       it: {
         confirmed: { subject: 'La tua prenotazione è confermata - Limpiezas LD', message: 'La tua prenotazione è stata <strong>confermata</strong>! Il nostro team sarà lì all\'orario concordato.' },
-        cancelled: { subject: 'Prenotazione annullata - Limpiezas LD', message: 'La tua prenotazione è stata <strong>annullata</strong>. Per qualsiasi domanda, contattaci.' },
+        cancelled: { subject: 'Prenotazione annullata - Limpiezas LD', message: 'La tua prenotazione è stata <strong>annullata</strong>. Attualmente offriamo i nostri servizi ad <strong>Águilas, Región de Murcia</strong> e dintorni. Se la tua posizione è al di fuori di quest\'area o hai domande, non esitare a contattarci.' },
         hello: (name) => `Caro/a ${name},`,
         detailsTitle: 'Dettagli della tua prenotazione:',
         labels: { service: 'Tipo di servizio', date: 'Data', time: 'Ora', address: 'Indirizzo', notes: 'Note' },
