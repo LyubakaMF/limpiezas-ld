@@ -84,7 +84,9 @@ export function trackBookingConversion() {
   if (!isMarketingAllowed()) return;
   if (typeof window.gtag === 'function') {
     window.gtag('event', 'conversion', {
-      send_to: 'AW-18035775016',
+      send_to: 'AW-18035775016/lB3SCPGBi44cEKiskJhD',
+      value: 0.01,
+      currency: 'EUR'
     });
   }
 }
