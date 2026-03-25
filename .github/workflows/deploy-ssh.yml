@@ -1,4 +1,4 @@
-name: Deploy via SSH
+name: Build and Deploy to JetHost (SSH)
 
 on:
   push:
@@ -10,29 +10,39 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
 
-      - name: Install
+      - name: Install dependencies
         run: npm ci
 
       - name: Build
         run: npm run build
 
-      - name: Setup SSH
+      - name: Setup SSH key
         run: |
           mkdir -p ~/.ssh
-          printf "%s" "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/id_ed25519
+          echo "${{ secrets.SSH_PRIVATE_KEY_B64 }}" | base64 -d > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+          ssh-keyscan -p "${{ secrets.SSH_PORT }}" "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
 
-      - name: Deploy to JetHost
+      - name: Test SSH connection
+        run: |
+          ssh -o StrictHostKeyChecking=yes \
+              -p "${{ secrets.SSH_PORT }}" \
+              -i ~/.ssh/id_ed25519 \
+              "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}" \
+              "echo 'SSH OK on $(hostname)'"
+
+      - name: Deploy dist to public_html
         run: |
           rsync -az --delete \
-            -e "ssh -p ${{ secrets.SSH_PORT }} -i ~/.ssh/id_ed25519" \
+            -e "ssh -o StrictHostKeyChecking=yes -p ${{ secrets.SSH_PORT }} -i ~/.ssh/id_ed25519" \
             dist/ \
-            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/dagmkxdt/public_html/
+            "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/dagmkxdt/public_html/"
