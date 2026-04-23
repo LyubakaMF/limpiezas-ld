@@ -5,6 +5,7 @@ import StatsSection from '../components/home/StatsSection';
 import TestimonialsSection from '../components/home/TestimonialsSection';
 import FaqSection from '../components/home/FaqSection';
 import CTASection from '../components/home/CTASection';
+import PromotionsSection from '../components/home/PromotionsSection';
 import { useSEO } from '@/lib/useSEO';
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
   return (
     <div>
       <HeroSection />
+      <PromotionsSection />
       <ServicesPreview />
       <StatsSection />
       <TestimonialsSection />
