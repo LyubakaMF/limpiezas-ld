@@ -43,7 +43,7 @@ export default function PromotionsSection() {
                 <Tag className="w-7 h-7 text-primary" />
               </div>
               <div className="text-right">
-                <div className="text-3xl font-extrabold text-primary">{p.from} 50€</div>
+                <div className="text-3xl font-extrabold text-primary">{p.from} 49€</div>
               </div>
               </div>
 
