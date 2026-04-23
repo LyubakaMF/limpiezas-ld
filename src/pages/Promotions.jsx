@@ -58,7 +58,6 @@ export default function Promotions() {
                   </div>
                   <div className="text-right">
                     <div className="text-3xl font-extrabold text-primary">{p.from} 50€</div>
-                    <div className="text-sm text-muted-foreground font-medium">{p.perMonth}</div>
                   </div>
                 </div>
                 <h2 className="text-xl font-bold mb-3">{p.promo1Title}</h2>

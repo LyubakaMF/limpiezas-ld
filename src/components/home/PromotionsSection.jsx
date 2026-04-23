@@ -39,12 +39,12 @@ export default function PromotionsSection() {
             <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary via-primary/70 to-primary/40" />
             <div className="p-8">
               <div className="flex items-start justify-between mb-6">
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center">
-                  <Tag className="w-7 h-7 text-primary" />
-                </div>
-                <div className="text-right">
-                  <div className="text-3xl font-extrabold text-primary">{p.from} 50€</div>
-                </div>
+              <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center">
+                <Tag className="w-7 h-7 text-primary" />
+              </div>
+              <div className="text-right">
+                <div className="text-3xl font-extrabold text-primary">{p.from} 50€</div>
+              </div>
               </div>
 
               <h3 className="text-xl font-bold mb-3">{p.promo1Title}</h3>
