@@ -23,6 +23,10 @@ export default function AdminBookings() {
     cancelled: { label: 'Cancelled', color: 'bg-red-100 text-red-800', icon: AlertCircle }
   };
 
+  useEffect(() => {
+    loadBookings();
+  }, []);
+
   // Check if user is admin
   if (!user || user.role !== 'admin') {
     return (
@@ -35,10 +39,6 @@ export default function AdminBookings() {
       </div>
     );
   }
-
-  useEffect(() => {
-    loadBookings();
-  }, []);
 
   const loadBookings = async () => {
     setLoading(true);

@@ -8,7 +8,7 @@ export const translations = {
     },
     hero: {
       badge: 'Rated 4.9/5 by 2,000+ customers',
-      title1: 'Professional Cleaning Services in Águilas,',
+      title1: 'Professional Cleaning Services in Región de Murcia, Águilas,',
       title2: 'San Juan de los Terreros & More.',
       description: 'Top-rated limpieza services in Águilas, San Juan de los Terreros, Pulpí and Lorca. Expert residential cleaning, vacation apartment cleaning, deep cleaning & more. Affordable prices, eco-friendly products, trusted by 2,000+ customers.',
       languages: 'We speak English, Spanish and Russian',
@@ -234,7 +234,7 @@ export const translations = {
     nav: { home: 'Inicio', services: 'Servicios', about: 'Nosotros', bookNow: 'Reservar' },
     hero: {
       badge: 'Valorado 4.9/5 por más de 2.000 clientes',
-      title1: 'Servicios de Limpieza Profesional en Águilas,',
+      title1: 'Servicios de Limpieza Profesional en Región de Murcia, Águilas,',
       title2: 'San Juan de los Terreros & Más.',
       description: 'Servicios de limpieza de calidad en Águilas, San Juan de los Terreros, Pulpí y Lorca. Limpieza residencial, limpieza de apartamentos vacacionales, limpieza profunda y más. Precios asequibles, productos ecológicos, confiado por 2.000+ clientes.',
       languages: 'Hablamos inglés, español y ruso',
@@ -410,7 +410,7 @@ export const translations = {
     nav: { home: 'Start', services: 'Leistungen', about: 'Über uns', bookNow: 'Buchen' },
     hero: {
       badge: 'Bewertet mit 4,9/5 von über 2.000 Kunden',
-      title1: 'Professionelle Reinigungsdienste in Águilas,',
+      title1: 'Professionelle Reinigungsdienste in der Region Murcia, Águilas,',
       title2: 'San Juan de los Terreros & mehr.',
       description: 'Top-bewertete Reinigungsdienste in Águilas, San Juan de los Terreros, Pulpí und Lorca. Wohnungsreinigung, Ferienwohnungsreinigung, Tiefenreinigung und mehr. Günstige Preise, umweltfreundliche Produkte, vertraut von 2.000+ Kunden.',
       languages: 'Wir sprechen Englisch, Spanisch und Russisch',
@@ -586,7 +586,7 @@ export const translations = {
     nav: { home: 'Accueil', services: 'Services', about: 'À propos', bookNow: 'Réserver' },
     hero: {
       badge: 'Noté 4,9/5 par plus de 2 000 clients',
-      title1: 'Services de Nettoyage Professionnels à Águilas,',
+      title1: 'Services de Nettoyage Professionnels en Région de Murcia, Águilas,',
       title2: 'San Juan de los Terreros & Plus.',
       description: 'Services de nettoyage de qualité à Águilas, San Juan de los Terreros, Pulpí et Lorca. Nettoyage résidentiel, nettoyage d\'appartements de vacances, nettoyage en profondeur et plus. Prix abordables, produits écologiques, approuvé par 2 000+ clients.',
       languages: 'Nous parlons anglais, espagnol et russe',
@@ -762,7 +762,7 @@ export const translations = {
     nav: { home: 'Home', services: 'Servizi', about: 'Chi Siamo', bookNow: 'Prenota' },
     hero: {
       badge: 'Valutato 4.9/5 da oltre 2.000 clienti',
-      title1: 'Servizi di Pulizia Professionale a Águilas,',
+      title1: 'Servizi di Pulizia Professionale nella Regione di Murcia, Águilas,',
       title2: 'San Juan de los Terreros & Più.',
       description: 'Servizi di pulizia di qualità a Águilas, San Juan de los Terreros, Pulpí e Lorca. Pulizia residenziale, pulizia appartamenti vacanza, pulizia profonda e altro. Prezzi convenienti, prodotti ecologici, approvato da 2.000+ clienti.',
       languages: 'Parliamo inglese, spagnolo e russo',
@@ -938,7 +938,7 @@ export const translations = {
     nav: { home: 'Home', services: 'Diensten', about: 'Over Ons', bookNow: 'Boeken' },
     hero: {
       badge: 'Beoordeeld met 4.9/5 door meer dan 2.000 klanten',
-      title1: 'Professionele Schoonmaakdiensten in Águilas,',
+      title1: 'Professionele Schoonmaakdiensten in Regio Murcia, Águilas,',
       title2: 'San Juan de los Terreros & Meer.',
       description: 'Topgeclassificeerde schoonmaakdiensten in Águilas, San Juan de los Terreros, Pulpí en Lorca. Woningschoonmaak, schoonmaak vakantieappartement, diepschoonmaak en meer. Betaalbare prijzen, eco-vriendelijke producten, vertrouwd door 2.000+ klanten.',
       languages: 'We spreken Engels, Spaans en Russisch',

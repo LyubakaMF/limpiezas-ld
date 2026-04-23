@@ -11,6 +11,10 @@ export default function AdminReviews() {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    loadReviews();
+  }, []);
+
   if (!user || user.role !== 'admin') {
     return (
       <div className="min-h-screen pt-20 bg-background flex items-center justify-center">
@@ -21,10 +25,6 @@ export default function AdminReviews() {
       </div>
     );
   }
-
-  useEffect(() => {
-    loadReviews();
-  }, []);
 
   const loadReviews = async () => {
     setLoading(true);
