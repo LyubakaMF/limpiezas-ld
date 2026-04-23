@@ -17,6 +17,7 @@ import Empleo from './pages/Empleo';
 import AdminBookings from './pages/AdminBookings';
 import LeaveReview from './pages/LeaveReview';
 import AdminReviews from './pages/AdminReviews';
+import Promotions from './pages/Promotions';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -52,6 +53,7 @@ const AuthenticatedApp = () => {
         <Route path="/Booking" element={<Booking />} />
         <Route path="/Empleo" element={<Empleo />} />
         <Route path="/AdminBookings" element={<AdminBookings />} />
+        <Route path="/Promotions" element={<Promotions />} />
       </Route>
       <Route path="/LeaveReview" element={<LeaveReview />} />
       <Route path="/AdminReviews" element={<AdminReviews />} />

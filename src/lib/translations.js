@@ -3,6 +3,7 @@ export const translations = {
     nav: {
       home: 'Home',
       services: 'Services',
+      promotions: 'Promotions',
       about: 'About',
       bookNow: 'Book Now',
     },
@@ -245,7 +246,7 @@ export const translations = {
   },
 
   es: {
-    nav: { home: 'Inicio', services: 'Servicios', about: 'Nosotros', bookNow: 'Reservar' },
+    nav: { home: 'Inicio', services: 'Servicios', promotions: 'Promociones', about: 'Nosotros', bookNow: 'Reservar' },
     hero: {
       badge: 'Valorado 4.9/5 por más de 2.000 clientes',
       title1: 'Servicios de Limpieza Profesional en Región de Murcia, Águilas,',
@@ -435,7 +436,7 @@ export const translations = {
   },
 
   de: {
-    nav: { home: 'Start', services: 'Leistungen', about: 'Über uns', bookNow: 'Buchen' },
+    nav: { home: 'Start', services: 'Leistungen', promotions: 'Aktionen', about: 'Über uns', bookNow: 'Buchen' },
     hero: {
       badge: 'Bewertet mit 4,9/5 von über 2.000 Kunden',
       title1: 'Professionelle Reinigungsdienste in der Region Murcia, Águilas,',
@@ -625,7 +626,7 @@ export const translations = {
   },
 
   fr: {
-    nav: { home: 'Accueil', services: 'Services', about: 'À propos', bookNow: 'Réserver' },
+    nav: { home: 'Accueil', services: 'Services', promotions: 'Promotions', about: 'À propos', bookNow: 'Réserver' },
     hero: {
       badge: 'Noté 4,9/5 par plus de 2 000 clients',
       title1: 'Services de Nettoyage Professionnels en Région de Murcia, Águilas,',
@@ -815,7 +816,7 @@ export const translations = {
   },
 
   it: {
-    nav: { home: 'Home', services: 'Servizi', about: 'Chi Siamo', bookNow: 'Prenota' },
+    nav: { home: 'Home', services: 'Servizi', promotions: 'Promozioni', about: 'Chi Siamo', bookNow: 'Prenota' },
     hero: {
       badge: 'Valutato 4.9/5 da oltre 2.000 clienti',
       title1: 'Servizi di Pulizia Professionale nella Regione di Murcia, Águilas,',
@@ -1005,7 +1006,7 @@ export const translations = {
   },
 
   nl: {
-    nav: { home: 'Home', services: 'Diensten', about: 'Over Ons', bookNow: 'Boeken' },
+    nav: { home: 'Home', services: 'Diensten', promotions: 'Aanbiedingen', about: 'Over Ons', bookNow: 'Boeken' },
     hero: {
       badge: 'Beoordeeld met 4.9/5 door meer dan 2.000 klanten',
       title1: 'Professionele Schoonmaakdiensten in Regio Murcia, Águilas,',

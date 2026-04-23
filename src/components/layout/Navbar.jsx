@@ -32,6 +32,7 @@ export default function Navbar() {
   const navLinks = [
   { label: t.nav.home, path: '/Home' },
   { label: t.nav.services, path: '/Services' },
+  { label: t.nav.promotions, path: '/Promotions' },
   { label: t.nav.about, path: '/About' },
   { label: t.nav.bookNow, path: '/Booking', highlight: true }];
 
