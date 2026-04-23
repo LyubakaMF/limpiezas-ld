@@ -5,7 +5,13 @@ Deno.serve(async (req) => {
       return Response.json({ success: false, error: 'RESEND_API_KEY is not configured' }, { status: 500 });
     }
 
-    const { full_name, email, phone, service_type, preferred_date, preferred_time, address, notes, lang = 'es' } = await req.json();
+    const {
+      full_name, email, phone, service_type, preferred_date, preferred_time, address, notes, lang = 'es',
+      property_type, property_type_other, property_area, property_area_other,
+      num_bedrooms, num_bedrooms_other, num_bathrooms, num_bathrooms_other,
+      num_living_rooms, num_living_rooms_other, num_kitchens, num_kitchens_other,
+      file_urls,
+    } = await req.json();
 
     const esc = (text) => {
       if (!text) return '';
@@ -119,6 +125,13 @@ Deno.serve(async (req) => {
       <p><strong>${adminT.labels.time}:</strong> ${esc(preferred_time)}</p>
       <p><strong>${adminT.labels.address}:</strong> ${esc(address)}</p>
       ${notes ? `<p><strong>${adminT.labels.notes}:</strong> ${esc(notes)}</p>` : ''}
+      ${property_type ? `<p><strong>Tipo de inmueble:</strong> ${esc(property_type)}${property_type === 'other' && property_type_other ? ` (${esc(property_type_other)})` : ''}</p>` : ''}
+      ${property_area ? `<p><strong>Superficie:</strong> ${esc(property_area)}${property_area === 'other' && property_area_other ? ` (${esc(property_area_other)})` : ''}</p>` : ''}
+      ${num_bedrooms ? `<p><strong>Dormitorios:</strong> ${esc(num_bedrooms)}${num_bedrooms === 'other' && num_bedrooms_other ? ` (${esc(num_bedrooms_other)})` : ''}</p>` : ''}
+      ${num_bathrooms ? `<p><strong>Baños:</strong> ${esc(num_bathrooms)}${num_bathrooms === 'other' && num_bathrooms_other ? ` (${esc(num_bathrooms_other)})` : ''}</p>` : ''}
+      ${num_living_rooms ? `<p><strong>Salones:</strong> ${esc(num_living_rooms)}${num_living_rooms === 'other' && num_living_rooms_other ? ` (${esc(num_living_rooms_other)})` : ''}</p>` : ''}
+      ${num_kitchens ? `<p><strong>Cocinas:</strong> ${esc(num_kitchens)}${num_kitchens === 'other' && num_kitchens_other ? ` (${esc(num_kitchens_other)})` : ''}</p>` : ''}
+      ${file_urls && file_urls.length > 0 ? `<p><strong>Archivos adjuntos:</strong> ${file_urls.length} archivo(s)<br/>${file_urls.map((u, i) => `<a href="${esc(u)}">Archivo ${i + 1}</a>`).join(' | ')}</p>` : ''}
       <hr/>
       <p>${adminT.adminNote}</p>
     `);

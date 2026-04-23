@@ -11,6 +11,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useSEO } from '@/lib/useSEO';
 import { trackBookingConversion } from '@/lib/cookieConsent';
+import PropertyDetailsForm from '@/components/booking/PropertyDetailsForm';
+import FileUpload from '@/components/booking/FileUpload';
 
 export default function Booking() {
   const { t, lang: language } = useLanguage();
@@ -25,7 +27,14 @@ export default function Booking() {
 
   const [form, setForm] = useState({
     full_name: '', email: '', phone: '', service_type: '',
-    preferred_date: '', preferred_time: '', address: '', notes: ''
+    preferred_date: '', preferred_time: '', address: '', notes: '',
+    property_type: '', property_type_other: '',
+    property_area: '', property_area_other: '',
+    num_bedrooms: '', num_bedrooms_other: '',
+    num_bathrooms: '', num_bathrooms_other: '',
+    num_living_rooms: '', num_living_rooms_other: '',
+    num_kitchens: '', num_kitchens_other: '',
+    file_urls: [],
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -35,7 +44,6 @@ export default function Booking() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Honeypot: ако е попълнено — бот
     if (honeypot) return;
     setIsSubmitting(true);
     try {
@@ -49,6 +57,21 @@ export default function Booking() {
       setIsSubmitting(false);
       alert('Error: ' + (error.response?.data?.error || error.message || 'Please try again'));
     }
+  };
+
+  const resetForm = () => {
+    setIsSuccess(false);
+    setForm({
+      full_name: '', email: '', phone: '', service_type: '',
+      preferred_date: '', preferred_time: '', address: '', notes: '',
+      property_type: '', property_type_other: '',
+      property_area: '', property_area_other: '',
+      num_bedrooms: '', num_bedrooms_other: '',
+      num_bathrooms: '', num_bathrooms_other: '',
+      num_living_rooms: '', num_living_rooms_other: '',
+      num_kitchens: '', num_kitchens_other: '',
+      file_urls: [],
+    });
   };
 
   return (
@@ -75,75 +98,82 @@ export default function Booking() {
                     </div>
                     <h2 className="text-2xl font-bold mb-2">{bp.successTitle}</h2>
                     <p className="text-muted-foreground max-w-md mx-auto">{bp.successMsg(form.full_name, form.email)}</p>
-                    <Button className="mt-8 rounded-full" onClick={() => { setIsSuccess(false); setForm({ full_name: '', email: '', phone: '', service_type: '', preferred_date: '', preferred_time: '', address: '', notes: '' }); }}>
-                      {bp.bookAnother}
-                    </Button>
+                    <Button className="mt-8 rounded-full" onClick={resetForm}>{bp.bookAnother}</Button>
                   </motion.div>
                 ) : (
-                  <motion.form key="form" initial={{ opacity: 0 }} animate={{ opacity: 1 }} onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid sm:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <Label htmlFor="full_name">{bp.fullName} *</Label>
-                        <Input id="full_name" placeholder="John Doe" value={form.full_name} onChange={(e) => handleChange('full_name', e.target.value)} required className="h-12 rounded-xl" />
+                  <motion.form key="form" initial={{ opacity: 0 }} animate={{ opacity: 1 }} onSubmit={handleSubmit} className="space-y-8">
+
+                    {/* Contact Info */}
+                    <div className="space-y-6">
+                      <h2 className="text-lg font-semibold border-b pb-2">{bp.contactInfo}</h2>
+                      <div className="grid sm:grid-cols-2 gap-6">
+                        <div className="space-y-2">
+                          <Label htmlFor="full_name">{bp.fullName} *</Label>
+                          <Input id="full_name" placeholder="John Doe" value={form.full_name} onChange={(e) => handleChange('full_name', e.target.value)} required className="h-12 rounded-xl" />
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="email">{bp.email} *</Label>
+                          <Input id="email" type="email" placeholder="john@example.com" value={form.email} onChange={(e) => handleChange('email', e.target.value)} required className="h-12 rounded-xl" />
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="phone">{bp.phone} *</Label>
+                          <Input id="phone" type="tel" placeholder="+34 600 000 000" value={form.phone} onChange={(e) => handleChange('phone', e.target.value)} required className="h-12 rounded-xl" />
+                        </div>
+                        <div className="space-y-2">
+                          <Label>{bp.serviceType} *</Label>
+                          <Select value={form.service_type} onValueChange={(v) => handleChange('service_type', v)} required>
+                            <SelectTrigger className="h-12 rounded-xl"><SelectValue placeholder={bp.selectService} /></SelectTrigger>
+                            <SelectContent>
+                              {bp.services.map(s => <SelectItem key={s.value} value={s.value}>{s.label}</SelectItem>)}
+                            </SelectContent>
+                          </Select>
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="date">{bp.preferredDate} *</Label>
+                          <Input id="date" type="date" value={form.preferred_date} onChange={(e) => handleChange('preferred_date', e.target.value)} required className="h-12 rounded-xl" />
+                        </div>
+                        <div className="space-y-2">
+                          <Label>{bp.preferredTime}</Label>
+                          <Select value={form.preferred_time} onValueChange={(v) => handleChange('preferred_time', v)}>
+                            <SelectTrigger className="h-12 rounded-xl"><SelectValue placeholder={bp.selectTime} /></SelectTrigger>
+                            <SelectContent>
+                              {bp.times.map(t => <SelectItem key={t.value} value={t.value}>{t.label}</SelectItem>)}
+                            </SelectContent>
+                          </Select>
+                        </div>
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="email">{bp.email} *</Label>
-                        <Input id="email" type="email" placeholder="john@example.com" value={form.email} onChange={(e) => handleChange('email', e.target.value)} required className="h-12 rounded-xl" />
+                        <Label htmlFor="address">{bp.address} *</Label>
+                        <Input id="address" placeholder={bp.addressPlaceholder} value={form.address} onChange={(e) => handleChange('address', e.target.value)} required className="h-12 rounded-xl" />
                       </div>
                     </div>
 
-                    <div className="grid sm:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <Label htmlFor="phone">{bp.phone} *</Label>
-                        <Input id="phone" type="tel" placeholder="(555) 123-4567" value={form.phone} onChange={(e) => handleChange('phone', e.target.value)} required className="h-12 rounded-xl" />
-                      </div>
-                      <div className="space-y-2">
-                        <Label>{bp.serviceType} *</Label>
-                        <Select value={form.service_type} onValueChange={(v) => handleChange('service_type', v)} required>
-                          <SelectTrigger className="h-12 rounded-xl"><SelectValue placeholder={bp.selectService} /></SelectTrigger>
-                          <SelectContent>
-                            {bp.services.map(s => <SelectItem key={s.value} value={s.value}>{s.label}</SelectItem>)}
-                          </SelectContent>
-                        </Select>
-                      </div>
+                    {/* Property Details */}
+                    <div className="space-y-6">
+                      <h2 className="text-lg font-semibold border-b pb-2">{bp.propertyDetails}</h2>
+                      <PropertyDetailsForm form={form} onChange={handleChange} translations={bp} />
                     </div>
 
-                    <div className="grid sm:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <Label htmlFor="date">{bp.preferredDate} *</Label>
-                        <Input id="date" type="date" value={form.preferred_date} onChange={(e) => handleChange('preferred_date', e.target.value)} required className="h-12 rounded-xl" />
-                      </div>
-                      <div className="space-y-2">
-                        <Label>{bp.preferredTime}</Label>
-                        <Select value={form.preferred_time} onValueChange={(v) => handleChange('preferred_time', v)}>
-                          <SelectTrigger className="h-12 rounded-xl"><SelectValue placeholder={bp.selectTime} /></SelectTrigger>
-                          <SelectContent>
-                            {bp.times.map(t => <SelectItem key={t.value} value={t.value}>{t.label}</SelectItem>)}
-                          </SelectContent>
-                        </Select>
-                      </div>
+                    {/* Files */}
+                    <div className="space-y-6">
+                      <h2 className="text-lg font-semibold border-b pb-2">{bp.filesSection}</h2>
+                      <FileUpload
+                        fileUrls={form.file_urls}
+                        onChange={(urls) => handleChange('file_urls', urls)}
+                        label={bp.attachments}
+                        hint={bp.attachHint}
+                      />
                     </div>
 
-                    <div className="space-y-2">
-                      <Label htmlFor="address">{bp.address} *</Label>
-                      <Input id="address" placeholder={bp.addressPlaceholder} value={form.address} onChange={(e) => handleChange('address', e.target.value)} required className="h-12 rounded-xl" />
-                    </div>
-
+                    {/* Notes */}
                     <div className="space-y-2">
                       <Label htmlFor="notes">{bp.notes}</Label>
-                      <Textarea id="notes" placeholder={bp.notesPlaceholder} value={form.notes} onChange={(e) => handleChange('notes', e.target.value)} className="min-h-[120px] rounded-xl" />
+                      <Textarea id="notes" placeholder={bp.notesPlaceholder} value={form.notes} onChange={(e) => handleChange('notes', e.target.value)} className="min-h-[100px] rounded-xl" />
                     </div>
 
-                    {/* Honeypot - скрито от потребителите, ботовете го попълват */}
+                    {/* Honeypot */}
                     <div style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, overflow: 'hidden' }} aria-hidden="true">
-                      <input
-                        type="text"
-                        name="website"
-                        value={honeypot}
-                        onChange={(e) => setHoneypot(e.target.value)}
-                        tabIndex={-1}
-                        autoComplete="off"
-                      />
+                      <input type="text" name="website" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} tabIndex={-1} autoComplete="off" />
                     </div>
 
                     <Button type="submit" size="lg" disabled={isSubmitting} className="w-full rounded-xl h-14 text-base">
@@ -172,13 +202,9 @@ export default function Booking() {
                       <div>
                         <p className="font-medium text-sm">{bp.needHelp}</p>
                         <p className="text-xs text-muted-foreground">{bp.needHelpDesc}</p>
-                        <div className="flex gap-2 mt-1">
-                          <a href="https://wa.me/34643533453" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs font-medium text-green-600 hover:text-green-700">
-                            💬 WhatsApp (+34 643 53 34 53)
-                          </a>
-                          <a href="https://wa.me/34602665537" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs font-medium text-green-600 hover:text-green-700">
-                            💬 WhatsApp (+34 602 66 55 37)
-                          </a>
+                        <div className="flex flex-col gap-1 mt-1">
+                          <a href="https://wa.me/34643533453" target="_blank" rel="noopener noreferrer" className="text-xs font-medium text-green-600 hover:text-green-700">💬 WhatsApp +34 643 53 34 53</a>
+                          <a href="https://wa.me/34602665537" target="_blank" rel="noopener noreferrer" className="text-xs font-medium text-green-600 hover:text-green-700">💬 WhatsApp +34 602 66 55 37</a>
                         </div>
                       </div>
                     </li>

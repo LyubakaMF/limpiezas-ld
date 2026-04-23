@@ -333,6 +333,63 @@ export default function AdminBookings() {
                   </div>
                 )}
 
+                {(selectedBooking.property_type || selectedBooking.property_area) && (
+                  <div className="pt-2 border-t">
+                    <p className="text-sm font-semibold text-muted-foreground mb-3">Property Details</p>
+                    <div className="grid sm:grid-cols-2 gap-3">
+                      {selectedBooking.property_type && (
+                        <div>
+                          <p className="text-xs text-muted-foreground">Type</p>
+                          <p className="font-medium capitalize">{selectedBooking.property_type}{selectedBooking.property_type === 'other' && selectedBooking.property_type_other ? ` – ${selectedBooking.property_type_other}` : ''}</p>
+                        </div>
+                      )}
+                      {selectedBooking.property_area && (
+                        <div>
+                          <p className="text-xs text-muted-foreground">Area</p>
+                          <p className="font-medium">{selectedBooking.property_area}{selectedBooking.property_area === 'other' && selectedBooking.property_area_other ? ` – ${selectedBooking.property_area_other}` : ''}</p>
+                        </div>
+                      )}
+                      {selectedBooking.num_bedrooms && (
+                        <div>
+                          <p className="text-xs text-muted-foreground">Bedrooms</p>
+                          <p className="font-medium">{selectedBooking.num_bedrooms}{selectedBooking.num_bedrooms === 'other' && selectedBooking.num_bedrooms_other ? ` – ${selectedBooking.num_bedrooms_other}` : ''}</p>
+                        </div>
+                      )}
+                      {selectedBooking.num_bathrooms && (
+                        <div>
+                          <p className="text-xs text-muted-foreground">Bathrooms</p>
+                          <p className="font-medium">{selectedBooking.num_bathrooms}{selectedBooking.num_bathrooms === 'other' && selectedBooking.num_bathrooms_other ? ` – ${selectedBooking.num_bathrooms_other}` : ''}</p>
+                        </div>
+                      )}
+                      {selectedBooking.num_living_rooms && (
+                        <div>
+                          <p className="text-xs text-muted-foreground">Living Rooms</p>
+                          <p className="font-medium">{selectedBooking.num_living_rooms}{selectedBooking.num_living_rooms === 'other' && selectedBooking.num_living_rooms_other ? ` – ${selectedBooking.num_living_rooms_other}` : ''}</p>
+                        </div>
+                      )}
+                      {selectedBooking.num_kitchens && (
+                        <div>
+                          <p className="text-xs text-muted-foreground">Kitchens</p>
+                          <p className="font-medium">{selectedBooking.num_kitchens}{selectedBooking.num_kitchens === 'other' && selectedBooking.num_kitchens_other ? ` – ${selectedBooking.num_kitchens_other}` : ''}</p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
+
+                {selectedBooking.file_urls && selectedBooking.file_urls.length > 0 && (
+                  <div className="pt-2 border-t">
+                    <p className="text-sm font-semibold text-muted-foreground mb-3">Attached Files ({selectedBooking.file_urls.length})</p>
+                    <div className="flex flex-wrap gap-3">
+                      {selectedBooking.file_urls.map((url, i) => (
+                        <a key={i} href={url} target="_blank" rel="noopener noreferrer" className="block w-20 h-20 rounded-lg overflow-hidden border hover:opacity-80 transition-opacity">
+                          <img src={url} alt={`File ${i + 1}`} className="w-full h-full object-cover" onError={(e) => { e.target.style.display='none'; }} />
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
                 <div className="pt-4 border-t">
                   <p className="text-sm text-muted-foreground mb-2">Status</p>
                   <Select
