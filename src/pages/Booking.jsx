@@ -51,6 +51,12 @@ export default function Booking() {
       await base44.entities.BookingRequest.create({ ...form, lang: language });
       await base44.functions.invoke('sendGmailBookingConfirmation', { ...form, lang: language });
       trackBookingConversion();
+      // Google Ads - track conversion
+      if (typeof window.gtag !== 'undefined') {
+        window.gtag('event', 'conversion', {
+          send_to: 'AW-18035775016/Ylh3CI_XvKMcEKiskJhD',
+        });
+      }
       // Meta Pixel - track Lead event (client-side)
       if (typeof window.fbq !== 'undefined') {
         window.fbq('track', 'Lead', { content_name: form.service_type }, { eventID: eventId });
