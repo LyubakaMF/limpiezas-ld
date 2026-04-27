@@ -47,13 +47,22 @@ export default function Booking() {
     if (honeypot) return;
     setIsSubmitting(true);
     try {
+      const eventId = `booking_${Date.now()}`;
       await base44.entities.BookingRequest.create({ ...form, lang: language });
       await base44.functions.invoke('sendGmailBookingConfirmation', { ...form, lang: language });
       trackBookingConversion();
-      // Meta Pixel - track Lead event
+      // Meta Pixel - track Lead event (client-side)
       if (typeof window.fbq !== 'undefined') {
-        window.fbq('track', 'Lead', { content_name: form.service_type });
+        window.fbq('track', 'Lead', { content_name: form.service_type }, { eventID: eventId });
       }
+      // Meta CAPI - track Lead event (server-side)
+      base44.functions.invoke('sendMetaCAPIEvent', {
+        email: form.email,
+        phone: form.phone,
+        full_name: form.full_name,
+        service_type: form.service_type,
+        event_id: eventId,
+      }).catch(() => {});
       setIsSubmitting(false);
       setIsSuccess(true);
     } catch (error) {
