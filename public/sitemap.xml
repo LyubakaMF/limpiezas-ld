@@ -3,16 +3,17 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://www.limpiezas-ld.com/Home</loc>
+    <loc>https://www.limpiezas-ld.com/</loc>
     <lastmod>2026-04-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.limpiezas-ld.com/Home"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.limpiezas-ld.com/Home"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.limpiezas-ld.com/Home"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.limpiezas-ld.com/Home"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.limpiezas-ld.com/Home"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.limpiezas-ld.com/Home"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.limpiezas-ld.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.limpiezas-ld.com/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.limpiezas-ld.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.limpiezas-ld.com/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.limpiezas-ld.com/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.limpiezas-ld.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.limpiezas-ld.com/"/>
   </url>
 
   <url>
@@ -26,6 +27,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.limpiezas-ld.com/Services"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://www.limpiezas-ld.com/Services"/>
     <xhtml:link rel="alternate" hreflang="nl" href="https://www.limpiezas-ld.com/Services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.limpiezas-ld.com/Services"/>
   </url>
 
   <url>
@@ -39,6 +41,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.limpiezas-ld.com/Booking"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://www.limpiezas-ld.com/Booking"/>
     <xhtml:link rel="alternate" hreflang="nl" href="https://www.limpiezas-ld.com/Booking"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.limpiezas-ld.com/Booking"/>
   </url>
 
   <url>
@@ -52,6 +55,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.limpiezas-ld.com/Promotions"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://www.limpiezas-ld.com/Promotions"/>
     <xhtml:link rel="alternate" hreflang="nl" href="https://www.limpiezas-ld.com/Promotions"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.limpiezas-ld.com/Promotions"/>
   </url>
 
   <url>
@@ -65,6 +69,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.limpiezas-ld.com/About"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://www.limpiezas-ld.com/About"/>
     <xhtml:link rel="alternate" hreflang="nl" href="https://www.limpiezas-ld.com/About"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.limpiezas-ld.com/About"/>
   </url>
 
   <url>
@@ -78,6 +83,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.limpiezas-ld.com/Empleo"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://www.limpiezas-ld.com/Empleo"/>
     <xhtml:link rel="alternate" hreflang="nl" href="https://www.limpiezas-ld.com/Empleo"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.limpiezas-ld.com/Empleo"/>
   </url>
 
   <url>
