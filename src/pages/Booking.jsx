@@ -51,8 +51,8 @@ export default function Booking() {
       await base44.functions.invoke('sendGmailBookingConfirmation', { ...form, lang: language });
       trackBookingConversion();
       // Meta Pixel - track Lead event
-      if (typeof fbq !== 'undefined') {
-        fbq('track', 'Lead', { content_name: form.service_type });
+      if (typeof window.fbq !== 'undefined') {
+        window.fbq('track', 'Lead', { content_name: form.service_type });
       }
       setIsSubmitting(false);
       setIsSuccess(true);
