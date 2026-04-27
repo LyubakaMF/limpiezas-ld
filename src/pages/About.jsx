@@ -16,7 +16,7 @@ export default function About() {
   useSEO({
     title: 'Sobre Nosotros - Limpiezas LD | Empresa de Limpieza en Águilas desde 2021',
     description: 'Conoce el equipo de Limpiezas LD. Empresa de limpieza profesional fundada en 2021 en Águilas, Murcia. Más de 20 profesionales, valoración 4.9★, 2.000+ clientes satisfechos. Productos ecológicos, asegurados.',
-    canonical: 'https://limpiezasld.com/About',
+    canonical: 'https://www.limpiezas-ld.com/About',
     ogImage: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&q=80',
   });
 

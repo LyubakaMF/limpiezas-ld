@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://limpiezasld.com/sitemap.xml
+Sitemap: https://www.limpiezas-ld.com/sitemap.xml

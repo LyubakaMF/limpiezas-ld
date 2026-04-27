@@ -107,6 +107,80 @@
     }
     </script>
     
+    <!-- Structured Data - CleaningService Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CleaningService",
+      "name": "Limpiezas LD",
+      "description": "Servicios profesionales de limpieza residencial, comercial, profunda y de apartamentos vacacionales",
+      "url": "https://www.limpiezas-ld.com",
+      "telephone": "+34643533453",
+      "email": "limpiezasdomesticos@gmail.com",
+      "priceRange": "$$",
+      "currenciesAccepted": "EUR",
+      "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+      "openingHours": "Mo-Sa 08:00-19:00",
+      "image": "https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=1200&q=80",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Águilas",
+        "addressLocality": "Águilas",
+        "addressRegion": "Murcia",
+        "postalCode": "30880",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "37.4044",
+        "longitude": "-1.5868"
+      },
+      "areaServed": [
+        {"@type": "City", "name": "Águilas"},
+        {"@type": "City", "name": "San Juan de los Terreros"},
+        {"@type": "City", "name": "Pulpí"},
+        {"@type": "City", "name": "Lorca"}
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de Limpieza",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Limpieza Residencial", "description": "Limpieza profesional de hogares en Águilas desde 80€"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Limpieza de Apartamentos Vacacionales", "description": "Limpieza entre estancias desde 30€"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Limpieza Profunda", "description": "Limpieza profunda e intensiva desde 180€"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Limpieza de Mudanzas", "description": "Limpieza completa de entrada y salida desde 150€"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Limpieza Comercial", "description": "Limpieza de oficinas y locales comerciales desde 15€/hora"}}
+        ]
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "2000",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "sameAs": [
+        "https://www.facebook.com/limpiezasld",
+        "https://www.instagram.com/limpiezasld"
+      ]
+    }
+    </script>
+
+    <!-- Structured Data - WebSite Schema with Sitelinks Searchbox -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Limpiezas LD",
+      "url": "https://www.limpiezas-ld.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.limpiezas-ld.com/Services?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

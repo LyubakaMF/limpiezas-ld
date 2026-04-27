@@ -3,51 +3,58 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://limpiezasld.com/</loc>
-    <lastmod>2026-03-19</lastmod>
+    <loc>https://www.limpiezas-ld.com/Home</loc>
+    <lastmod>2026-04-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://limpiezasld.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://limpiezasld.com/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://limpiezasld.com/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://limpiezasld.com/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://limpiezasld.com/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://limpiezasld.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.limpiezas-ld.com/Home"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.limpiezas-ld.com/Home"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.limpiezas-ld.com/Home"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.limpiezas-ld.com/Home"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.limpiezas-ld.com/Home"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.limpiezas-ld.com/Home"/>
   </url>
 
   <url>
-    <loc>https://limpiezasld.com/Home</loc>
-    <lastmod>2026-03-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <url>
-    <loc>https://limpiezasld.com/Services</loc>
-    <lastmod>2026-03-19</lastmod>
+    <loc>https://www.limpiezas-ld.com/Services</loc>
+    <lastmod>2026-04-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://limpiezasld.com/Booking</loc>
-    <lastmod>2026-03-19</lastmod>
+    <loc>https://www.limpiezas-ld.com/Booking</loc>
+    <lastmod>2026-04-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://limpiezasld.com/About</loc>
-    <lastmod>2026-03-19</lastmod>
+    <loc>https://www.limpiezas-ld.com/Promotions</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.limpiezas-ld.com/About</loc>
+    <lastmod>2026-04-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://limpiezasld.com/Empleo</loc>
-    <lastmod>2026-03-19</lastmod>
+    <loc>https://www.limpiezas-ld.com/Empleo</loc>
+    <lastmod>2026-04-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.limpiezas-ld.com/PrivacyPolicy</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 
 </urlset>
