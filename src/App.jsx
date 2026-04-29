@@ -19,7 +19,6 @@ import LeaveReview from './pages/LeaveReview';
 import AdminReviews from './pages/AdminReviews';
 import Promotions from './pages/Promotions';
 import PrivacyPolicy from './pages/PrivacyPolicy';
-import FlyerPreview from './pages/FlyerPreview';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -60,7 +59,6 @@ const AuthenticatedApp = () => {
       <Route path="/LeaveReview" element={<LeaveReview />} />
       <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
       <Route path="/AdminReviews" element={<AdminReviews />} />
-      <Route path="/FlyerPreview" element={<FlyerPreview />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
