@@ -16,6 +16,7 @@ const images = [
   'https://media.base44.com/images/public/69b9d864ebb8dd58db0fa41f/a72c2bacb_generated_image.png',
   'https://media.base44.com/images/public/69b9d864ebb8dd58db0fa41f/e85b46f0f_generated_image.png',
   'https://media.base44.com/images/public/69b9d864ebb8dd58db0fa41f/9e3421c98_generated_image.png',
+  'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
   'https://media.base44.com/images/public/69b9d864ebb8dd58db0fa41f/65fd12e53_generated_image.png',
   'https://media.base44.com/images/public/69b9d864ebb8dd58db0fa41f/f98310a8d_generated_image.png',
 ];
