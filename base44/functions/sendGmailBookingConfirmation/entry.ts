@@ -10,7 +10,7 @@ Deno.serve(async (req) => {
       property_type, property_type_other, property_area, property_area_other,
       num_bedrooms, num_bedrooms_other, num_bathrooms, num_bathrooms_other,
       num_living_rooms, num_living_rooms_other, num_kitchens, num_kitchens_other,
-      file_urls,
+      file_urls, promo_code, promo_discount,
     } = await req.json();
 
     const esc = (text) => {
@@ -29,6 +29,8 @@ Deno.serve(async (req) => {
         clientBody: 'Hemos recibido tu solicitud de servicio de limpieza. Nuestro equipo se pondrá en contacto contigo en menos de 2 horas para confirmar tu reserva.',
         detailsTitle: 'Detalles de tu reserva:',
         labels: { service: 'Tipo de servicio', date: 'Fecha preferida', time: 'Hora preferida', address: 'Dirección', notes: 'Notas', name: 'Nombre', email: 'Email', phone: 'Teléfono' },
+        promoLabel: 'Código promocional aplicado',
+        promoMsg: (pct) => `¡Enhorabuena! Se ha aplicado un descuento del ${pct}% a tu reserva gracias a tu código promocional.`,
         help: '¿Necesitas ayuda?',
         call: 'Llámanos',
         whatsapp: 'WhatsApp',
@@ -44,6 +46,8 @@ Deno.serve(async (req) => {
         clientBody: 'We have received your cleaning service request. Our team will contact you within 2 hours to confirm your reservation.',
         detailsTitle: 'Your booking details:',
         labels: { service: 'Service Type', date: 'Preferred Date', time: 'Preferred Time', address: 'Address', notes: 'Notes', name: 'Name', email: 'Email', phone: 'Phone' },
+        promoLabel: 'Promotional code applied',
+        promoMsg: (pct) => `Congratulations! A ${pct}% discount has been applied to your booking thanks to your promo code.`,
         help: 'Need help?',
         call: 'Call us',
         whatsapp: 'WhatsApp',
@@ -59,6 +63,8 @@ Deno.serve(async (req) => {
         clientBody: 'Wir haben Ihre Anfrage erhalten. Unser Team wird Sie innerhalb von 2 Stunden kontaktieren, um Ihre Buchung zu bestätigen.',
         detailsTitle: 'Ihre Buchungsdetails:',
         labels: { service: 'Leistungsart', date: 'Bevorzugtes Datum', time: 'Bevorzugte Uhrzeit', address: 'Adresse', notes: 'Notizen', name: 'Name', email: 'E-Mail', phone: 'Telefon' },
+        promoLabel: 'Aktionscode angewendet',
+        promoMsg: (pct) => `Herzlichen Glückwunsch! Dank Ihres Aktionscodes wurde ein Rabatt von ${pct}% auf Ihre Buchung angewendet.`,
         help: 'Brauchen Sie Hilfe?',
         call: 'Rufen Sie uns an',
         whatsapp: 'WhatsApp',
@@ -74,6 +80,8 @@ Deno.serve(async (req) => {
         clientBody: 'Nous avons reçu votre demande de service de nettoyage. Notre équipe vous contactera dans les 2 heures pour confirmer votre réservation.',
         detailsTitle: 'Détails de votre réservation :',
         labels: { service: 'Type de service', date: 'Date souhaitée', time: 'Heure souhaitée', address: 'Adresse', notes: 'Notes', name: 'Nom', email: 'E-mail', phone: 'Téléphone' },
+        promoLabel: 'Code promotionnel appliqué',
+        promoMsg: (pct) => `Félicitations ! Une réduction de ${pct}% a été appliquée à votre réservation grâce à votre code promotionnel.`,
         help: 'Besoin d\'aide ?',
         call: 'Appelez-nous',
         whatsapp: 'WhatsApp',
@@ -89,6 +97,8 @@ Deno.serve(async (req) => {
         clientBody: 'Abbiamo ricevuto la tua richiesta di servizio di pulizia. Il nostro team ti contatterà entro 2 ore per confermare la tua prenotazione.',
         detailsTitle: 'Dettagli della tua prenotazione:',
         labels: { service: 'Tipo di servizio', date: 'Data preferita', time: 'Ora preferita', address: 'Indirizzo', notes: 'Note', name: 'Nome', email: 'Email', phone: 'Telefono' },
+        promoLabel: 'Codice promozionale applicato',
+        promoMsg: (pct) => `Congratulazioni! Grazie al tuo codice promozionale è stato applicato uno sconto del ${pct}% alla tua prenotazione.`,
         help: 'Hai bisogno di aiuto?',
         call: 'Chiamaci',
         whatsapp: 'WhatsApp',
@@ -104,6 +114,8 @@ Deno.serve(async (req) => {
         clientBody: 'We hebben uw aanvraag voor schoonmaakdiensten ontvangen. Ons team neemt binnen 2 uur contact met u op om uw boeking te bevestigen.',
         detailsTitle: 'Uw boekingsgegevens:',
         labels: { service: 'Servicetype', date: 'Voorkeursdatum', time: 'Voorkeurstijd', address: 'Adres', notes: 'Notities', name: 'Naam', email: 'E-mail', phone: 'Telefoon' },
+        promoLabel: 'Promotiecode toegepast',
+        promoMsg: (pct) => `Gefeliciteerd! Dankzij uw promotiecode is een korting van ${pct}% op uw boeking toegepast.`,
         help: 'Hulp nodig?',
         call: 'Bel ons',
         whatsapp: 'WhatsApp',
@@ -132,6 +144,7 @@ Deno.serve(async (req) => {
       ${num_living_rooms ? `<p><strong>Salones:</strong> ${esc(num_living_rooms)}${num_living_rooms === 'other' && num_living_rooms_other ? ` (${esc(num_living_rooms_other)})` : ''}</p>` : ''}
       ${num_kitchens ? `<p><strong>Cocinas:</strong> ${esc(num_kitchens)}${num_kitchens === 'other' && num_kitchens_other ? ` (${esc(num_kitchens_other)})` : ''}</p>` : ''}
       ${file_urls && file_urls.length > 0 ? `<p><strong>Archivos adjuntos:</strong> ${file_urls.length} archivo(s)<br/>${file_urls.map((u, i) => `<a href="${esc(u)}">Archivo ${i + 1}</a>`).join(' | ')}</p>` : ''}
+      ${promo_code ? `<p style="background:#f0fdf4;border:1px solid #86efac;padding:10px;border-radius:6px;"><strong>🏷️ Código promocional:</strong> ${esc(promo_code)} → <strong>${esc(promo_discount)} de descuento</strong></p>` : ''}
       <hr/>
       <p>${adminT.adminNote}</p>
     `);
@@ -149,6 +162,11 @@ Deno.serve(async (req) => {
         <li><strong>${t.labels.address}:</strong> ${esc(address)}</li>
         ${notes ? `<li><strong>${t.labels.notes}:</strong> ${esc(notes)}</li>` : ''}
       </ul>
+      ${promo_code && promo_discount ? `
+      <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:16px;margin:16px 0;">
+        <p style="margin:0;font-weight:bold;color:#16a34a;">🏷️ ${t.promoLabel}: ${esc(promo_code)}</p>
+        <p style="margin:8px 0 0;color:#15803d;">${t.promoMsg(esc(promo_discount).replace('%',''))}</p>
+      </div>` : ''}
       <hr/>
       <p><strong>${t.help}</strong></p>
       <p>${t.call}: <a href="tel:+34643533453">+34 643 53 34 53</a></p>

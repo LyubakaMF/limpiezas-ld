@@ -3,48 +3,46 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Tag, CheckCircle2, XCircle } from 'lucide-react';
 
-// Valid promo codes: { code: { discount, label, expiresAt } }
-const PROMO_CODES = {
-  rosa20: {
-    discount: 20,
-    label: '20% descuento',
-    expiresAt: new Date('2026-06-15T23:59:59'),
-  },
-};
+const EXPIRY = new Date('2026-06-15T23:59:59');
+
+// Extract discount % from code suffix (e.g. rosa20 → 20, vip10 → 10)
+function getDiscount(code) {
+  const match = code.match(/(\d+)$/);
+  return match ? parseInt(match[1], 10) : null;
+}
 
 export default function PromoCodeInput({ onChange }) {
   const [value, setValue] = useState('');
   const [status, setStatus] = useState(null); // null | 'valid' | 'invalid' | 'expired'
+  const [discount, setDiscount] = useState(null);
 
   const handleChange = (e) => {
-    const code = e.target.value;
-    setValue(code);
+    setValue(e.target.value);
     setStatus(null);
+    setDiscount(null);
     onChange({ code: '', discount: 0 });
   };
 
   const handleBlur = () => {
-    if (!value.trim()) {
-      setStatus(null);
-      return;
-    }
-    const key = value.trim().toLowerCase();
-    const promo = PROMO_CODES[key];
+    const trimmed = value.trim().toLowerCase();
+    if (!trimmed) { setStatus(null); return; }
 
-    if (!promo) {
-      setStatus('invalid');
-      onChange({ code: '', discount: 0 });
-      return;
-    }
-
-    if (new Date() > promo.expiresAt) {
+    if (new Date() > EXPIRY) {
       setStatus('expired');
       onChange({ code: '', discount: 0 });
       return;
     }
 
+    const pct = getDiscount(trimmed);
+    if (!pct || pct <= 0 || pct > 100) {
+      setStatus('invalid');
+      onChange({ code: '', discount: 0 });
+      return;
+    }
+
     setStatus('valid');
-    onChange({ code: value.trim().toLowerCase(), discount: promo.discount, label: promo.label });
+    setDiscount(pct);
+    onChange({ code: trimmed, discount: pct, label: `${pct}% descuento` });
   };
 
   return (
@@ -67,8 +65,8 @@ export default function PromoCodeInput({ onChange }) {
           <XCircle className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-destructive" />
         )}
       </div>
-      {status === 'valid' && (
-        <p className="text-sm text-green-600 font-medium">✓ ¡Código aplicado! 20% de descuento</p>
+      {status === 'valid' && discount && (
+        <p className="text-sm text-green-600 font-medium">✓ ¡Código aplicado! {discount}% de descuento</p>
       )}
       {status === 'invalid' && (
         <p className="text-sm text-destructive">Código no válido.</p>
