@@ -57,7 +57,7 @@ export default function Promotions() {
                     <Tag className="w-7 h-7 text-primary" />
                   </div>
                   <div className="text-right">
-                    <div className="text-3xl font-extrabold text-primary">{p.from} 49€</div>
+                    <div className="text-3xl font-extrabold text-primary">{p.from} 29€</div>
                   </div>
                 </div>
                 <h2 className="text-xl font-bold mb-3">{p.promo1Title}</h2>
