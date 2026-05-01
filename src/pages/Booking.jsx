@@ -13,6 +13,7 @@ import { useSEO } from '@/lib/useSEO';
 import { trackBookingConversion } from '@/lib/cookieConsent';
 import PropertyDetailsForm from '@/components/booking/PropertyDetailsForm';
 import FileUpload from '@/components/booking/FileUpload';
+import PromoCodeInput from '@/components/booking/PromoCodeInput';
 
 export default function Booking() {
   const { t, lang: language } = useLanguage();
@@ -35,7 +36,10 @@ export default function Booking() {
     num_living_rooms: '', num_living_rooms_other: '',
     num_kitchens: '', num_kitchens_other: '',
     file_urls: [],
+    promo_code: '',
+    promo_discount: '',
   });
+  const [promoApplied, setPromoApplied] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [honeypot, setHoneypot] = useState('');
@@ -48,7 +52,7 @@ export default function Booking() {
     setIsSubmitting(true);
     try {
       const eventId = `booking_${Date.now()}`;
-      await base44.entities.BookingRequest.create({ ...form, lang: language });
+      await base44.entities.BookingRequest.create({ ...form, lang: language, promo_code: form.promo_code, promo_discount: form.promo_discount });
       await base44.functions.invoke('sendGmailBookingConfirmation', { ...form, lang: language });
       trackBookingConversion();
       // Google Ads - track conversion
@@ -90,7 +94,10 @@ export default function Booking() {
       num_living_rooms: '', num_living_rooms_other: '',
       num_kitchens: '', num_kitchens_other: '',
       file_urls: [],
+      promo_code: '',
+      promo_discount: '',
     });
+    setPromoApplied(null);
   };
 
   return (
@@ -183,6 +190,13 @@ export default function Booking() {
                         hint={bp.attachHint}
                       />
                     </div>
+
+                    {/* Promo Code */}
+                    <PromoCodeInput onChange={({ code, discount, label }) => {
+                      setPromoApplied(label || null);
+                      handleChange('promo_code', code);
+                      handleChange('promo_discount', discount ? `${discount}%` : '');
+                    }} />
 
                     {/* Notes */}
                     <div className="space-y-2">

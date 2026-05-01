@@ -168,6 +168,14 @@
         "type": "string"
       },
       "description": "Uploaded file URLs (photos/videos)"
+    },
+    "promo_code": {
+      "type": "string",
+      "description": "Promo code entered by the customer"
+    },
+    "promo_discount": {
+      "type": "string",
+      "description": "Discount applied via promo code (e.g. 20%)"
     }
   },
   "required": [

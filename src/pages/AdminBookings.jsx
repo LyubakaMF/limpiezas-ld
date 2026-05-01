@@ -196,6 +196,7 @@ export default function AdminBookings() {
                     <th className="px-6 py-3 text-left font-semibold">Phone</th>
                     <th className="px-6 py-3 text-left font-semibold">Service</th>
                     <th className="px-6 py-3 text-left font-semibold">Date</th>
+                    <th className="px-6 py-3 text-left font-semibold">Promo</th>
                     <th className="px-6 py-3 text-left font-semibold">Status</th>
                     <th className="px-6 py-3 text-left font-semibold">Actions</th>
                   </tr>
@@ -219,6 +220,13 @@ export default function AdminBookings() {
                         <td className="px-6 py-3 text-xs">{booking.phone}</td>
                         <td className="px-6 py-3 capitalize text-xs">{booking.service_type.replace('_', ' ')}</td>
                         <td className="px-6 py-3 text-xs">{booking.preferred_date} ({booking.preferred_time})</td>
+                        <td className="px-6 py-3 text-xs">
+                          {booking.promo_code ? (
+                            <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-green-100 text-green-700 font-semibold text-xs">
+                              🏷️ {booking.promo_code} {booking.promo_discount && `(${booking.promo_discount})`}
+                            </span>
+                          ) : '—'}
+                        </td>
                         <td className="px-6 py-3">
                           <Select value={booking.status} onValueChange={(val) => handleStatusChange(booking.id, val)}>
                             <SelectTrigger className="w-32 h-8 text-xs">
@@ -325,6 +333,15 @@ export default function AdminBookings() {
                   <p className="text-sm text-muted-foreground">Address</p>
                   <p className="font-semibold">{selectedBooking.address}</p>
                 </div>
+
+                {selectedBooking.promo_code && (
+                  <div>
+                    <p className="text-sm text-muted-foreground">Promo Code</p>
+                    <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-green-100 text-green-700 font-semibold text-sm">
+                      🏷️ {selectedBooking.promo_code} {selectedBooking.promo_discount && `→ ${selectedBooking.promo_discount} descuento`}
+                    </span>
+                  </div>
+                )}
 
                 {selectedBooking.notes && (
                   <div>
