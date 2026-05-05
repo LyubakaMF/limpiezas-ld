@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { Tag, Calendar, ArrowRight, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/lib/LanguageContext';
@@ -12,30 +11,18 @@ export default function PromotionsSection() {
   return (
     <section className="py-20 lg:py-28 bg-accent/40">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
+        <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm font-semibold text-primary mb-4">
             <Sparkles className="w-4 h-4" />
             {p.tag}
           </div>
           <h2 className="text-3xl lg:text-5xl font-bold tracking-tight">{p.title}</h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">{p.subtitle}</p>
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Promo 1 - Management */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="relative bg-card rounded-3xl border-2 border-primary/30 shadow-xl overflow-hidden"
-          >
+          <div className="relative bg-card rounded-3xl border-2 border-primary/30 shadow-xl overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary via-primary/70 to-primary/40" />
             <div className="p-8">
               <div className="flex items-start justify-between mb-6">
@@ -61,16 +48,10 @@ export default function PromotionsSection() {
                 </Button>
               </Link>
             </div>
-          </motion.div>
+          </div>
 
           {/* Promo 2 - Weekly */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative bg-card rounded-3xl border-2 border-primary/30 shadow-xl overflow-hidden"
-          >
+          <div className="relative bg-card rounded-3xl border-2 border-primary/30 shadow-xl overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary/40 via-primary/70 to-primary" />
             <div className="p-8">
               <div className="flex items-start justify-between mb-6">
@@ -97,7 +78,7 @@ export default function PromotionsSection() {
                 </Button>
               </Link>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Star } from 'lucide-react';
-import { motion } from 'framer-motion';
 import { useLanguage } from '@/lib/LanguageContext';
 import { base44 } from '@/api/base44Client';
 
@@ -43,12 +42,8 @@ export default function TestimonialsSection() {
 
         <div className="grid md:grid-cols-3 gap-6">
           {items.map((item, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
               className="bg-card rounded-2xl p-8 border shadow-sm hover:shadow-md transition-shadow"
             >
               <div className="flex gap-1 mb-4">
@@ -63,7 +58,7 @@ export default function TestimonialsSection() {
                 </div>
                 <p className="font-semibold text-sm">{item.name}</p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Home, Building2, SprayCan, Truck, ArrowRight } from 'lucide-react';
-import { motion } from 'framer-motion';
 import { useLanguage } from '@/lib/LanguageContext';
 
 const icons = [Home, Building2, SprayCan, Truck];
@@ -23,12 +22,8 @@ export default function ServicesPreview() {
           {s.items.map((service, i) => {
             const Icon = icons[i];
             return (
-              <motion.div
+              <div
                 key={service.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
                 className="group p-6 rounded-2xl border bg-card hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center mb-5 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
@@ -37,7 +32,7 @@ export default function ServicesPreview() {
                 <h3 className="font-semibold text-lg mb-2">{service.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-4">{service.description}</p>
                 <p className="text-sm font-semibold text-primary">{service.price}</p>
-              </motion.div>
+              </div>
             );
           })}
         </div>
