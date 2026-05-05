@@ -1,12 +1,14 @@
 import { createClient } from '@base44/sdk';
 import { appParams } from '@/lib/app-params';
 
-const { appId, token, functionsVersion, appBaseUrl } = appParams;
+const { appId, functionsVersion, appBaseUrl } = appParams;
 
-// Create client — pass token only if it exists so SDK doesn't fire tracking on anonymous visits
+// IMPORTANT: Do NOT pass token at init time.
+// The Base44 SDK fires /User/me and /track/batch automatically when a token is present.
+// These block the critical render path and hurt LCP/TBT on mobile.
+// Token is read lazily by base44.auth.me() inside AuthContext after page load.
 export const base44 = createClient({
   appId,
-  ...(token ? { token } : {}),
   functionsVersion,
   serverUrl: '',
   requiresAuth: false,

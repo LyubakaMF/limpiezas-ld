@@ -8,69 +8,67 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoadingAuth, setIsLoadingAuth] = useState(false);
-  const [isLoadingPublicSettings] = useState(false);
   const [authError, setAuthError] = useState(null);
-  const [appPublicSettings] = useState(null);
 
   useEffect(() => {
-    // Only run auth check if there's a token — skip entirely for anonymous visitors
+    // Skip entirely for anonymous visitors — no token means no auth check
     if (!appParams.token) {
       return;
     }
-    // Defer until after page is fully interactive
-    const run = () => checkUserAuth();
+
+    // Defer auth check until AFTER page is painted — keeps /User/me out of critical path
+    const runAuth = () => {
+      // Set token lazily so SDK doesn't auto-fire requests at init time
+      base44.auth.setToken(appParams.token, false); // false = don't re-save to localStorage
+      checkUserAuth();
+    };
+
     if (typeof requestIdleCallback !== 'undefined') {
-      requestIdleCallback(run, { timeout: 4000 });
+      requestIdleCallback(runAuth, { timeout: 5000 });
     } else {
-      setTimeout(run, 3000);
+      setTimeout(runAuth, 4000);
     }
   }, []);
 
   const checkUserAuth = async () => {
     try {
-      // Now check if the user is authenticated
       setIsLoadingAuth(true);
       const currentUser = await base44.auth.me();
       setUser(currentUser);
       setIsAuthenticated(true);
-      setIsLoadingAuth(false);
-    } catch (error) {
-      // Token expired or invalid — just treat as unauthenticated, do NOT redirect
-      setIsLoadingAuth(false);
+    } catch {
       setIsAuthenticated(false);
-      // Clear the stale token from storage so it doesn't cause issues again
+      // Clear stale token so next visit is clean
       if (typeof localStorage !== 'undefined') {
         localStorage.removeItem('base44_access_token');
       }
+    } finally {
+      setIsLoadingAuth(false);
     }
   };
 
   const logout = (shouldRedirect = true) => {
     setUser(null);
     setIsAuthenticated(false);
-    
     if (shouldRedirect) {
-      // Use the SDK's logout method which handles token cleanup and redirect
       base44.auth.logout(window.location.href);
     } else {
-      // Just remove the token without redirect
       base44.auth.logout();
     }
   };
 
   const navigateToLogin = () => {
-    // Use the SDK's redirectToLogin method
     base44.auth.redirectToLogin(window.location.href);
   };
 
   return (
-    <AuthContext.Provider value={{ 
-      user, 
-      isAuthenticated, 
+    <AuthContext.Provider value={{
+      user,
+      isAuthenticated,
       isLoadingAuth,
-      isLoadingPublicSettings,
+      isLoadingPublicSettings: false,
       authError,
-      appPublicSettings,
+      appPublicSettings: null,
       logout,
       navigateToLogin
     }}>
