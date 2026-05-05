@@ -10,13 +10,20 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-[100svh] flex items-center overflow-hidden">
-      {/* Pure CSS background - no external image request, eliminates LCP bottleneck */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background: 'linear-gradient(135deg, hsl(142 60% 35% / 0.15) 0%, hsl(142 40% 94% / 0.6) 40%, hsl(210 20% 99% / 0.3) 100%), linear-gradient(to bottom right, hsl(142 60% 35% / 0.08), transparent)'
-        }}
-      />
+      {/* Hero background image - hosted on Base44 CDN */}
+      <div className="absolute inset-0">
+        <img
+          src="https://media.base44.com/images/public/69b9d864ebb8dd58db0fa41f/c10c7559e_generated_image.png"
+          alt=""
+          aria-hidden="true"
+          className="w-full h-full object-cover"
+          fetchpriority="high"
+          decoding="sync"
+          width="1200"
+          height="800"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/85 via-background/55 to-background/25" />
+      </div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-32 lg:py-40">
         <div className="grid lg:grid-cols-2 gap-16 items-center">

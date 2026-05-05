@@ -10,8 +10,21 @@ export default function PromotionsSection() {
   const p = t.promotions;
 
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-b from-background to-accent/30">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section className="py-20 lg:py-28 relative overflow-hidden">
+      <div className="absolute inset-0">
+        <img
+          src="https://media.base44.com/images/public/69b9d864ebb8dd58db0fa41f/341c8c53a_generated_image.png"
+          alt=""
+          aria-hidden="true"
+          className="w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
+          width="1200"
+          height="800"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/85 to-background/95" />
+      </div>
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
