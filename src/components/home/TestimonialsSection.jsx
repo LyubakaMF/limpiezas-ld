@@ -19,12 +19,12 @@ export default function TestimonialsSection() {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    // Delay API call to not block initial render / LCP
+    // Delay reviews fetch until after page is fully interactive
     const timer = setTimeout(() => {
       base44.entities.Review.filter({ approved: true }, '-created_date', 6)
         .then(setReviews)
         .catch(() => {});
-    }, 2000);
+    }, 5000);
     return () => clearTimeout(timer);
   }, []);
 
