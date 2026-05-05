@@ -104,16 +104,12 @@ export const AuthProvider = ({ children }) => {
       setIsAuthenticated(true);
       setIsLoadingAuth(false);
     } catch (error) {
-      console.error('User auth check failed:', error);
+      // Token expired or invalid — just treat as unauthenticated, do NOT redirect
       setIsLoadingAuth(false);
       setIsAuthenticated(false);
-      
-      // If user auth fails, it might be an expired token
-      if (error.status === 401 || error.status === 403) {
-        setAuthError({
-          type: 'auth_required',
-          message: 'Authentication required'
-        });
+      // Clear the stale token from storage so it doesn't cause issues again
+      if (typeof localStorage !== 'undefined') {
+        localStorage.removeItem('base44_access_token');
       }
     }
   };
