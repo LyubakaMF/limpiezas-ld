@@ -46,7 +46,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link to="/" className="flex items-center gap-2">
-            <img src="https://media.base44.com/images/public/69b9d864ebb8dd58db0fa41f/3f30551b2_generated_image.png" alt="Limpiezas LD" className="rounded-none h-10 w-10 object-contain" width="40" height="40" fetchpriority="high" />
+            <img src="https://media.base44.com/images/public/69b9d864ebb8dd58db0fa41f/3f30551b2_generated_image.png" alt="Limpiezas LD logo" className="rounded-none h-10 w-10 object-contain" width="40" height="40" fetchpriority="high" />
             <span className="text-4xl font-semibold tracking-tight">Limpiezas LD</span>
           </Link>
 
@@ -103,8 +103,9 @@ export default function Navbar() {
 
           <button
             className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors"
-            onClick={() => setIsOpen(!isOpen)}>
-            
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
+            aria-expanded={isOpen}>
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
