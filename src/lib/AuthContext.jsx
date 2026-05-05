@@ -37,9 +37,14 @@ export const AuthProvider = ({ children }) => {
         setAppPublicSettings(publicSettings);
         setIsLoadingPublicSettings(false);
 
-        // Check auth non-blocking — don't delay page render
+        // Check auth non-blocking — defer until after page is interactive
         if (appParams.token) {
-          checkUserAuth(); // intentionally not awaited
+          // Use requestIdleCallback if available, else setTimeout with 2s delay
+          if (typeof requestIdleCallback !== 'undefined') {
+            requestIdleCallback(() => checkUserAuth(), { timeout: 3000 });
+          } else {
+            setTimeout(() => checkUserAuth(), 2000);
+          }
         } else {
           setIsLoadingAuth(false);
           setIsAuthenticated(false);

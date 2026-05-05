@@ -16,7 +16,7 @@ export default function HeroSection() {
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-32 lg:py-40">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent border border-primary/10 text-sm font-medium text-accent-foreground mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/15 border border-primary/20 text-sm font-medium text-primary mb-8">
               <Star className="w-4 h-4 fill-primary text-primary" />
               {h.badge}
             </div>
