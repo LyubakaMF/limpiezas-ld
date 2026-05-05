@@ -10,21 +10,13 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-[100svh] flex items-center overflow-hidden">
-      {/* Background - preloaded LCP image, reduced size for mobile */}
-      <div className="absolute inset-0">
-        <img
-          src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=75"
-          srcSet="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=75 800w, https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&q=75 1200w"
-          sizes="100vw"
-          alt="Empresa de limpieza profesional Limpiezas LD en Águilas, Murcia"
-          className="w-full h-full object-cover"
-          fetchpriority="high"
-          decoding="sync"
-          width="800"
-          height="600"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/50 to-background/20" />
-      </div>
+      {/* Pure CSS background - no external image request, eliminates LCP bottleneck */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: 'linear-gradient(135deg, hsl(142 60% 35% / 0.15) 0%, hsl(142 40% 94% / 0.6) 40%, hsl(210 20% 99% / 0.3) 100%), linear-gradient(to bottom right, hsl(142 60% 35% / 0.08), transparent)'
+        }}
+      />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-32 lg:py-40">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -69,28 +61,23 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Right image - desktop only, lazy loaded */}
-          <div className="hidden lg:block">
-            <div className="relative">
-              <div className="rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 aspect-[4/5]">
-                <img
-                  src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=600&q=75"
-                  alt="Equipo profesional de limpieza Limpiezas LD - Águilas, San Juan de los Terreros, Pulpí, Lorca"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                  decoding="async"
-                  width="600"
-                  height="750"
-                />
-              </div>
-              <div className="absolute -bottom-6 -left-6 bg-card rounded-2xl shadow-xl p-5 border">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                    <Star className="w-6 h-6 text-primary fill-primary" />
+          {/* Right side - desktop only, pure CSS decorative block (no external image) */}
+          <div className="hidden lg:flex items-center justify-center">
+            <div className="relative w-full max-w-sm">
+              <div className="rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 aspect-[4/5] bg-gradient-to-br from-primary/20 via-accent to-primary/5 flex items-center justify-center">
+                <div className="text-center p-8">
+                  <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                    <Star className="w-10 h-10 text-primary fill-primary" />
                   </div>
-                  <div>
-                    <p className="font-bold text-lg">2,000+</p>
-                    <p className="text-sm text-muted-foreground">{h.happyCustomers}</p>
+                  <p className="font-bold text-4xl text-primary">4.9★</p>
+                  <p className="text-muted-foreground mt-2 font-medium">2,000+ {h.happyCustomers}</p>
+                  <div className="mt-6 flex items-center gap-2 justify-center text-sm text-muted-foreground">
+                    <Shield className="w-4 h-4 text-primary" />
+                    <span>{h.insured}</span>
+                  </div>
+                  <div className="mt-2 flex items-center gap-2 justify-center text-sm text-muted-foreground">
+                    <Clock className="w-4 h-4 text-primary" />
+                    <span>{h.sameDay}</span>
                   </div>
                 </div>
               </div>
