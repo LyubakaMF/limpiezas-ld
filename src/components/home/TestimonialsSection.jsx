@@ -24,7 +24,7 @@ export default function TestimonialsSection() {
       base44.entities.Review.filter({ approved: true }, '-created_date', 6)
         .then(setReviews)
         .catch(() => {});
-    }, 5000);
+    }, 8000);
     return () => clearTimeout(timer);
   }, []);
 
