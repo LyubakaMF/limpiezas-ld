@@ -166,6 +166,13 @@
     }
     </script>
 
+    <!-- Security Headers (meta equivalents) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://www.googletagmanager.com https://googleads.g.doubleclick.net https://base44.com https://*.base44.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https: http:; connect-src 'self' https: wss:; frame-src 'self' https://www.googletagmanager.com; object-src 'none'; base-uri 'self'; form-action 'self';" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(self), payment=()" />
+    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin-allow-popups" />
+
     <!-- Google Consent Mode v2 - Default DENIED until user consents -->
     <script>
       window.dataLayer = window.dataLayer || [];
