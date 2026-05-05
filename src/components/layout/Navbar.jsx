@@ -42,11 +42,11 @@ export default function Navbar() {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
     scrolled ? 'bg-background/80 backdrop-blur-xl shadow-sm border-b' : 'bg-transparent'}`
-    }>
+    } style={{ minHeight: '64px' }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link to="/" className="flex items-center gap-2">
-            <img src="https://media.base44.com/images/public/69b9d864ebb8dd58db0fa41f/3f30551b2_generated_image.png" alt="Limpiezas LD" className="rounded-none h-12 w-auto" />
+            <img src="https://media.base44.com/images/public/69b9d864ebb8dd58db0fa41f/3f30551b2_generated_image.png" alt="Limpiezas LD" className="rounded-none h-12 w-auto" width="48" height="48" fetchpriority="high" />
             <span className="text-4xl font-semibold tracking-tight">Limpiezas LD</span>
           </Link>
 

@@ -9,7 +9,7 @@ export default function HeroSection() {
   const h = t.hero;
 
   return (
-    <section className="relative flex items-center overflow-hidden" style={{ minHeight: '100svh' }}>
+    <section className="relative flex items-center overflow-hidden" style={{ minHeight: '100vh' }}>
       {/* Hero background - pure CSS gradient, zero CLS, zero LCP penalty */}
       <div className="absolute inset-0 bg-gradient-to-br from-accent via-background to-primary/5" />
 
