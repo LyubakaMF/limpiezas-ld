@@ -15,7 +15,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <img src="https://media.base44.com/images/public/69b9d864ebb8dd58db0fa41f/3f30551b2_generated_image.png" alt="Limpiezas LD logo" className="h-10 w-10 object-contain" width="40" height="40" />
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Limpiezas LD logo" role="img">
+                <rect width="40" height="40" rx="8" fill="hsl(142,60%,35%)"/>
+                <text x="20" y="27" textAnchor="middle" fontSize="18" fontWeight="bold" fill="white" fontFamily="system-ui,sans-serif">LD</text>
+              </svg>
               <span className="text-2xl font-bold">Limpiezas LD</span>
             </div>
             <p className="text-background/60 text-sm leading-relaxed">{f.description}</p>
