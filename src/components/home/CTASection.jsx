@@ -19,7 +19,7 @@ export default function CTASection() {
           transition={{ duration: 0.6 }}
           className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-primary to-primary/80 p-12 lg:p-20 text-center"
         >
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1527515545081-5db817172677?w=1200&q=60')] opacity-10 bg-cover bg-center" />
+          <div className="absolute inset-0 opacity-10" style={{ background: 'radial-gradient(circle at 30% 50%, white 0%, transparent 60%)' }} />
           <div className="relative">
             <h2 className="text-3xl lg:text-5xl font-bold text-primary-foreground tracking-tight max-w-2xl mx-auto">
               {c.title}
