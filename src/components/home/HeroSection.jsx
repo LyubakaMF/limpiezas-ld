@@ -9,25 +9,12 @@ export default function HeroSection() {
   const h = t.hero;
 
   return (
-    <section className="relative min-h-[100svh] flex items-center overflow-hidden">
-      {/* Hero background image - hosted on Base44 CDN */}
-      <div className="absolute inset-0">
-        <img
-          src="https://media.base44.com/images/public/69b9d864ebb8dd58db0fa41f/c10c7559e_generated_image.png"
-          alt=""
-          aria-hidden="true"
-          className="w-full h-full object-cover"
-          fetchpriority="high"
-          decoding="sync"
-          width="1200"
-          height="800"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-background/85 via-background/55 to-background/25" />
-      </div>
+    <section className="relative flex items-center overflow-hidden" style={{ minHeight: '100svh' }}>
+      {/* Hero background - pure CSS gradient, zero CLS, zero LCP penalty */}
+      <div className="absolute inset-0 bg-gradient-to-br from-accent via-background to-primary/5" />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-32 lg:py-40">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* No animation wrapper - avoids CLS and improves FCP/LCP */}
           <div>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent border border-primary/10 text-sm font-medium text-accent-foreground mb-8">
               <Star className="w-4 h-4 fill-primary text-primary" />
