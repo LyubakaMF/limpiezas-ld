@@ -8,18 +8,22 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [isLoadingAuth, setIsLoadingAuth] = useState(true);
-  const [isLoadingPublicSettings, setIsLoadingPublicSettings] = useState(true);
+  const [isLoadingAuth, setIsLoadingAuth] = useState(false);
+  const [isLoadingPublicSettings, setIsLoadingPublicSettings] = useState(false);
   const [authError, setAuthError] = useState(null);
   const [appPublicSettings, setAppPublicSettings] = useState(null); // Contains only { id, public_settings }
 
   useEffect(() => {
-    checkAppState();
+    // Defer the entire auth check until after initial paint
+    if (typeof requestIdleCallback !== 'undefined') {
+      requestIdleCallback(() => checkAppState(), { timeout: 2000 });
+    } else {
+      setTimeout(() => checkAppState(), 500);
+    }
   }, []);
 
   const checkAppState = async () => {
     try {
-      setIsLoadingPublicSettings(true);
       setAuthError(null);
       
       // First, check app public settings (with token if available)
@@ -35,7 +39,7 @@ export const AuthProvider = ({ children }) => {
       try {
         const publicSettings = await appClient.get(`/prod/public-settings/by-id/${appParams.appId}`);
         setAppPublicSettings(publicSettings);
-        setIsLoadingPublicSettings(false);
+        setIsLoadingPublicSettings(false); // already false by default, but explicit
 
         // Check auth non-blocking — defer until after page is interactive
         if (appParams.token) {
