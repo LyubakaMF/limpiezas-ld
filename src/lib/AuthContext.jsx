@@ -9,6 +9,18 @@ export const AuthProvider = ({ children }) => {
   const [authError, setAuthError] = useState(null);
 
   useEffect(() => {
+    // Skip auth entirely if no token — anonymous visitors (most traffic) never need /User/me
+    const hasToken = !!(
+      localStorage.getItem('base44_access_token') ||
+      localStorage.getItem('token') ||
+      new URLSearchParams(window.location.search).get('access_token')
+    );
+
+    if (!hasToken) {
+      setIsLoadingAuth(false);
+      return;
+    }
+
     base44.auth.me()
       .then(u => setUser(u))
       .catch(err => {
