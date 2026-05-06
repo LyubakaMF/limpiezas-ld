@@ -1,12 +1,37 @@
-import React from 'react';
+import React, { Suspense, lazy, useRef, useState, useEffect } from 'react';
 import HeroSection from '../components/home/HeroSection';
-import ServicesPreview from '../components/home/ServicesPreview';
-import StatsSection from '../components/home/StatsSection';
-import TestimonialsSection from '../components/home/TestimonialsSection';
-import FaqSection from '../components/home/FaqSection';
-import CTASection from '../components/home/CTASection';
-import PromotionsSection from '../components/home/PromotionsSection';
 import { useSEO } from '@/lib/useSEO';
+
+// Lazy load all below-the-fold sections
+const PromotionsSection = lazy(() => import('../components/home/PromotionsSection'));
+const ServicesPreview   = lazy(() => import('../components/home/ServicesPreview'));
+const StatsSection      = lazy(() => import('../components/home/StatsSection'));
+const TestimonialsSection = lazy(() => import('../components/home/TestimonialsSection'));
+const FaqSection        = lazy(() => import('../components/home/FaqSection'));
+const CTASection        = lazy(() => import('../components/home/CTASection'));
+
+// Sentinel: mounts below-fold content once the user scrolls past the hero
+function BelowFold({ children }) {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setVisible(true); observer.disconnect(); } },
+      { rootMargin: '300px', threshold: 0 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={ref}>
+      {visible && <Suspense fallback={<div />}>{children}</Suspense>}
+    </div>
+  );
+}
 
 export default function Home() {
   useSEO({
@@ -19,12 +44,14 @@ export default function Home() {
   return (
     <div>
       <HeroSection />
-      <PromotionsSection />
-      <ServicesPreview />
-      <StatsSection />
-      <TestimonialsSection />
-      <FaqSection />
-      <CTASection />
+      <BelowFold>
+        <PromotionsSection />
+        <ServicesPreview />
+        <StatsSection />
+        <TestimonialsSection />
+        <FaqSection />
+        <CTASection />
+      </BelowFold>
     </div>
   );
 }

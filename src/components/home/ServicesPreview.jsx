@@ -25,6 +25,7 @@ export default function ServicesPreview() {
               <div
                 key={service.title}
                 className="group p-6 rounded-2xl border bg-card hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1"
+                loading="lazy"
               >
                 <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center mb-5 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                   <Icon className="w-6 h-6" />
