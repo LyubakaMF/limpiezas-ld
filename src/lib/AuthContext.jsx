@@ -1,32 +1,28 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
-import { base44 } from '@/api/base44Client';
-import { appParams } from '@/lib/app-params';
+import { base44, savedAuthToken } from '@/api/base44Client';
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoadingAuth, setIsLoadingAuth] = useState(false);
   const [authError, setAuthError] = useState(null);
 
   useEffect(() => {
-    // Skip entirely for anonymous visitors — no token means no auth check
-    if (!appParams.token) {
-      return;
-    }
+    // No token = anonymous visitor, skip auth entirely
+    if (!savedAuthToken) return;
 
-    // Defer auth check until AFTER page is painted — keeps /User/me out of critical path
+    // Defer auth check until after first paint — keeps /User/me out of LCP critical path
     const runAuth = () => {
-      // Set token lazily so SDK doesn't auto-fire requests at init time
-      base44.auth.setToken(appParams.token, false); // false = don't re-save to localStorage
+      // Restore token into SDK lazily (saves back to localStorage)
+      base44.auth.setToken(savedAuthToken, true);
       checkUserAuth();
     };
 
     if (typeof requestIdleCallback !== 'undefined') {
-      requestIdleCallback(runAuth, { timeout: 5000 });
+      requestIdleCallback(runAuth, { timeout: 6000 });
     } else {
-      setTimeout(runAuth, 4000);
+      setTimeout(runAuth, 5000);
     }
   }, []);
 
@@ -35,10 +31,8 @@ export const AuthProvider = ({ children }) => {
       setIsLoadingAuth(true);
       const currentUser = await base44.auth.me();
       setUser(currentUser);
-      setIsAuthenticated(true);
     } catch {
-      setIsAuthenticated(false);
-      // Clear stale token so next visit is clean
+      // Stale/invalid token — clear it
       if (typeof localStorage !== 'undefined') {
         localStorage.removeItem('base44_access_token');
       }
@@ -47,14 +41,9 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const logout = (shouldRedirect = true) => {
+  const logout = () => {
     setUser(null);
-    setIsAuthenticated(false);
-    if (shouldRedirect) {
-      base44.auth.logout(window.location.href);
-    } else {
-      base44.auth.logout();
-    }
+    base44.auth.logout(window.location.href);
   };
 
   const navigateToLogin = () => {
@@ -64,7 +53,7 @@ export const AuthProvider = ({ children }) => {
   return (
     <AuthContext.Provider value={{
       user,
-      isAuthenticated,
+      isAuthenticated: !!user,
       isLoadingAuth,
       isLoadingPublicSettings: false,
       authError,

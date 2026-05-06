@@ -116,7 +116,7 @@ export default function CookieBanner() {
   useEffect(() => {
     if (!hasConsented()) {
       // Small delay so page loads first
-      const timer = setTimeout(() => setVisible(true), 1200);
+      const timer = setTimeout(() => setVisible(true), 3000);
       return () => clearTimeout(timer);
     } else {
       const consent = getCookieConsent();
