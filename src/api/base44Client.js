@@ -1,24 +1,21 @@
 import { createClient } from '@base44/sdk';
 import { appParams } from '@/lib/app-params';
 
-const { appId, token, functionsVersion, appBaseUrl } = appParams;
+const { appId, functionsVersion, appBaseUrl } = appParams;
 
-// Check if there's an auth token BEFORE creating the client
-// Anonymous visitors (no token) should not trigger /User/me or /track/batch
-const hasToken = !!(
-  token ||
+// Only pass token if one actually exists in storage/URL
+// This prevents SDK from auto-firing /User/me and /track/batch for anonymous visitors
+const storedToken = (
   localStorage.getItem('base44_access_token') ||
-  localStorage.getItem('token')
-);
+  localStorage.getItem('token') ||
+  new URLSearchParams(window.location.search).get('access_token')
+) || undefined;
 
 export const base44 = createClient({
   appId,
-  // Only pass token if one exists — prevents SDK from auto-firing auth requests
-  token: hasToken ? token : undefined,
+  token: storedToken,
   functionsVersion,
   appBaseUrl,
-  // Disable analytics tracking for anonymous visitors to prevent /track/batch
-  ...(hasToken ? {} : { disableAnalytics: true }),
 });
 
-export { hasToken };
+export const hasToken = !!storedToken;
