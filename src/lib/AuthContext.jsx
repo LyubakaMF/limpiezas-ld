@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
-import { base44 } from '@/api/base44Client';
+import { base44, hasToken } from '@/api/base44Client';
 
 const AuthContext = createContext();
 
@@ -9,13 +9,6 @@ export const AuthProvider = ({ children }) => {
   const [authError, setAuthError] = useState(null);
 
   useEffect(() => {
-    // Skip auth entirely if no token — anonymous visitors (most traffic) never need /User/me
-    const hasToken = !!(
-      localStorage.getItem('base44_access_token') ||
-      localStorage.getItem('token') ||
-      new URLSearchParams(window.location.search).get('access_token')
-    );
-
     if (!hasToken) {
       setIsLoadingAuth(false);
       return;
