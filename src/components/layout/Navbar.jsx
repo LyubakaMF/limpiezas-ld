@@ -57,13 +57,13 @@ export default function Navbar() {
             {navLinks.map((link) =>
             link.highlight ?
             <Link key={link.path} to={link.path}>
-                  <Button className="ml-3 rounded-full px-6 min-h-[44px]">{link.label}</Button>
+                  <Button className="ml-3 rounded-full px-6">{link.label}</Button>
                 </Link> :
 
             <Link
               key={link.path}
               to={link.path}
-              className={`px-4 py-3 rounded-full text-sm font-medium transition-colors min-h-[44px] flex items-center ${
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
               location.pathname === link.path ?
               'text-primary bg-accent' :
               'text-muted-foreground hover:text-foreground hover:bg-muted'}`
