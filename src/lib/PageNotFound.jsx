@@ -1,11 +1,24 @@
 import { useLocation } from 'react-router-dom';
 import { base44 } from '@/api/base44Client';
 import { useQuery } from '@tanstack/react-query';
+import { useEffect } from 'react';
 
 
 export default function PageNotFound({}) {
     const location = useLocation();
     const pageName = location.pathname.substring(1);
+
+    useEffect(() => {
+        // Signal to crawlers this is a real 404
+        const meta = document.createElement('meta');
+        meta.name = 'robots';
+        meta.content = 'noindex, nofollow';
+        document.head.appendChild(meta);
+        document.title = '404 - Página no encontrada | Limpiezas LD';
+        return () => {
+            document.head.removeChild(meta);
+        };
+    }, []);
 
     const { data: authData, isFetched } = useQuery({
         queryKey: ['user'],
