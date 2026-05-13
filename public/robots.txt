@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /AdminBookings
+Disallow: /AdminReviews
+Disallow: /LeaveReview
 
 Sitemap: https://www.limpiezas-ld.com/sitemap.xml
