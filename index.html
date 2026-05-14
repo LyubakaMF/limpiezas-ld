@@ -7,6 +7,7 @@
     <meta name="description" content="Limpieza profesional en Águilas, San Juan de los Terreros, Pulpí y Lorca. Hogares, apartamentos vacacionales y oficinas. Productos ecológicos. Presupuesto gratis. ☎ +34 643 53 34 53" />
     <meta name="language" content="es-ES" />
     <meta http-equiv="Content-Language" content="es-ES" />
+    <meta http-equiv="content-language" content="es-ES" />
 
     <!-- Per-page meta injection for crawlers without JS (Bing, etc.) -->
     <script>
@@ -43,6 +44,14 @@
         document.querySelector('title').textContent = page.title;
         document.querySelector('meta[name="description"]').setAttribute('content', page.desc);
       }
+      // Ensure content-language is always present for Bing
+      var cl = document.querySelector('meta[http-equiv="content-language"]');
+      if (!cl) {
+        cl = document.createElement('meta');
+        cl.setAttribute('http-equiv', 'content-language');
+        document.head.appendChild(cl);
+      }
+      cl.setAttribute('content', 'es-ES');
     })();
     </script>
     <meta name="keywords" content="limpieza, limpieza de hogares, limpieza comercial, limpieza profunda, Águilas, San Juan de los Terreros, Pulpí, Lorca, servicios de limpieza, apartamentos vacacionales, precios" />
