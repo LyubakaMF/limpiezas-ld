@@ -34,7 +34,7 @@ export default function PromotionsSection() {
               </div>
               </div>
 
-              <h2 className="text-xl font-bold mb-3">{p.promo1Title}</h2>
+              <h3 className="text-xl font-bold mb-3">{p.promo1Title}</h3>
               <p className="text-muted-foreground leading-relaxed mb-6">{p.promo1Desc}</p>
 
               <div className="flex items-center gap-2 p-3 bg-amber-50 border border-amber-200 rounded-xl mb-6">
@@ -64,7 +64,7 @@ export default function PromotionsSection() {
                 </div>
               </div>
 
-              <h2 className="text-xl font-bold mb-3">{p.promo2Title}</h2>
+              <h3 className="text-xl font-bold mb-3">{p.promo2Title}</h3>
               <p className="text-muted-foreground leading-relaxed mb-6">{p.promo2Desc}</p>
 
               <div className="flex items-center gap-2 p-3 bg-amber-50 border border-amber-200 rounded-xl mb-6">
