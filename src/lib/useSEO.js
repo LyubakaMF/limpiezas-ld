@@ -4,10 +4,31 @@ import { useEffect } from 'react';
  * Custom hook for dynamic SEO meta tags per page
  * Optimized for local SEO in Águilas, Murcia, Spain
  */
-export function useSEO({ title, description, canonical, ogImage }) {
+export function useSEO({ title, description, canonical, ogImage, lang = 'es' }) {
   useEffect(() => {
     // Title
     document.title = title;
+
+    // Language
+    document.documentElement.setAttribute('lang', lang === 'es' ? 'es-ES' : lang);
+    const setMetaHttp = (httpEquiv, value) => {
+      let el = document.querySelector(`meta[http-equiv="${httpEquiv}"]`);
+      if (!el) {
+        el = document.createElement('meta');
+        el.setAttribute('http-equiv', httpEquiv);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('content', value);
+    };
+    const langCode = lang === 'es' ? 'es-ES' : lang;
+    setMetaHttp('Content-Language', langCode);
+    let metaLang = document.querySelector('meta[name="language"]');
+    if (!metaLang) {
+      metaLang = document.createElement('meta');
+      metaLang.setAttribute('name', 'language');
+      document.head.appendChild(metaLang);
+    }
+    metaLang.setAttribute('content', langCode);
 
     // Update or create meta tags
     const setMeta = (selector, attr, value) => {
