@@ -283,23 +283,18 @@
   <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TCCRCPFQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <!-- Visible fallback for crawlers without JS -->
-  <div id="seo-fallback" style="position:absolute;left:-9999px;top:-9999px;">
-    <h1>Limpiezas LD - Limpieza Profesional en Águilas, San Juan de los Terreros, Pulpí y Lorca</h1>
-    <p>Empresa de limpieza profesional en Águilas, San Juan de los Terreros, Pulpí y Lorca. Hogares, apartamentos vacacionales y oficinas. Productos ecológicos. ☎ +34 643 53 34 53</p>
-    <h2>Nuestros Servicios</h2>
-    <ul>
-      <li><a href="/Services">Limpieza Residencial en Águilas - desde 80€</a></li>
-      <li><a href="/Services">Limpieza de Apartamentos Vacacionales - desde 30€</a></li>
-      <li><a href="/Services">Limpieza Profunda - desde 180€</a></li>
-      <li><a href="/Services">Limpieza de Mudanzas - desde 150€</a></li>
-      <li><a href="/Services">Limpieza Comercial - 15€/hora</a></li>
-    </ul>
-    <p>Zona de servicio: Águilas · San Juan de los Terreros · Pulpí · Lorca</p>
-    <p><a href="/Booking">Solicitar presupuesto gratis</a></p>
-  </div>
-
-    <div id="root"></div>
+    <div id="root">
+      <!-- Static fallback for crawlers (Bing, etc.) that do not execute JavaScript. React replaces this on load. -->
+      <h1>Limpiezas LD - Limpieza Profesional en Águilas</h1>
+      <p>Empresa de limpieza profesional en Águilas, San Juan de los Terreros, Pulpí y Lorca. Hogares, apartamentos vacacionales y oficinas. Productos ecológicos. Presupuesto gratis. ☎ +34 643 53 34 53</p>
+      <nav>
+        <a href="/">Inicio</a>
+        <a href="/Services">Servicios</a>
+        <a href="/Booking">Reservar</a>
+        <a href="/About">Sobre Nosotros</a>
+        <a href="/Promotions">Promociones</a>
+      </nav>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
