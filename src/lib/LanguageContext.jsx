@@ -26,18 +26,21 @@ export function LanguageProvider({ children }) {
   const initialLang = isMobile ? detectLanguage() : 'es';
 
   const [lang, setLang] = useState(initialLang);
-  const [t, setT] = useState(initialLang === 'es' ? esTranslations : null);
+  // Always start with Spanish so page renders immediately, then swap if needed
+  const [t, setT] = useState(esTranslations);
 
   useEffect(() => {
-    if (lang === 'es' && t === esTranslations) return;
+    if (initialLang === 'es') return;
+    langLoaders[initialLang]().then(setT);
+  }, []); // only on mount
+
+  useEffect(() => {
     langLoaders[lang]().then(setT);
   }, [lang]);
 
   const changeLang = (newLang) => {
     if (SUPPORTED_LANGS.includes(newLang)) setLang(newLang);
   };
-
-  if (!t) return null; // brief loading while non-ES translation loads
 
   return (
     <LanguageContext.Provider value={{ lang, setLang: changeLang, t }}>
