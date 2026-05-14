@@ -7,6 +7,44 @@
     <meta name="description" content="Limpieza profesional en Águilas, San Juan de los Terreros, Pulpí y Lorca. Hogares, apartamentos vacacionales y oficinas. Productos ecológicos. Presupuesto gratis. ☎ +34 643 53 34 53" />
     <meta name="language" content="es-ES" />
     <meta http-equiv="Content-Language" content="es-ES" />
+
+    <!-- Per-page meta injection for crawlers without JS (Bing, etc.) -->
+    <script>
+    (function() {
+      var pages = {
+        '/Services': {
+          title: 'Servicios de Limpieza en Águilas - Residencial, Comercial, Profunda | Limpiezas LD',
+          desc: 'Todos nuestros servicios de limpieza en Águilas, San Juan de los Terreros, Pulpí y Lorca. Limpieza residencial desde 80€, apartamentos vacacionales desde 30€, limpieza profunda, mudanzas, post-obra y más.'
+        },
+        '/Booking': {
+          title: 'Reservar Limpieza en Águilas - Presupuesto Gratis | Limpiezas LD',
+          desc: 'Reserva tu servicio de limpieza en Águilas, San Juan de los Terreros, Pulpí o Lorca. Respuesta en menos de 2 horas. Presupuesto gratuito y sin compromiso. ☎ +34 643 53 34 53'
+        },
+        '/About': {
+          title: 'Sobre Nosotros - Limpiezas LD | Empresa de Limpieza en Águilas desde 2021',
+          desc: 'Conoce el equipo de Limpiezas LD. Empresa de limpieza profesional fundada en 2021 en Águilas, Murcia. Más de 20 profesionales, valoración 4.9★, 2.000+ clientes satisfechos.'
+        },
+        '/Promotions': {
+          title: 'Promociones - Ofertas Especiales de Limpieza | Limpiezas LD',
+          desc: 'Aprovecha nuestras ofertas especiales en servicios de limpieza. Gestión de apartamentos vacacionales y limpieza semanal a precios exclusivos. ☎ +34 643 53 34 53'
+        },
+        '/Empleo': {
+          title: 'Trabaja con Nosotros - Empleo en Limpiezas LD | Águilas, Murcia',
+          desc: 'Únete al equipo de Limpiezas LD. Buscamos personal de limpieza en Águilas, San Juan de los Terreros, Pulpí y Lorca. Envíanos tu CV y te contactamos pronto.'
+        },
+        '/PrivacyPolicy': {
+          title: 'Política de Privacidad | Limpiezas LD',
+          desc: 'Política de privacidad y protección de datos de Limpiezas LD. Información sobre el tratamiento de tus datos personales conforme al RGPD.'
+        }
+      };
+      var path = window.location.pathname.replace(/\/$/, '') || '/';
+      var page = pages[path];
+      if (page) {
+        document.querySelector('title').textContent = page.title;
+        document.querySelector('meta[name="description"]').setAttribute('content', page.desc);
+      }
+    })();
+    </script>
     <meta name="keywords" content="limpieza, limpieza de hogares, limpieza comercial, limpieza profunda, Águilas, San Juan de los Terreros, Pulpí, Lorca, servicios de limpieza, apartamentos vacacionales, precios" />
     <meta name="author" content="Limpiezas LD" />
     <meta name="robots" content="index, follow" />
