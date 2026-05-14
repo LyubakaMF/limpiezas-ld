@@ -25,7 +25,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4">{f.services}</h3>
+            <p className="font-semibold mb-4">{f.services}</p>
             <ul className="space-y-3 text-sm text-background/70">
               {f.serviceLinks.map(label => (
                 <li key={label}><Link to="/Services" className="hover:text-background transition-colors">{label}</Link></li>
@@ -34,7 +34,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4">{f.company}</h3>
+            <p className="font-semibold mb-4">{f.company}</p>
             <ul className="space-y-3 text-sm text-background/70">
               <li><Link to="/About" className="hover:text-background transition-colors">{f.companyLinks[0]}</Link></li>
               <li><Link to="/Booking" className="hover:text-background transition-colors">{f.companyLinks[1]}</Link></li>
@@ -44,7 +44,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4">{f.contact}</h3>
+            <p className="font-semibold mb-4">{f.contact}</p>
             <ul className="space-y-3 text-sm text-background/70">
               <li className="flex flex-wrap items-center gap-2">
                 <a href="tel:+34643533453" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors">
