@@ -22,24 +22,27 @@ function detectLanguage() {
 }
 
 export function LanguageProvider({ children }) {
-  const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-  const initialLang = isMobile ? detectLanguage() : 'es';
-
-  const [lang, setLang] = useState(initialLang);
-  // Always start with Spanish so page renders immediately, then swap if needed
+  // ALWAYS render with Spanish first — prevents NO_FCP / blank page on Lighthouse
+  // Language detection happens after first paint via useEffect
+  const [lang, setLang] = useState('es');
   const [t, setT] = useState(esTranslations);
 
   useEffect(() => {
-    if (initialLang === 'es') return;
-    langLoaders[initialLang]().then(setT);
-  }, []); // only on mount
+    // Detect browser language AFTER first render — no CLS, no blocked paint
+    const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (!isMobile) return; // Desktop always shows Spanish
 
-  useEffect(() => {
-    langLoaders[lang]().then(setT);
-  }, [lang]);
+    const detected = detectLanguage();
+    if (detected !== 'es') {
+      setLang(detected);
+      langLoaders[detected]().then(setT);
+    }
+  }, []);
 
   const changeLang = (newLang) => {
-    if (SUPPORTED_LANGS.includes(newLang)) setLang(newLang);
+    if (!SUPPORTED_LANGS.includes(newLang)) return;
+    setLang(newLang);
+    langLoaders[newLang]().then(setT);
   };
 
   return (
