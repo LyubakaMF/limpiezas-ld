@@ -72,7 +72,7 @@ export default {
       rights: '© 2026 Limpiezas LD. All rights reserved.',
       privacy: 'Privacy Policy',
       terms: 'Terms of Service',
-      serviceArea: 'Serving: Águilas · San Juan de los Terreros · Pulpí · Lorca',
+      serviceArea: 'Región de Murcia · Almería · Costa Cálida: Águilas · San Juan de los Terreros · Vera · Mazarrón · Cartagena',
       scanQR: 'Scan to visit our website',
     },
     servicesPage: {
