@@ -5,6 +5,7 @@ import { Home, Building2, SprayCan, Truck, HardHat, CalendarCheck, Umbrella, Che
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useSEO } from '@/lib/useSEO';
+import VacationalPricingSection from '../components/services/VacationalPricingSection';
 
 const icons = [Home, Umbrella, Building2, SprayCan, Truck, HardHat, CalendarCheck];
 const images = [
@@ -45,6 +46,7 @@ export default function Services() {
 
       <section className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-12">
+          <VacationalPricingSection />
           {sp.items.map((service, i) => {
             const Icon = icons[i] || Home;
             return (
