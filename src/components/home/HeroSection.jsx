@@ -21,23 +21,23 @@ export default function HeroSection() {
               {h.badge}
             </div>
 
-            <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.05]">
+            <h1 className="text-3xl sm:text-4xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] break-words hyphens-auto">
               {h.title1}
               <span className="text-primary block">{h.title2}</span>
             </h1>
 
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-lg">{h.description}</p>
+            <p className="mt-6 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-lg break-words hyphens-auto">{h.description}</p>
 
             <p className="mt-4 text-sm font-medium text-primary">{h.languages}</p>
 
             <div className="flex flex-col sm:flex-row gap-4 mt-10">
               <Link to="/Booking">
-                <Button size="lg" className="rounded-full px-8 h-14 text-base gap-2 shadow-lg shadow-primary/20">
+                <Button size="lg" className="rounded-full px-6 sm:px-8 h-12 sm:h-14 text-sm sm:text-base gap-2 shadow-lg shadow-primary/20 w-full sm:w-auto">
                   {h.cta} <ArrowRight className="w-4 h-4" />
                 </Button>
               </Link>
               <Link to="/Services">
-                <Button size="lg" variant="outline" className="rounded-full px-8 h-14 text-base">
+                <Button size="lg" variant="outline" className="rounded-full px-6 sm:px-8 h-12 sm:h-14 text-sm sm:text-base w-full sm:w-auto">
                   {h.services}
                 </Button>
               </Link>
