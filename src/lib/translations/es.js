@@ -3,7 +3,7 @@ export default {
     hero: {
       badge: 'Valorado 4.9/5 por más de 2.000 clientes',
       title1: 'Servicios de Limpieza Profesional en Región de Murcia, Águilas,',
-      title2: 'San Juan de los Terreros & Más.',
+      title2: 'San Juan de los Terreros, Mazarrón & Más.',
       description: 'Servicios de limpieza de calidad en Águilas, San Juan de los Terreros, Mazarrón, Pulpí y Lorca. Limpieza residencial, limpieza de apartamentos vacacionales, limpieza profunda y más. Precios asequibles, productos ecológicos, confiado por 2.000+ clientes.',
       languages: 'Hablamos inglés, español y ruso',
       cta: 'Presupuesto gratis',

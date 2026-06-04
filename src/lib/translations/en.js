@@ -9,7 +9,7 @@ export default {
     hero: {
       badge: 'Rated 4.9/5 by 2,000+ customers',
       title1: 'Professional Cleaning Services in Región de Murcia, Águilas,',
-      title2: 'San Juan de los Terreros & More.',
+      title2: 'San Juan de los Terreros, Mazarrón & More.',
       description: 'Top-rated limpieza services in Águilas, San Juan de los Terreros, Mazarrón, Pulpí and Lorca. Expert residential cleaning, vacation apartment cleaning, deep cleaning & more. Affordable prices, eco-friendly products, trusted by 2,000+ customers.',
       languages: 'We speak English, Spanish and Russian',
       cta: 'Get a Free Quote',
