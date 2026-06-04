@@ -10,7 +10,7 @@ export default {
       badge: 'Rated 4.9/5 by 2,000+ customers',
       title1: 'Professional Cleaning Services in Región de Murcia, Águilas,',
       title2: 'San Juan de los Terreros & More.',
-      description: 'Top-rated limpieza services in Águilas, San Juan de los Terreros, Pulpí and Lorca. Expert residential cleaning, vacation apartment cleaning, deep cleaning & more. Affordable prices, eco-friendly products, trusted by 2,000+ customers.',
+      description: 'Top-rated limpieza services in Águilas, San Juan de los Terreros, Mazarrón, Pulpí and Lorca. Expert residential cleaning, vacation apartment cleaning, deep cleaning & more. Affordable prices, eco-friendly products, trusted by 2,000+ customers.',
       languages: 'We speak English, Spanish and Russian',
       cta: 'Get a Free Quote',
       services: 'Our Services',
@@ -21,7 +21,7 @@ export default {
     servicesPreview: {
       tag: 'Professional Limpieza Services',
       title: 'Cleaning services for every need – Affordable prices',
-      subtitle: 'From regular upkeep to intensive deep cleans, we have you covered. Serving Águilas, San Juan de los Terreros, Pulpí & Lorca.',
+      subtitle: 'From regular upkeep to intensive deep cleans, we have you covered. Serving Águilas, San Juan de los Terreros, Mazarrón, Pulpí & Lorca.',
       viewAll: 'View All Services',
       items: [
         { title: 'Residential Cleaning', description: 'Professional limpieza for homes. Regular cleaning that keeps your space fresh, organized, and inviting every single day.', price: 'From 29 €/week' },
@@ -78,7 +78,7 @@ export default {
     servicesPage: {
       tag: 'Professional Limpieza Services',
       title: 'Professional cleaning solutions for every space – Expert limpieza services',
-      subtitle: 'From routine maintenance to specialized deep cleans in Águilas, San Juan de los Terreros, Pulpí & Lorca. Our expert team delivers exceptional results.',
+      subtitle: 'From routine maintenance to specialized deep cleans in Águilas, San Juan de los Terreros, Mazarrón, Pulpí & Lorca. Our expert team delivers exceptional results.',
       bookNow: 'Book Now',
       vacationalPricing: {
         badge: '2026 Price List',
@@ -174,7 +174,7 @@ export default {
       title: 'Frequently Asked Questions',
       subtitle: 'Find answers to common questions about our cleaning services and pricing.',
       items: [
-        { question: 'What areas do you serve?', answer: 'We serve Águilas, San Juan de los Terreros, Pulpí, and Lorca with professional cleaning services.' },
+        { question: 'What areas do you serve?', answer: 'We serve Águilas, San Juan de los Terreros, Mazarrón, Pulpí, and Lorca with professional cleaning services.' },
         { question: 'How far in advance do I need to book?', answer: 'You can book as little as 24 hours in advance, but we recommend booking at least 3-5 days ahead for better availability.' },
         { question: 'Do you use eco-friendly products?', answer: 'Yes, all our cleaning products are environmentally safe and non-toxic. We prioritize both your health and the planet.' },
         { question: 'Are your team members insured?', answer: 'Absolutely. All our team members are background-checked, fully insured, and bonded for your complete peace of mind.' },

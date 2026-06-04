@@ -1,0 +1,57 @@
+{
+  "name": "Review",
+  "type": "object",
+  "properties": {
+    "full_name": {
+      "type": "string",
+      "description": "Reviewer's name"
+    },
+    "rating": {
+      "type": "number",
+      "description": "Star rating 1-5"
+    },
+    "comment": {
+      "type": "string",
+      "description": "Review comment"
+    },
+    "service_type": {
+      "type": "string",
+      "description": "Service that was performed"
+    },
+    "approved": {
+      "type": "boolean",
+      "default": false,
+      "description": "Admin approved for public display"
+    }
+  },
+  "required": [
+    "full_name",
+    "rating",
+    "comment"
+  ],
+  "rls": {
+    "create": {},
+    "read": {
+      "$or": [
+        {
+          "data.approved": true
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

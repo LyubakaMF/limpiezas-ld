@@ -64,7 +64,7 @@ export default function Promotions() {
                 <p className="text-muted-foreground leading-relaxed mb-6">{p.promo1Desc}</p>
                 <div className="flex items-center gap-2 p-3 bg-amber-50 border border-amber-200 rounded-xl mb-6">
                   <Calendar className="w-4 h-4 text-amber-600 shrink-0" />
-                  <span className="text-sm font-semibold text-amber-700">{p.validUntil}: 01.06.2026</span>
+                  <span className="text-sm font-semibold text-amber-700">{p.validUntil}: 01.07.2026</span>
                 </div>
                 <Link to="/Booking">
                   <Button className="w-full rounded-xl gap-2">
@@ -96,7 +96,7 @@ export default function Promotions() {
                 <p className="text-muted-foreground leading-relaxed mb-6">{p.promo2Desc}</p>
                 <div className="flex items-center gap-2 p-3 bg-amber-50 border border-amber-200 rounded-xl mb-6">
                   <Calendar className="w-4 h-4 text-amber-600 shrink-0" />
-                  <span className="text-sm font-semibold text-amber-700">{p.validUntil}: 01.06.2026</span>
+                  <span className="text-sm font-semibold text-amber-700">{p.validUntil}: 01.07.2026</span>
                 </div>
                 <Link to="/Booking">
                   <Button className="w-full rounded-xl gap-2">

@@ -4,7 +4,7 @@ export default {
       badge: 'Valorado 4.9/5 por más de 2.000 clientes',
       title1: 'Servicios de Limpieza Profesional en Región de Murcia, Águilas,',
       title2: 'San Juan de los Terreros & Más.',
-      description: 'Servicios de limpieza de calidad en Águilas, San Juan de los Terreros, Pulpí y Lorca. Limpieza residencial, limpieza de apartamentos vacacionales, limpieza profunda y más. Precios asequibles, productos ecológicos, confiado por 2.000+ clientes.',
+      description: 'Servicios de limpieza de calidad en Águilas, San Juan de los Terreros, Mazarrón, Pulpí y Lorca. Limpieza residencial, limpieza de apartamentos vacacionales, limpieza profunda y más. Precios asequibles, productos ecológicos, confiado por 2.000+ clientes.',
       languages: 'Hablamos inglés, español y ruso',
       cta: 'Presupuesto gratis',
       services: 'Nuestros servicios',
@@ -15,7 +15,7 @@ export default {
     servicesPreview: {
       tag: 'Servicios Profesionales de Limpieza',
       title: 'Servicios de limpieza para cada necesidad – Precios asequibles',
-      subtitle: 'Desde el mantenimiento habitual hasta limpiezas profundas. Servimos Águilas, San Juan de los Terreros, Pulpí y Lorca.',
+      subtitle: 'Desde el mantenimiento habitual hasta limpiezas profundas. Servimos Águilas, San Juan de los Terreros, Mazarrón, Pulpí y Lorca.',
       viewAll: 'Ver todos los servicios',
       items: [
         { title: 'Limpieza Residencial', description: 'Servicios profesionales de limpieza para hogares. Limpieza regular que mantiene tu espacio fresco, organizado y acogedor.', price: 'Desde 29 €/semana' },
@@ -72,7 +72,7 @@ export default {
     servicesPage: {
       tag: 'Servicios Profesionales de Limpieza',
       title: 'Soluciones profesionales de limpieza para cada espacio – Servicios de limpieza expertos',
-      subtitle: 'Desde mantenimiento rutinario hasta limpiezas profundas en Águilas, San Juan de los Terreros, Pulpí y Lorca. Nuestro equipo entrega resultados excepcionales.',
+      subtitle: 'Desde mantenimiento rutinario hasta limpiezas profundas en Águilas, San Juan de los Terreros, Mazarrón, Pulpí y Lorca. Nuestro equipo entrega resultados excepcionales.',
       bookNow: 'Reservar',
       vacationalPricing: {
         badge: 'Tarifa de Precios 2026',
@@ -168,7 +168,7 @@ export default {
       title: 'Preguntas Frecuentes',
       subtitle: 'Encuentra respuestas a las preguntas más comunes sobre nuestros servicios de limpieza y precios.',
       items: [
-        { question: '¿Qué zonas cubren?', answer: 'Servimos en Águilas, San Juan de los Terreros, Pulpí y Lorca con servicios de limpieza profesional.' },
+        { question: '¿Qué zonas cubren?', answer: 'Servimos en Águilas, San Juan de los Terreros, Mazarrón, Pulpí y Lorca con servicios de limpieza profesional.' },
         { question: '¿Con cuánta anticipación debo reservar?', answer: 'Puedes reservar con tan solo 24 horas de anticipación, pero recomendamos hacerlo 3-5 días antes para mejor disponibilidad.' },
         { question: '¿Utilizan productos ecológicos?', answer: 'Sí, todos nuestros productos de limpieza son seguros para el medio ambiente y no tóxicos.' },
         { question: '¿Están asegurados los miembros del equipo?', answer: 'Sí, todos nuestros empleados tienen antecedentes verificados, están completamente asegurados y avalados.' },
