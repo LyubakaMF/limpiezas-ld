@@ -3,13 +3,11 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Tag, CheckCircle2, XCircle } from 'lucide-react';
 
-const EXPIRY = new Date('2026-06-15T23:59:59');
+const EXPIRY = new Date('2026-08-01T23:59:59');
 
-// Extract discount % from code suffix (e.g. rosa20 → 20, vip10 → 10)
-function getDiscount(code) {
-  const match = code.match(/(\d+)$/);
-  return match ? parseInt(match[1], 10) : null;
-}
+const VALID_CODES = {
+  'rosa20': 20,
+};
 
 export default function PromoCodeInput({ onChange }) {
   const [value, setValue] = useState('');
@@ -33,8 +31,8 @@ export default function PromoCodeInput({ onChange }) {
       return;
     }
 
-    const pct = getDiscount(trimmed);
-    if (!pct || pct <= 0 || pct > 100) {
+    const pct = VALID_CODES[trimmed];
+    if (!pct) {
       setStatus('invalid');
       onChange({ code: '', discount: 0 });
       return;
@@ -42,7 +40,7 @@ export default function PromoCodeInput({ onChange }) {
 
     setStatus('valid');
     setDiscount(pct);
-    onChange({ code: trimmed, discount: pct, label: `${pct}% descuento` });
+    onChange({ code: trimmed.toUpperCase(), discount: pct, label: `${pct}% descuento` });
   };
 
   return (
@@ -72,7 +70,7 @@ export default function PromoCodeInput({ onChange }) {
         <p className="text-sm text-destructive">Código no válido.</p>
       )}
       {status === 'expired' && (
-        <p className="text-sm text-destructive">Este código ha expirado (válido hasta el 15/06/2026).</p>
+        <p className="text-sm text-destructive">Este código ha expirado (válido hasta el 01/08/2026).</p>
       )}
     </div>
   );
