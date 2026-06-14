@@ -255,9 +255,9 @@
     }
 
     if (document.readyState === 'complete') {
-      setTimeout(loadThirdParty, 3000);
+      loadThirdParty();
     } else {
-      window.addEventListener('load', function() { setTimeout(loadThirdParty, 3000); });
+      window.addEventListener('load', loadThirdParty);
     }
     </script>
 
