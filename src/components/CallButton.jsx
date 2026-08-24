@@ -20,7 +20,7 @@ export default function CallButton() {
     <motion.a
       href={telUrl}
       onClick={handleClick}
-      className="fixed bottom-24 right-6 md:hidden z-50 bg-blue-500 hover:bg-blue-600 text-white rounded-full p-4 shadow-lg"
+      className="fixed bottom-24 right-6 md:hidden z-50 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
       initial={{ opacity: 0, scale: 0 }}
