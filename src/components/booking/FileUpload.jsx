@@ -12,7 +12,7 @@ export default function FileUpload({ fileUrls, onChange, label, hint }) {
     setUploading(true);
     const urls = [];
     for (const file of files) {
-      const { file_url } = await base44.integrations.Core.UploadFile({ file });
+      const { file_url } = await base44.integrations.Core.UploadPublicFile({ file });
       urls.push(file_url);
     }
     onChange([...(fileUrls || []), ...urls]);

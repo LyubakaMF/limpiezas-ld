@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, Loader2, Phone, Clock, Shield } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useSEO } from '@/lib/useSEO';
 import { trackBookingConversion } from '@/lib/cookieConsent';
