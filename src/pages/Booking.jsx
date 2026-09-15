@@ -7,7 +7,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, Loader2, Phone, Clock, Shield } from 'lucide-react';
-import { motion } from 'framer-motion';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useSEO } from '@/lib/useSEO';
 import { trackBookingConversion } from '@/lib/cookieConsent';
@@ -104,11 +103,11 @@ export default function Booking() {
     <div className="pt-20">
       <section className="py-20 lg:py-28 bg-gradient-to-b from-accent to-background">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-center max-w-2xl mx-auto">
+          <div className="text-center max-w-2xl mx-auto">
             <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">{bp.tag}</p>
             <h1 className="text-4xl lg:text-6xl font-bold tracking-tight">{bp.title}</h1>
             <p className="mt-4 text-lg text-muted-foreground">{bp.subtitle}</p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -116,105 +115,103 @@ export default function Booking() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2">
-              <AnimatePresence mode="wait">
-                {isSuccess ? (
-                  <motion.div key="success" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-20">
-                    <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
-                      <CheckCircle2 className="w-10 h-10 text-primary" />
-                    </div>
-                    <h2 className="text-2xl font-bold mb-2">{bp.successTitle}</h2>
-                    <p className="text-muted-foreground max-w-md mx-auto">{bp.successMsg(form.full_name, form.email)}</p>
-                    <Button className="mt-8 rounded-full" onClick={resetForm}>{bp.bookAnother}</Button>
-                  </motion.div>
-                ) : (
-                  <motion.form key="form" initial={{ opacity: 0 }} animate={{ opacity: 1 }} onSubmit={handleSubmit} className="space-y-8">
+              {isSuccess ? (
+                <div className="text-center py-20">
+                  <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle2 className="w-10 h-10 text-primary" />
+                  </div>
+                  <h2 className="text-2xl font-bold mb-2">{bp.successTitle}</h2>
+                  <p className="text-muted-foreground max-w-md mx-auto">{bp.successMsg(form.full_name, form.email)}</p>
+                  <Button className="mt-8 rounded-full" onClick={resetForm}>{bp.bookAnother}</Button>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-8">
 
-                    {/* Contact Info */}
-                    <div className="space-y-6">
-                      <h2 className="text-lg font-semibold border-b pb-2">{bp.contactInfo}</h2>
-                      <div className="grid sm:grid-cols-2 gap-6">
-                        <div className="space-y-2">
-                          <Label htmlFor="full_name">{bp.fullName} *</Label>
-                          <Input id="full_name" placeholder="John Doe" value={form.full_name} onChange={(e) => handleChange('full_name', e.target.value)} required className="h-12 rounded-xl" />
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="email">{bp.email} *</Label>
-                          <Input id="email" type="email" placeholder="john@example.com" value={form.email} onChange={(e) => handleChange('email', e.target.value)} required className="h-12 rounded-xl" />
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="phone">{bp.phone} *</Label>
-                          <Input id="phone" type="tel" placeholder="+34 600 000 000" value={form.phone} onChange={(e) => handleChange('phone', e.target.value)} required className="h-12 rounded-xl" />
-                        </div>
-                        <div className="space-y-2">
-                          <Label>{bp.serviceType} *</Label>
-                          <Select value={form.service_type} onValueChange={(v) => handleChange('service_type', v)} required>
-                            <SelectTrigger className="h-12 rounded-xl"><SelectValue placeholder={bp.selectService} /></SelectTrigger>
-                            <SelectContent>
-                              {bp.services.map(s => <SelectItem key={s.value} value={s.value}>{s.label}</SelectItem>)}
-                            </SelectContent>
-                          </Select>
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="date">{bp.preferredDate} *</Label>
-                          <Input id="date" type="date" value={form.preferred_date} onChange={(e) => handleChange('preferred_date', e.target.value)} required className="h-12 rounded-xl" />
-                        </div>
-                        <div className="space-y-2">
-                          <Label>{bp.preferredTime}</Label>
-                          <Select value={form.preferred_time} onValueChange={(v) => handleChange('preferred_time', v)}>
-                            <SelectTrigger className="h-12 rounded-xl"><SelectValue placeholder={bp.selectTime} /></SelectTrigger>
-                            <SelectContent>
-                              {bp.times.map(t => <SelectItem key={t.value} value={t.value}>{t.label}</SelectItem>)}
-                            </SelectContent>
-                          </Select>
-                        </div>
+                  {/* Contact Info */}
+                  <div className="space-y-6">
+                    <h2 className="text-lg font-semibold border-b pb-2">{bp.contactInfo}</h2>
+                    <div className="grid sm:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <Label htmlFor="full_name">{bp.fullName} *</Label>
+                        <Input id="full_name" placeholder="John Doe" value={form.full_name} onChange={(e) => handleChange('full_name', e.target.value)} required className="h-12 rounded-xl" />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="address">{bp.address} *</Label>
-                        <Input id="address" placeholder={bp.addressPlaceholder} value={form.address} onChange={(e) => handleChange('address', e.target.value)} required className="h-12 rounded-xl" />
+                        <Label htmlFor="email">{bp.email} *</Label>
+                        <Input id="email" type="email" placeholder="john@example.com" value={form.email} onChange={(e) => handleChange('email', e.target.value)} required className="h-12 rounded-xl" />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="phone">{bp.phone} *</Label>
+                        <Input id="phone" type="tel" placeholder="+34 600 000 000" value={form.phone} onChange={(e) => handleChange('phone', e.target.value)} required className="h-12 rounded-xl" />
+                      </div>
+                      <div className="space-y-2">
+                        <Label>{bp.serviceType} *</Label>
+                        <Select value={form.service_type} onValueChange={(v) => handleChange('service_type', v)} required>
+                          <SelectTrigger className="h-12 rounded-xl"><SelectValue placeholder={bp.selectService} /></SelectTrigger>
+                          <SelectContent>
+                            {bp.services.map(s => <SelectItem key={s.value} value={s.value}>{s.label}</SelectItem>)}
+                          </SelectContent>
+                        </Select>
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="date">{bp.preferredDate} *</Label>
+                        <Input id="date" type="date" value={form.preferred_date} onChange={(e) => handleChange('preferred_date', e.target.value)} required className="h-12 rounded-xl" />
+                      </div>
+                      <div className="space-y-2">
+                        <Label>{bp.preferredTime}</Label>
+                        <Select value={form.preferred_time} onValueChange={(v) => handleChange('preferred_time', v)}>
+                          <SelectTrigger className="h-12 rounded-xl"><SelectValue placeholder={bp.selectTime} /></SelectTrigger>
+                          <SelectContent>
+                            {bp.times.map(t => <SelectItem key={t.value} value={t.value}>{t.label}</SelectItem>)}
+                          </SelectContent>
+                        </Select>
                       </div>
                     </div>
-
-                    {/* Property Details */}
-                    <div className="space-y-6">
-                      <h2 className="text-lg font-semibold border-b pb-2">{bp.propertyDetails}</h2>
-                      <PropertyDetailsForm form={form} onChange={handleChange} translations={bp} />
-                    </div>
-
-                    {/* Files */}
-                    <div className="space-y-6">
-                      <h2 className="text-lg font-semibold border-b pb-2">{bp.filesSection}</h2>
-                      <FileUpload
-                        fileUrls={form.file_urls}
-                        onChange={(urls) => handleChange('file_urls', urls)}
-                        label={bp.attachments}
-                        hint={bp.attachHint}
-                      />
-                    </div>
-
-                    {/* Promo Code */}
-                    <PromoCodeInput onChange={({ code, discount, label }) => {
-                      setPromoApplied(label || null);
-                      handleChange('promo_code', code);
-                      handleChange('promo_discount', discount ? `${discount}%` : '');
-                    }} />
-
-                    {/* Notes */}
                     <div className="space-y-2">
-                      <Label htmlFor="notes">{bp.notes}</Label>
-                      <Textarea id="notes" placeholder={bp.notesPlaceholder} value={form.notes} onChange={(e) => handleChange('notes', e.target.value)} className="min-h-[100px] rounded-xl" />
+                      <Label htmlFor="address">{bp.address} *</Label>
+                      <Input id="address" placeholder={bp.addressPlaceholder} value={form.address} onChange={(e) => handleChange('address', e.target.value)} required className="h-12 rounded-xl" />
                     </div>
+                  </div>
 
-                    {/* Honeypot */}
-                    <div style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, overflow: 'hidden' }} aria-hidden="true">
-                      <input type="text" name="website" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} tabIndex={-1} autoComplete="off" />
-                    </div>
+                  {/* Property Details */}
+                  <div className="space-y-6">
+                    <h2 className="text-lg font-semibold border-b pb-2">{bp.propertyDetails}</h2>
+                    <PropertyDetailsForm form={form} onChange={handleChange} translations={bp} />
+                  </div>
 
-                    <Button type="submit" size="lg" disabled={isSubmitting} className="w-full rounded-xl h-14 text-base">
-                      {isSubmitting ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> {bp.submitting}</> : bp.submit}
-                    </Button>
-                  </motion.form>
-                )}
-              </AnimatePresence>
+                  {/* Files */}
+                  <div className="space-y-6">
+                    <h2 className="text-lg font-semibold border-b pb-2">{bp.filesSection}</h2>
+                    <FileUpload
+                      fileUrls={form.file_urls}
+                      onChange={(urls) => handleChange('file_urls', urls)}
+                      label={bp.attachments}
+                      hint={bp.attachHint}
+                    />
+                  </div>
+
+                  {/* Promo Code */}
+                  <PromoCodeInput onChange={({ code, discount, label }) => {
+                    setPromoApplied(label || null);
+                    handleChange('promo_code', code);
+                    handleChange('promo_discount', discount ? `${discount}%` : '');
+                  }} />
+
+                  {/* Notes */}
+                  <div className="space-y-2">
+                    <Label htmlFor="notes">{bp.notes}</Label>
+                    <Textarea id="notes" placeholder={bp.notesPlaceholder} value={form.notes} onChange={(e) => handleChange('notes', e.target.value)} className="min-h-[100px] rounded-xl" />
+                  </div>
+
+                  {/* Honeypot */}
+                  <div style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, overflow: 'hidden' }} aria-hidden="true">
+                    <input type="text" name="website" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} tabIndex={-1} autoComplete="off" />
+                  </div>
+
+                  <Button type="submit" size="lg" disabled={isSubmitting} className="w-full rounded-xl h-14 text-base">
+                    {isSubmitting ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> {bp.submitting}</> : bp.submit}
+                  </Button>
+                </form>
+              )}
             </div>
 
             <div className="space-y-6">
