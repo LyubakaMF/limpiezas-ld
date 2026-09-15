@@ -8,6 +8,7 @@ import { LanguageProvider } from '@/lib/LanguageContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import { Navigate } from 'react-router-dom';
 import SiteLayout from './components/layout/SiteLayout';
+import ErrorBoundary from './components/ErrorBoundary';
 import CookieBanner from './components/CookieBanner';
 import Home from './pages/Home';
 import Services from './pages/Services';
@@ -48,7 +49,7 @@ const AuthenticatedApp = () => {
 
         <Route path="/Services" element={<Services />} />
         <Route path="/About" element={<About />} />
-        <Route path="/Booking" element={<Booking />} />
+        <Route path="/Booking" element={<ErrorBoundary><Booking /></ErrorBoundary>} />
         <Route path="/Empleo" element={<Empleo />} />
         <Route path="/AdminBookings" element={<AdminBookings />} />
         <Route path="/Promotions" element={<Promotions />} />
