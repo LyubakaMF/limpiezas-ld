@@ -101,6 +101,7 @@ export default function Booking() {
 
   return (
     <div className="pt-20">
+      <div data-debug="booking-rendered" style={{ background: 'red', color: 'white', padding: '8px', textAlign: 'center' }}>DEBUG: Booking page rendered</div>
       <section className="py-20 lg:py-28 bg-gradient-to-b from-accent to-background">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">
