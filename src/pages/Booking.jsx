@@ -2,13 +2,26 @@ import React from 'react';
 
 export default function Booking() {
   return (
-    <div className="pt-20 min-h-screen">
-      <div className="bg-red-600 text-white p-8 text-center text-2xl font-bold">
-        BOOKING PAGE TEST — ако виждаш това, маршрутизацията работи
+    <>
+      <div style={{
+        position: 'fixed',
+        top: '60px',
+        left: 0,
+        right: 0,
+        zIndex: 99999,
+        background: 'red',
+        color: 'white',
+        padding: '20px',
+        textAlign: 'center',
+        fontSize: '24px',
+        fontWeight: 'bold'
+      }}>
+        BOOKING RENDERED — Booking.jsx се изпълнява
       </div>
-      <div className="p-8">
-        <p>Това е тестова страница за диагностика.</p>
+      <div className="pt-32 min-h-screen p-8">
+        <h1 className="text-2xl font-bold text-foreground">Booking страница</h1>
+        <p className="text-muted-foreground">Това е тестово съдържание.</p>
       </div>
-    </div>
+    </>
   );
 }
