@@ -49,7 +49,7 @@ const AuthenticatedApp = () => {
 
         <Route path="/Services" element={<Services />} />
         <Route path="/About" element={<About />} />
-        <Route path="/Booking" element={<Booking />} />
+        <Route path="/Booking" element={<div style={{ background: 'purple', color: 'white', padding: '40px', fontSize: '30px', fontWeight: 'bold' }}>INLINE BOOKING ROUTE WORKS</div>} />
         <Route path="/Empleo" element={<Empleo />} />
         <Route path="/AdminBookings" element={<AdminBookings />} />
         <Route path="/Promotions" element={<Promotions />} />
