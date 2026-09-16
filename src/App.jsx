@@ -40,28 +40,24 @@ const AuthenticatedApp = () => {
 
   // Render the main app
   return (
-    <>
-    <div style={{ position: 'fixed', top: '30px', left: 0, right: 0, zIndex: 99998, background: 'pink', color: 'black', padding: '4px', textAlign: 'center', fontSize: '10px', fontWeight: 'bold' }}>APP.JSX RENDERED — AuthenticatedApp v2</div>
     <Routes>
       <Route element={<SiteLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/Home" element={<Navigate to="/" replace />} />
         <Route path="/home" element={<Navigate to="/" replace />} />
-        <Route path="/booking" element={<Navigate to="/Booking" replace />} />
 
         <Route path="/Services" element={<Services />} />
         <Route path="/About" element={<About />} />
+        <Route path="/Booking" element={<Booking />} />
         <Route path="/Empleo" element={<Empleo />} />
         <Route path="/AdminBookings" element={<AdminBookings />} />
         <Route path="/Promotions" element={<Promotions />} />
       </Route>
-      <Route path="/Booking" element={<div style={{ background: 'purple', color: 'white', padding: '40px', fontSize: '30px', fontWeight: 'bold' }}>INLINE BOOKING ROUTE WORKS — OUTSIDE LAYOUT</div>} />
       <Route path="/LeaveReview" element={<LeaveReview />} />
       <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
       <Route path="/AdminReviews" element={<AdminReviews />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
-    </>
   );
 };
 
