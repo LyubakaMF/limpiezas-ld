@@ -40,6 +40,8 @@ const AuthenticatedApp = () => {
 
   // Render the main app
   return (
+    <>
+    <div style={{ position: 'fixed', top: '30px', left: 0, right: 0, zIndex: 99998, background: 'pink', color: 'black', padding: '4px', textAlign: 'center', fontSize: '10px', fontWeight: 'bold' }}>APP.JSX RENDERED — AuthenticatedApp v2</div>
     <Routes>
       <Route element={<SiteLayout />}>
         <Route path="/" element={<Home />} />
@@ -59,6 +61,7 @@ const AuthenticatedApp = () => {
       <Route path="/AdminReviews" element={<AdminReviews />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
+    </>
   );
 };
 
