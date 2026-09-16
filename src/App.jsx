@@ -41,7 +41,7 @@ const AuthenticatedApp = () => {
   // Render the main app
   return (
     <Routes>
-      <Route element={<SiteLayout />}>
+      <Route element={<ErrorBoundary><SiteLayout /></ErrorBoundary>}>
         <Route path="/" element={<Home />} />
         <Route path="/Home" element={<Navigate to="/" replace />} />
         <Route path="/home" element={<Navigate to="/" replace />} />
