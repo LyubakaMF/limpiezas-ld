@@ -66,7 +66,7 @@ export default function PromotionsSection() {
 
               <a href="https://wa.me/34643533453" target="_blank" rel="noopener noreferrer" className="block">
                 <Button className="w-full rounded-xl gap-2">
-                  <Phone className="w-4 h-4" /> {p.contactForInfo}
+                  <Phone className="w-4 h-4" /> {p.moreInfo}
                 </Button>
               </a>
             </div>
