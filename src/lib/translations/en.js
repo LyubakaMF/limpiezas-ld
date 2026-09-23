@@ -49,8 +49,6 @@ export default {
       from: 'From',
       perMonth: '/ month',
       perWeek: '/ week',
-      promo1Title: 'Vacation Apartment Management & Cleaning',
-      promo1Desc: 'Complete management and professional cleaning of your vacation apartment. We handle everything so you don\'t have to worry — from guest changeovers to deep cleaning. All for just 29€/month.',
       promo2Title: 'Weekly Cleaning – 2-Bedroom Apartment',
       promo2Desc: 'Regular weekly cleaning for 2-bedroom apartments at an unbeatable price. Keep your home spotless week after week with our professional team. Just 29€ per week.',
     },

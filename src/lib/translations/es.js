@@ -43,8 +43,6 @@ export default {
       from: 'Desde',
       perMonth: '/ mes',
       perWeek: '/ semana',
-      promo1Title: 'Gestión y Limpieza de Apartamentos Vacacionales',
-      promo1Desc: 'Gestión completa y limpieza profesional de tu apartamento vacacional. Nos encargamos de todo para que no tengas que preocuparte — desde cambios de huéspedes hasta limpiezas profundas. Todo por solo 29€/mes.',
       promo2Title: 'Limpieza Semanal – Apartamento de 2 Dormitorios',
       promo2Desc: 'Limpieza semanal regular para apartamentos de 2 dormitorios a un precio inmejorable. Mantén tu hogar impecable semana tras semana con nuestro equipo profesional. Solo 29€ a la semana.',
     },
