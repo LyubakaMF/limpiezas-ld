@@ -45,6 +45,9 @@ export default {
       perWeek: '/ semana',
       promo2Title: 'Limpieza Semanal – Apartamento de 2 Dormitorios',
       promo2Desc: 'Limpieza semanal regular para apartamentos de 2 dormitorios a un precio inmejorable. Mantén tu hogar impecable semana tras semana con nuestro equipo profesional. Solo 29€ a la semana.',
+      promo3Title: 'Key Holding – Custodia de Llaves y Visitas',
+      promo3Desc: 'Servicio de custodia de llaves y visitas periódicas a tu propiedad. Guardamos tus llaves de forma segura y comprobamos que todo está en orden en cada visita. Ideal para propietarios ausentes o de alquiler vacacional.',
+      contactForInfo: 'Contáctanos para más información y precios',
     },
     cta: {
       title: '¿Listo para un espacio impecable?',

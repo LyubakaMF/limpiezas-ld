@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Calendar, ArrowRight, Sparkles } from 'lucide-react';
+import { Calendar, ArrowRight, Sparkles, KeyRound, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useSEO } from '@/lib/useSEO';
@@ -41,9 +41,9 @@ export default function Promotions() {
       {/* Promo Cards */}
       <section className="py-16 lg:py-24">
         <div className="max-w-5xl mx-auto px-6 lg:px-8">
-          <div className="max-w-xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8">
 
-            {/* Promo 2 - Weekly Cleaning */}
+            {/* Promo - Weekly Cleaning */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -72,6 +72,30 @@ export default function Promotions() {
                     {p.bookNow} <ArrowRight className="w-4 h-4" />
                   </Button>
                 </Link>
+              </div>
+            </motion.div>
+
+            {/* Promo - Key Holding */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="relative bg-card rounded-3xl border-2 border-primary/30 shadow-xl overflow-hidden"
+            >
+              <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary via-primary/70 to-primary/40" />
+              <div className="p-8">
+                <div className="flex items-start justify-between mb-6">
+                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center">
+                    <KeyRound className="w-7 h-7 text-primary" />
+                  </div>
+                </div>
+                <h2 className="text-xl font-bold mb-3">{p.promo3Title}</h2>
+                <p className="text-muted-foreground leading-relaxed mb-6">{p.promo3Desc}</p>
+                <a href="https://wa.me/34643533453" target="_blank" rel="noopener noreferrer" className="block">
+                  <Button className="w-full rounded-xl gap-2">
+                    <Phone className="w-4 h-4" /> {p.contactForInfo}
+                  </Button>
+                </a>
               </div>
             </motion.div>
 

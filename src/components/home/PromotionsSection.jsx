@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Calendar, ArrowRight, Sparkles } from 'lucide-react';
+import { Calendar, ArrowRight, Sparkles, KeyRound, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/lib/LanguageContext';
 
@@ -20,7 +20,7 @@ export default function PromotionsSection() {
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">{p.subtitle}</p>
         </div>
 
-        <div className="max-w-xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8">
           {/* Promo - Weekly Cleaning */}
           <div className="relative bg-card rounded-3xl border-2 border-primary/30 shadow-xl overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary/40 via-primary/70 to-primary" />
@@ -48,6 +48,27 @@ export default function PromotionsSection() {
                   {p.bookNow} <ArrowRight className="w-4 h-4" />
                 </Button>
               </Link>
+            </div>
+          </div>
+
+          {/* Promo - Key Holding */}
+          <div className="relative bg-card rounded-3xl border-2 border-primary/30 shadow-xl overflow-hidden">
+            <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary via-primary/70 to-primary/40" />
+            <div className="p-8">
+              <div className="flex items-start justify-between mb-6">
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center">
+                  <KeyRound className="w-7 h-7 text-primary" />
+                </div>
+              </div>
+
+              <h3 className="text-xl font-bold mb-3">{p.promo3Title}</h3>
+              <p className="text-muted-foreground leading-relaxed mb-6">{p.promo3Desc}</p>
+
+              <a href="https://wa.me/34643533453" target="_blank" rel="noopener noreferrer" className="block">
+                <Button className="w-full rounded-xl gap-2">
+                  <Phone className="w-4 h-4" /> {p.contactForInfo}
+                </Button>
+              </a>
             </div>
           </div>
         </div>
