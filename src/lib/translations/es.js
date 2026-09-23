@@ -270,4 +270,26 @@ export default {
       attachments: 'Adjuntar fotos / vídeos',
       attachHint: 'Haz clic para subir imágenes o vídeos del inmueble',
     },
+    keyHoldingPage: {
+      tag: 'Key Holding',
+      title: 'Custodia de Llaves y Cuidado de Inmuebles en Águilas, Mazarrón, Terreros y Pulpí',
+      intro: 'Esté completamente tranquilo por su casa de vacaciones mientras esté fuera de España. Somos sus socios de confianza, legales y locales sobre el terreno en Águilas. Guardamos sus llaves en un lugar seguro, vigilamos su propiedad y nos encargamos de que esté perfectamente limpia y lista para su próxima llegada.',
+      packagesTitle: 'Nuestros Paquetes',
+      packages: [
+        { name: 'Paquete "Básico" (Secure Care)', tagline: 'Solución ideal para propietarios que quieren una persona de contacto de confianza en la ciudad para emergencias.', price: '120 € / año (pago único anual)', features: ['Custodia segura de llaves en caja fuerte con código.', 'Persona de contacto 24/7 para emergencias (alarma activada, policía, aseguradoras).', 'Entrega de llaves a técnicos autorizados o a sus invitados (en horario laboral).', 'Nota: Las inspecciones físicas de la propiedad sin urgencia se facturan aparte.'] },
+        { name: 'Paquete "Tranquilidad" (Home Watch) – Más Popular', tagline: 'Cuidado ideal para mantener su casa de vacaciones segura, ventilada y protegida de la humedad durante los meses de invierno.', price: '35 € / mes (o 360 € / año – ¡ahorra 60 €!)', features: ['Todas las ventajas del Paquete Básico.', '2 inspecciones regulares al mes de su propiedad.', 'Ventilación completa de las habitaciones y paso de agua en grifos e inodoros contra olores.', 'Comprobación de humedad, fugas o daños tras lluvias y tormentas en Águilas.', 'Revisión del buzón y envío de fotos de cartas importantes por WhatsApp.', 'Informes y fotos regulares del estado, enviados directamente a su teléfono.'] },
+        { name: 'Paquete "Alquiler" (Rental Support)', tagline: 'Creado para propietarios que alquilan sus inmuebles a turistas (Airbnb) o a amigos.', price: '60 € / mes', features: ['Todas las ventajas del Paquete Tranquilidad.', 'Prioridad en reservas y planificación de limpiezas tras invitados (Changeover clean).', 'Recepción, coordinación y acceso para equipos técnicos (reparación de aire acondicionado, electrodomésticos, etc.).', 'Lectura de contadores de luz y agua bajo petición.'] },
+      ],
+      additionalTitle: 'Servicios Adicionales (Pay-As-You-Go)',
+      additionalSubtitle: '¿Necesita algo fuera del paquete? Estamos a su disposición:',
+      additionalServices: [
+        { name: 'Recepción de invitados (Entrega de llaves)', price: '25 € (Lun-Sáb, 09:00-20:00) / 40 € (Tardes y domingo)' },
+        { name: 'Respuesta a alarma activada', price: '40 € por visita in situ' },
+        { name: 'Limpieza tras invitados y limpieza general', price: 'Precio fijo según tamaño del inmueble (¡Clientes de Key Holding tienen prioridad de reserva!)' },
+      ],
+      ctaTitle: '¡Contáctenos hoy para asegurar su propiedad en Águilas!',
+      ctaBtn: 'Contáctanos',
+      bookBtn: 'Reservar',
+      moreInfo: 'Más información',
+    },
 };

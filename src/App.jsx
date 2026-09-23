@@ -20,6 +20,7 @@ import LeaveReview from './pages/LeaveReview';
 import AdminReviews from './pages/AdminReviews';
 import Promotions from './pages/Promotions';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import KeyHolding from './pages/KeyHolding';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -52,6 +53,7 @@ const AuthenticatedApp = () => {
         <Route path="/Empleo" element={<Empleo />} />
         <Route path="/AdminBookings" element={<AdminBookings />} />
         <Route path="/Promotions" element={<Promotions />} />
+        <Route path="/KeyHolding" element={<KeyHolding />} />
       </Route>
       <Route path="/LeaveReview" element={<LeaveReview />} />
       <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />

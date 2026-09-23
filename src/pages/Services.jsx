@@ -78,13 +78,20 @@ export default function Services() {
                       </li>
                     ))}
                   </ul>
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-4 flex-wrap">
                     <span className="text-lg font-bold text-primary">{service.price}</span>
                     <Link to="/Booking">
                       <Button className="rounded-full gap-2">
                         {sp.bookNow} <ArrowRight className="w-4 h-4" />
                       </Button>
                     </Link>
+                    {i === sp.items.length - 1 && (
+                      <Link to="/KeyHolding">
+                        <Button variant="outline" className="rounded-full gap-2">
+                          <KeyRound className="w-4 h-4" /> {t.keyHoldingPage.moreInfo}
+                        </Button>
+                      </Link>
+                    )}
                   </div>
                 </div>
               </motion.div>

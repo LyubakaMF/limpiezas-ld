@@ -276,4 +276,26 @@ export default {
       attachments: 'Attach Photos / Videos',
       attachHint: 'Click to upload images or videos of the property',
     },
+    keyHoldingPage: {
+      tag: 'Key Holding',
+      title: 'Key Storage and Property Care in Águilas, Mazarrón, Terreros and Pulpí',
+      intro: 'Rest easy knowing your vacation home is in safe hands while you are away from Spain. We are your trusted, legal and local partners on the ground in Águilas. We store your keys securely, watch over your property, and ensure it is perfectly clean and ready for your next arrival.',
+      packagesTitle: 'Our Packages',
+      packages: [
+        { name: 'Basic Package (Secure Care)', tagline: 'Ideal solution for owners who want a trusted contact person in town for emergencies.', price: '120 € / year (one-time annual payment)', features: ['Secure key storage in our coded safe.', '24/7 emergency contact person (triggered alarm, police, insurers).', 'Key handover to authorized tradesmen or your guests (during working hours).', 'Note: Non-emergency physical property inspections are billed separately.'] },
+        { name: 'Peace of Mind Package (Home Watch) – Most Popular', tagline: 'Ideal care to keep your vacation home safe, aired and protected from damp during winter months.', price: '35 € / month (or 360 € / year – save 60 €!)', features: ['All benefits from the Basic Package.', '2 regular inspections per month of your property.', 'Full airing of rooms and running water in taps and toilets against odours.', 'Check for damp, leaks or damage after heavy rains and storms in Águilas.', 'Mailbox check and photos of important letters sent via WhatsApp.', 'Regular reports and photos of the condition, sent directly to your phone.'] },
+        { name: 'Rental Package (Rental Support)', tagline: 'Created for owners who rent their properties to tourists (Airbnb) or to friends.', price: '60 € / month', features: ['All benefits from the Peace of Mind Package.', 'Priority booking and scheduling of post-guest cleaning (Changeover clean).', 'Reception, coordination and access for technical teams (AC repair, appliances, etc.).', 'Electricity and water meter readings on request.'] },
+      ],
+      additionalTitle: 'Additional Services (Pay-As-You-Go)',
+      additionalSubtitle: 'Need something outside the package? We are here for you:',
+      additionalServices: [
+        { name: 'Guest reception (Key handover)', price: '25 € (Mon-Sat, 09:00-20:00) / 40 € (Late hours & Sunday)' },
+        { name: 'Triggered alarm response', price: '40 € per on-site visit' },
+        { name: 'Post-guest and deep cleaning', price: 'Fixed price based on property size (Key Holding clients get priority booking!)' },
+      ],
+      ctaTitle: 'Contact us today to secure your property in Águilas!',
+      ctaBtn: 'Contact us',
+      bookBtn: 'Book now',
+      moreInfo: 'More info',
+    },
 };
