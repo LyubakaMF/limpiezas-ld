@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import { Home, Building2, SprayCan, Truck, HardHat, CalendarCheck, Umbrella, Check, ArrowRight } from 'lucide-react';
+import { Home, Building2, SprayCan, Truck, HardHat, CalendarCheck, Umbrella, Check, ArrowRight, KeyRound, CalendarClock, Building, Wind, Sofa } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useSEO } from '@/lib/useSEO';
 import VacationalPricingSection from '../components/services/VacationalPricingSection';
 
-const icons = [Home, Umbrella, Building2, SprayCan, Truck, HardHat, CalendarCheck];
+const icons = [Home, Umbrella, Building2, SprayCan, Truck, HardHat, CalendarCheck, CalendarClock, Building, Wind, Sofa, KeyRound];
 const images = [
   'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80',
   'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=600&q=80',
@@ -20,6 +20,7 @@ const images = [
   'https://media.base44.com/images/public/69b9d864ebb8dd58db0fa41f/b434ab1ae_generated-image-1777551312041.JPG',
   'https://media.base44.com/images/public/69b9d864ebb8dd58db0fa41f/65fd12e53_generated_image.png',
   'https://media.base44.com/images/public/69b9d864ebb8dd58db0fa41f/f98310a8d_generated_image.png',
+  'https://images.unsplash.com/photo-1564767609342-620cb19b2357?w=600&q=80',
 ];
 
 export default function Services() {

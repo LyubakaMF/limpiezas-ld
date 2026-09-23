@@ -129,6 +129,7 @@ export default {
         { title: 'Community & Building Cleaning', description: 'Focused on common areas of residential buildings to ensure good coexistence and an impeccable image.', features: ['Entrance halls, staircases & landings', 'Disinfection of lift cabins & mirrors', 'Cleaning of handrails & entrance doors', 'Maintenance of common rooms', 'Cleaning of glass in common areas'], price: 'From 60 €/month' },
         { title: 'Glass & Window Cleaning', description: 'Professional cleaning of windows, shop fronts and glass facades. Streak-free, spotless results every time.', features: ['Shop fronts & windows', 'Glass facades', 'Streak-free finish', 'Sparkling results'], price: 'From 1.50 €/m²' },
         { title: 'Carpet, Rug & Sofa Cleaning', description: 'Deep cleaning of carpets, rugs and upholstery. We remove stains, dust mites and odours to restore freshness and life to your textiles.', features: ['Carpets & rugs', 'Sofas & upholstery', 'Stain & mite removal', 'Fast drying'], price: 'From 3 €/m²' },
+        { title: 'Key Holding – Key Storage & Property Visits', description: 'Secure key storage and periodic property visit service. We keep your keys safe and check that everything is in order on each visit. Ideal for absent owners or vacation rental properties.', features: ['Secure key storage', 'Scheduled periodic visits', 'Property condition check', 'Report after each visit', 'Ideal for vacation rentals'], price: 'Contact us' },
       ],
     },
     aboutPage: {
