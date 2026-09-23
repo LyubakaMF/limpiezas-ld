@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { KeyRound, Lock, Home, Key, Check, ArrowRight, Phone, Star, Sparkles } from 'lucide-react';
+import { KeyRound, Lock, Home, Key, Check, ArrowRight, Phone, MessageCircle, Star, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useSEO } from '@/lib/useSEO';
@@ -124,9 +124,14 @@ export default function KeyHolding() {
           >
             <h2 className="text-2xl lg:text-3xl font-bold mb-8">{kh.ctaTitle}</h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://wa.me/34643533453" target="_blank" rel="noopener noreferrer">
+              <a href="tel:+34643533453">
                 <Button size="lg" className="rounded-full gap-2 w-full sm:w-auto">
                   <Phone className="w-4 h-4" /> {kh.ctaBtn}
+                </Button>
+              </a>
+              <a href="https://wa.me/34643533453" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="rounded-full gap-2 w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white">
+                  <MessageCircle className="w-4 h-4" /> {kh.writeUs}
                 </Button>
               </a>
               <Link to="/Booking">
