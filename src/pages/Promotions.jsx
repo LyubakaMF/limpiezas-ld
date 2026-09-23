@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Calendar, ArrowRight, Sparkles, KeyRound, Phone } from 'lucide-react';
+import { Calendar, ArrowRight, Sparkles, KeyRound, Phone, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useSEO } from '@/lib/useSEO';
@@ -91,9 +91,14 @@ export default function Promotions() {
                 </div>
                 <h2 className="text-xl font-bold mb-3">{p.promo3Title}</h2>
                 <p className="text-muted-foreground leading-relaxed mb-6">{p.promo3Desc}</p>
-                <a href="https://wa.me/34643533453" target="_blank" rel="noopener noreferrer" className="block">
+                <Link to="/KeyHolding" className="block">
                   <Button className="w-full rounded-xl gap-2">
-                    <Phone className="w-4 h-4" /> {p.moreInfo}
+                    {p.moreInfo} <ArrowRight className="w-4 h-4" />
+                  </Button>
+                </Link>
+                <a href="https://wa.me/34643533453" target="_blank" rel="noopener noreferrer" className="block mt-3">
+                  <Button className="w-full rounded-xl gap-2 bg-green-600 hover:bg-green-700 text-white">
+                    <MessageCircle className="w-4 h-4" /> {p.whatsappBtn}
                   </Button>
                 </a>
               </div>

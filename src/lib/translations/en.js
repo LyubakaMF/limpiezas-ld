@@ -53,6 +53,7 @@ export default {
       promo3Desc: 'Secure key storage and periodic property visit service in Águilas, Pulpí and San Juan de los Terreros. We keep your keys safe and check that everything is in order on each visit. Ideal for absent owners or vacation rental properties.',
       contactForInfo: 'Contact us for more information and prices',
       moreInfo: 'More info',
+      whatsappBtn: 'WhatsApp',
       promo2Title: 'Weekly Cleaning – 2-Bedroom Apartment',
       promo2Desc: 'Regular weekly cleaning for 2-bedroom apartments at an unbeatable price. Keep your home spotless week after week with our professional team. Just 29€ per week.',
     },

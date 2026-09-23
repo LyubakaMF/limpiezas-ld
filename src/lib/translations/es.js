@@ -49,6 +49,7 @@ export default {
       promo3Desc: 'Servicio de custodia de llaves y visitas periódicas a tu propiedad en Águilas, Pulpí y San Juan de los Terreros. Guardamos tus llaves de forma segura y comprobamos que todo está en orden en cada visita. Ideal para propietarios ausentes o de alquiler vacacional.',
       contactForInfo: 'Contáctanos para más información y precios',
       moreInfo: 'Más información',
+      whatsappBtn: 'WhatsApp',
     },
     cta: {
       title: '¿Listo para un espacio impecable?',
